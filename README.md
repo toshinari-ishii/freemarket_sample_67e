@@ -12,6 +12,7 @@
 - has_many :comments
 - has_one :card
 - has_one :address
+- has_many :items
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -29,6 +30,7 @@
 - has_many :comments
 - has_many :photos
 - belongs_to :category
+- belongs_to :user
 
 ## cardsテーブル
 |Column|Type|Options|
