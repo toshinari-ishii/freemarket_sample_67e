@@ -34,10 +34,10 @@
 |Column|Type|Options|
 |------|----|-------|
 |item|references|null: false, foreign_key: true|
-|category|references|null: false, foreign_key: true|
+|category_first|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :item
-- belongs_to :category
+- belongs_to :category_first
 
 ## cardsテーブル
 |Column|Type|Options|
@@ -78,27 +78,27 @@
 - belongs_to :user
 - belongs_to :item
 
-## category1テーブル
+## category_firstテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name1|stirng|null: false|
 ### Association
 - has_many :items_categories
-- has_many :categories2
+- has_many :categories_second
 
-## category2テーブル
+## category_secondテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name2|string|null: false|
 |name1|references|null: false, foreign_key: true|
 ### Association
-- belongs_to :category1
-- has_many :categories3
+- belongs_to :category_first
+- has_many :categories_third
 
-### category3テーブル
+### category_thirdテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name3|string|null: false|
 |name2|references|null: false, foreign_key: true|
 ### Association
-- belongs_to :category2
+- belongs_to :category_second
