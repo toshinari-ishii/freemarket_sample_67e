@@ -24,20 +24,11 @@
 |day|integer|null: false|
 |price|integer|null: false|
 |user|references|null: false, foreign_key: true|
+|category|references|null: false, foreign_key: true|
 ### Association
 - has_many :comments
 - has_many :photos
-- has_many :categories,through: :items_categories
-- has_many :items_categories
-
-## items_categoriesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|item|references|null: false, foreign_key: true|
-|category_first|references|null: false, foreign_key: true|
-### Association
-- belongs_to :item
-- belongs_to :category_first
+- belongs_to :category
 
 ## cardsテーブル
 |Column|Type|Options|
@@ -78,28 +69,9 @@
 - belongs_to :user
 - belongs_to :item
 
-## category_firstテーブル
+## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name1|stirng|null: false|
+|name|stirng|null: false|
 ### Association
-- has_many :items_categories
-- has_many :categories_second
-
-## category_secondテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name2|string|null: false|
-|name1|references|null: false, foreign_key: true|
-### Association
-- belongs_to :category_first
-- has_many :categories_third
-
-### category_thirdテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name3|string|null: false|
-|name2|references|null: false, foreign_key: true|
-### Association
-- belongs_to :category_second
-
+- has_many :items
