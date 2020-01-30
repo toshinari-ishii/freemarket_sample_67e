@@ -1,0 +1,35 @@
+header{
+  .heder__top{
+    &__up{
+      display: flex;
+      // max-width: 1040px;
+      // width: 100%;
+      &__logo{
+        font-size: 30px;
+        margin-right: 30px;
+      }
+      &__form{
+        display: flex;
+        &__text{
+          // width:calc(100% - 26px);
+          width: 40vw;
+
+        }
+        &__submit{
+
+        }
+      }
+      border-bottom: 1px black;
+    }
+    &__down{
+      display: flex;
+      justify-content: space-between;
+      &__left{
+      }
+      &__right{
+      }
+    }
+  }
+  .heder__bottom{
+  }
+}
