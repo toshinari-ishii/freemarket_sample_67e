@@ -5,25 +5,19 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates :nickname, :first_name, :last_name, :first_hurigana, :last_hurigana, :birthday, :password, presence: true
 
-
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGEX }
-  validate :zenkaku
-  # validate :first_name, :last_name
+  validate :zenkaku_first_name, :zenkaku_last_name
 
-  def zenkaku
+  def zenkaku_first_name
     if first_name !~/^[^ -~｡-ﾟ]*$/
-      errors.add(:zenkaku, "全角ではありません") # error message
+      errors.add(:zenkaku_first_name, "全角ではありません") # error message
     end
   end
   
-  # def self.zenkaku?(str)
-  #   return nil if str.nil?
-  #   # 全角のみOKなので、半角が混ざっているとfalseが返る
-  #   unless str.to_s =~/^[^ -~｡-ﾟ]*$/
-  #     return false
-  #   end
-  #   return true
-  # end
-  
+  def zenkaku_last_name
+    if last_name !~/^[^ -~｡-ﾟ]*$/
+      errors.add(:zenkaku_last_name, "全角ではありません") # error message
+    end
+  end  
 end

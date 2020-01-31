@@ -15,13 +15,10 @@ describe User do
       expect(user.errors[:first_name]).to include("can't be blank")
     end
 
-    ###未導入###
     it "(2-2) first_name(名)は全角が必須です。" do
-      user = build(:user, first_name: "takada")
-      # user = build(:user, first_name: "高田")
+      user = build(:user, first_name: "kenichi")
       user.valid?
-      # binding.pry
-      expect(user.errors[:zenkaku]).to include("全角ではありません")
+      expect(user.errors[:zenkaku_first_name]).to include("全角ではありません")
     end
 
     it "(3-1) last_name(姓)は必須です。" do
@@ -30,11 +27,10 @@ describe User do
       expect(user.errors[:last_name]).to include("can't be blank")
     end
 
-    ###未導入###
     it "(3-2) last_name(姓)は全角が必須です。" do
-      user = build(:user, last_name: "")
+      user = build(:user, last_name: "takada")
       user.valid?
-      expect(user.errors[:last_name]).to include("can't be blank")
+      expect(user.errors[:zenkaku_last_name]).to include("全角ではありません")
     end
 
     it "(4) first_hurigana(名)は必須です。" do
