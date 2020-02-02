@@ -21,6 +21,12 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :first_hurigana
       t.string :last_hurigana
       t.date :birthday
+      t.string :postcode
+      t.string :prefecture
+      t.string :city
+      t.string :block
+      t.string :room
+      t.string :phone_number
       
       ## Trackable
       # t.integer  :sign_in_count, default: 0, null: false
