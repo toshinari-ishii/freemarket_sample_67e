@@ -37,10 +37,8 @@
           %p アプリをお持ちでない方は以下より
           %p インストールしてご利用いただけます
           .buy__third--address--image1
-            %a{:href => "#"}
-              = image_tag "app-store", alt: "アップルリンク画像"
-            %a{:href => "#"}
-              = image_tag "google-play", alt: "グーグルリンク画像"    
+            = link_to image_tag("app-store", alt: "アップルリンク画像")
+            = link_to image_tag( "google-play", alt: "グーグルリンク画像")    
       .foot
         .foot__link
           %tr=link_to "プライバシーポリシー", url:'#'
