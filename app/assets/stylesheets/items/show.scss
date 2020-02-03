@@ -2,7 +2,6 @@
 .items{
   .show{ 
     .header{
-      // background-color: yellow;
       padding: 0 60px;
       margin-bottom: 10px;
       &__main{
@@ -10,7 +9,6 @@
         padding: 15px 0 0;
         background-color: 0 60px;
         max-width: 1040px;
-        // width: 100%;
         height: 82px;
         &__top{
           display: flex;
@@ -229,11 +227,33 @@
     .banner{
       background-image: url(/assets/bg-appBanner-pict.jpg);
       width: 100%;
+      padding: 100px 40px;
       background-size: cover;
       background-position: center;
       &__background{
         
         &__content{
+          &__main{
+            &__title{
+              font-size: 24px;
+              text-align: center;
+            }
+            &__text{
+              font-size: 35px;
+              text-shadow: 0 0 5px rgba(0,0,0,0.4);
+              text-align: center;
+            }
+            &__icon{
+              width: 100%;
+              display: flex;
+              justify-content: center;
+              margin: 20px auto 0;
+              &__app{
+                margin-right: 10px;
+              }
+              &__google{}
+            }
+          }
            
         }
       }
@@ -249,7 +269,6 @@
         max-width: 840px;
         margin: 0 auto;
         &__content{
-          // text-align: center;
           width: calc(1 / 3 * 100%);
           margin: 0 2% 0 0;
           font-weight: bold;
