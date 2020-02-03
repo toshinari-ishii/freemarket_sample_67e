@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'gets#index'
+  root to: 'items#index'
   resources :items, only:[:new, :show] do
     member do
       get 'buy'
