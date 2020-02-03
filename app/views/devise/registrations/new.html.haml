@@ -1,66 +1,78 @@
+-# registrations#new
+.registrations
+  .new
+    %h1.new__h2 会員情報入力
+    = form_with model: @user, url: user_registration_path, id: 'boxes', class: 'boxes', local: true  do |f|
+      = render "devise/shared/error_messages", resource: resource
+      .boxes__field
+        = f.label :"ニックネーム"
+        %span.required 必須
+        %br/
+        = f.text_field :nickname, autofocus: true, class: "boxes__field__large-frame", placeholder: "例)フリマ太郎"
+      .boxes__field
+        = f.label :"メールアドレス"
+        %span.required 必須
+        %br/
+        = f.email_field :email, autocomplete: "email", class: "boxes__field__large-frame", placeholder: "PC・携帯どちらでも可"
+      .boxes__field
+        = f.label :"パスワード"
+        %span.required 必須
+        %br/
+        = f.password_field :password, autocomplete: "new-password", class: "boxes__field__large-frame", placeholder: "7文字以上の半角英数字"
+      .boxes__field
+        = f.label :"パスワード(再確認)"
+        %span.required 必須
+        %br/
+        = f.password_field :password_confirmation, autocomplete: "new-password", class: "boxes__field__large-frame", placeholder: "上記と同じ文字を入力"
+      -# %p 本人確認
+      .boxes__field
+        = f.label :"お名前(全角)"
+        %span.required 必須
+        %br/
+        = f.text_field :last_name, class: "boxes__field__middle-frame", placeholder: "例)山田"
+        = f.text_field :first_name, class: "boxes__field__middle-frame", placeholder: "例)彩"
+      .boxes__field
+        = f.label :"お名前カナ(全角)"
+        %span.required 必須
+        %br/
+        = f.text_field :last_hurigana, class: "boxes__field__middle-frame", placeholder: "例)ヤマダ"
+        = f.text_field :first_hurigana, class: "boxes__field__middle-frame", placeholder: "例)アヤ"
+      .boxes__field
+        = f.label :"生年月日"
+        %span.required 必須
+        %br/
+      != sprintf(f.date_select(:birthday, {class: 'boxes__field__birthday', with_css_classes:'boxes__field__birthday', prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'}),'年','月')+'日'
+      .boxes__field
+        = f.label :"郵便番号"
+      %span.required 必須
+      %br/
+      = f.text_field :postcode, class: "boxes__field__large-frame", placeholder: "例)123-4567"
+      .boxes__field
+        = f.label :"都道府県"
+        %span.required 必須
+        %br/
+        = f.collection_select :prefecture, JpPrefecture::Prefecture.all, :code, :name, class: "box__field__prefecture"
+      .boxes__field
+        = f.label :"市区町村"
+        %span.required 必須
+        %br/
+        = f.text_field :city, class: "boxes__field__large-frame", placeholder: "例)大阪市中央区"
+      .boxes__field
+        = f.label :"番地"
+        %span.required 必須
+        %br/
+        = f.text_field :block, class: "boxes__field__large-frame", placeholder: "例)難波５丁目１−６０"
+      .boxes__field
+        = f.label :"建物名"
+        %span.optional 任意
+        %br/
+        = f.text_field :room, class: "boxes__field__large-frame", placeholder: "例)なんばスカイオ１５階"
+      .boxes__field
+        = f.label :"電話"
+        %span.optional 任意
+        %br/
+        = f.text_field :phone_number, class: "boxes__field__large-frame", placeholder: "例)050-3187-3522"
 
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
-
-%h2 会員情報入力
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :"ニックネーム"
-    %br/
-    = f.text_field :nickname, autofocus: true, placeholder: "例)フリマ太郎"
-  .field
-    = f.label :"メールアドレス"
-    %br/
-    = f.email_field :email, autocomplete: "email", placeholder: "PC・携帯どちらでも可"
-  .field
-    = f.label :"パスワード"
-    -# - if @minimum_password_length
-    -#   %em
-    -#     (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password", placeholder: "7文字以上の半角英数字"
-  .field
-    = f.label :"パスワード(再確認)"
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "上記と同じ文字を入力"
-  %p 本人確認
-  .field
-    = f.label :"お名前(全角)"
-    %br/
-    = f.text_field :first_name, placeholder: "例)山田"
-    = f.text_field :last_name, placeholder: "例)彩"
-  .field
-    = f.label :"お名前カナ(全角)"
-    %br/
-    = f.text_field :first_hurigana, placeholder: "例)ヤマダ"
-    = f.text_field :last_hurigana, placeholder: "例)アヤ"
-  .field
-    = f.label :"生年月日"
-    %br/
-    
-  != sprintf(f.date_select(:birthday, prefix:'birthday',with_css_classes:'XXXXX', prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'
-
-  .actions
-    = f.submit "登録する"
--# = render "devise/shared/links"
+      .actions
+        = f.submit "登録する", class: "actions__btn"
 

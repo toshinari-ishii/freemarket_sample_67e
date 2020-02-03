@@ -1,0 +1,65 @@
+.boxes__field__birthday {
+  background-color: green;
+}
+.boxes__field__prefecture {
+  background-color: red;
+}
+
+.registrations {
+  .new {
+    &__h2 {
+      text-align: center;
+    }
+    width: 400px;
+    margin: 0 auto;
+    .boxes {
+      margin: 10px;
+      &__field {
+        margin: 5px 5px 5px 5px;
+        .required {
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+          border-radius: 2px;
+          color: white;
+          font-size: 12px;
+          vertical-align: top;
+          background-color: red;
+        }
+        .optional {
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+          border-radius: 2px;
+          color: white;
+          font-size: 12px;
+          vertical-align: top;
+          background-color: grey;
+        }
+        &__large-frame {
+          width: 300px;
+          height: 40px;
+          font-size: 15px;
+        }
+        &__middle-frame {
+          width: 150px;
+          height: 40px;
+          font-size: 15px;
+        }
+        &__birthday {
+          background-color: red;
+          color: green;
+        }
+      }
+      .actions {
+        &__btn {
+          display: block;
+          margin: 0 auto;
+          width: 300px;
+          line-height: 48px;
+          font-size: 20px;
+          color: rgb(245, 245, 245);
+          background-color: red;
+        }
+      }
+    }
+  }
+}
