@@ -1,53 +1,53 @@
 -# 購入確認画面作成2020/1/30(後で正式なコントローラーへ変更する)
-.buy
-  .buy__head
-    = image_tag "logo", size: "260x85", alt: "商品画像"
-  .buy__head--title
-    購入内容の確認
-  .buy__second
-    .buy__second--image
-      = image_tag "shirt.jpg", size: "100x97", alt: "商品画像"
-    .buy__second--price
-      %p.buy__second--price--name 限定 ナイキ エアマックス 90 NIKE AIR MAX LTR GS
-      %p.buy__second--price--price ¥14,999 （税込）送料込み
-  .buy__third
-    .buy__third--price
-      %p.buy__third--price--text 支払金額 
-      %p.buy__third--price--int ¥14.999
-    .buy__third--price--point
-      %tr= check_box :item, :item_ids, {class: "check_box"}, true, false
-      %tr ポイントを使用する
-    .buy__third--choice
-      %p 支払方法
-      %p 登録してください
-    .buy__third--address
-      %tr 配送先
-      %tr=link_to "変更する", url:'#'
-      %p 〒XXX-XXX
-      %p XXX府XXX市XXX町XXX丁目
-      %p 購入者の名前
-    .buy__third--address--red 
-      %p この商品はラクラクフリマ便、アプリ
-      %p からのみ購入できます。
-    .buy__third--address--btn
-      %btn= submit_tag "購入する",  class:"buy-btn"
-    .buy__third--address--comment
-      %p アプリをお持ちでない方は以下より
-      %p インストールしてご利用いただけます
-      .buy__third--address--image1
-        %a{:href => "#"}
-          = image_tag "app-store", alt: "アップルリンク画像"
-        %a{:href => "#"}
-          = image_tag "google-play", alt: "グーグルリンク画像"    
-  .foot
-    .foot__link
-      %tr=link_to "プライバシーポリシー", url:'#'
-      %tr=link_to "フリマ利用規約", url:'#'
-      %tr=link_to "特定商取引に関する表記", url:'#'
-    .foot__icon
-      = image_tag "logo-white", size: "260x75", alt: "商品画像"
-    .foot__copy
-      %p.foot__copy--mini Furima,inc.
+.gets
+  .show
+    .buy
+      .buy__head
+        = image_tag "logo", size: "260x85", alt: "商品画像"
+      .buy__head--title
+        購入内容の確認
+      .buy__second
+        .buy__second--image
+          = image_tag "shirt.jpg", size: "100x97", alt: "商品画像"
+        .buy__second--price
+          %p.buy__second--price--name 限定 ナイキ エアマックス 90 NIKE AIR MAX LTR GS
+          %p.buy__second--price--price ¥14,999 （税込）送料込み
+      .buy__third
+        .buy__third--price
+          %p.buy__third--price--text 支払金額 
+          %p.buy__third--price--int ¥14.999
+        .buy__third--price--point
+          %tr= check_box :item, :item_ids, {class: "check_box"}, true, false
+          %tr ポイントを使用する
+        .buy__third--choice
+          %p 支払方法
+          %p 登録してください
+        .buy__third--address
+          %tr 配送先
+          %tr=link_to "変更する", url:'#'
+          %p 〒XXX-XXX
+          %p XXX府XXX市XXX町XXX丁目
+          %p 購入者の名前
+        .buy__third--address--red 
+          %p この商品はラクラクフリマ便、アプリ
+          %p からのみ購入できます。
+        .buy__third--address--btn
+          %btn= submit_tag "購入する",  class:"buy-btn"
+        .buy__third--address--comment
+          %p アプリをお持ちでない方は以下より
+          %p インストールしてご利用いただけます
+          .buy__third--address--image1
+            = link_to image_tag("app-store", alt: "アップルリンク画像")
+            = link_to image_tag( "google-play", alt: "グーグルリンク画像")    
+      .foot
+        .foot__link
+          %tr=link_to "プライバシーポリシー", url:'#'
+          %tr=link_to "フリマ利用規約", url:'#'
+          %tr=link_to "特定商取引に関する表記", url:'#'
+        .foot__icon
+          = image_tag "logo-white", size: "260x75", alt: "商品画像"
+        .foot__copy
+          %p.foot__copy--mini Furima,inc.
 
 
     
