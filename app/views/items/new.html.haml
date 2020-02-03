@@ -1,100 +1,102 @@
-.header
-  = image_tag "logo.png", size: "185x49"
+.items
+  .new
+    .header
+      = image_tag "logo.png", size: "185x49"
 
-.contents
-  .contents__content
-    %h2.contents__content__head
-      商品の情報を入力
-    .contents__content__main
-      .contents__content__main__upload
-        %h3.contents__content__main__upload__1
-          出品画像
-          %span.form 必須
+    .contents
+      .contents__content
+        %h2.contents__content__head
+          商品の情報を入力
+        .contents__content__main
+          .contents__content__main__upload
+            %h3.contents__content__main__upload__1
+              出品画像
+              %span.form 必須
 
-        %p.contents__content__main__upload__2
-          最大10枚までアップロードできます
-        .contents__content__main__upload__3
-          %b
-            ドラッグアンドドロップ
-            %br
-            またはクリックしてファイルをアップロード
-      .contents__content__main__text
-        %label.contents__content__main__text__1
-          商品名
-          %span.form 必須
-        
-        .contents__content__main__text__2
-          = form_for "aaa" do |f|
-            = f.text_field :content, class: 'input',id:'area', placeholder: '  商品名 (必須40文字まで)'
-        %label.contents__content__main__text__3
-          商品説明
-          %span.form 必須
-        .contents__content__main__text__4
-          = form_for "aaa" do |f|
-            = f.text_field :content, class: 'input', placeholder: '  商品の説明 (必須1,000文字以内) (色、素材、重さ、定価、注意点など)例)2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。'
-      .contents__content__main__clearfix
-        .contents__content__main__clearfix__left
-          .contents__content__main__clearfix__left__1
-            商品の詳細
-          .contents__content__main__clearfix__right
-            .contents__content__main__clearfix__right__head
-              .contents__content__main__clearfix__right__head__1
-                カテゴリー
-              .contents__content__main__clearfix__right__head__2
+            %p.contents__content__main__upload__2
+              最大10枚までアップロードできます
+            .contents__content__main__upload__3
+              %b
+                ドラッグアンドドロップ
+                %br
+                またはクリックしてファイルをアップロード
+          .contents__content__main__text
+            %label.contents__content__main__text__1
+              商品名
+              %span.form 必須
+            
+            .contents__content__main__text__2
+              = form_for "aaa" do |f|
+                = f.text_field :content, class: 'input',id:'area', placeholder: '  商品名 (必須40文字まで)'
+            %label.contents__content__main__text__3
+              商品説明
+              %span.form 必須
+            .contents__content__main__text__4
+              = form_for "aaa" do |f|
+                = f.text_field :content, class: 'input', placeholder: '  商品の説明 (必須1,000文字以内) (色、素材、重さ、定価、注意点など)例)2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。'
+          .contents__content__main__clearfix
+            .contents__content__main__clearfix__left
+              .contents__content__main__clearfix__left__1
+                商品の詳細
+              .contents__content__main__clearfix__right
+                .contents__content__main__clearfix__right__head
+                  .contents__content__main__clearfix__right__head__1
+                    カテゴリー
+                  .contents__content__main__clearfix__right__head__2
+                    必須
+                  .contents__content__main__clearfix__right__head__3
+                    
+                .contents__content__main__clearfix__right__foot
+                  .contents__content__main__clearfix__right__foot__1
+                    商品の状態
+                  .contents__content__main__clearfix__right__foot__2
+                    必須
+                  .contents__content__main__clearfix__right__foot__3
+          .contents__content__main__price
+            .contents__content__main__price__left
+              販売価格(300~9,999,999)
+            .contents__content__main__price__right
+              .contents__content__main__price__right__1
+                価格
+              .contents__content__main__price__right__2
                 必須
-              .contents__content__main__clearfix__right__head__3
-                
-            .contents__content__main__clearfix__right__foot
-              .contents__content__main__clearfix__right__foot__1
-                商品の状態
-              .contents__content__main__clearfix__right__foot__2
-                必須
-              .contents__content__main__clearfix__right__foot__3
-      .contents__content__main__price
-        .contents__content__main__price__left
-          販売価格(300~9,999,999)
-        .contents__content__main__price__right
-          .contents__content__main__price__right__1
-            価格
-          .contents__content__main__price__right__2
-            必須
-          .contents__content__main__price__right__3
-            ¥例) 300
-          .contents__content__main__price__right__4
-            販売手数料
-          .contents__content__main__price__right__5
-            販売利益
-      .contents__content__main__btn
-        .contents__content__main__btn__box
-          %p.contents__content__main__btn__box__1
-            %a{:href => "#", :target => "_blank"} 禁止されている出品
-            、
-            %a{:href => "#", :target => "_blank"} 行為
-            を必ずご確認ください。
+              .contents__content__main__price__right__3
+                ¥例) 300
+              .contents__content__main__price__right__4
+                販売手数料
+              .contents__content__main__price__right__5
+                販売利益
+          .contents__content__main__btn
+            .contents__content__main__btn__box
+              %p.contents__content__main__btn__box__1
+                %a{:href => "#", :target => "_blank"} 禁止されている出品
+                、
+                %a{:href => "#", :target => "_blank"} 行為
+                を必ずご確認ください。
 
-          %p.contents__content__main__btn__box__2
-            またブランド品でシリアルナンバー等がある場合はご記載ください。
-            %a{:href => "#", :target => "_blank"} 偽ブランドの販売
-            は犯罪であり処罰される可能性があります。
-          %p.contents__content__main__btn__box__3
-            また、出品をもちまして
-            %a{:href => "#", :target => "_blank"} 加盟店規約
-            に同意したことになります。
-        .contents__content__main__btn__push
-          .contents__content__main__btn__push__box
-            %a.contents__content__main__btn__push__box__red
-              出品する
-          .contents__content__main__btn__push__box
-            %a.contents__content__main__btn__push__box__gray
-              もどる
+              %p.contents__content__main__btn__box__2
+                またブランド品でシリアルナンバー等がある場合はご記載ください。
+                %a{:href => "#", :target => "_blank"} 偽ブランドの販売
+                は犯罪であり処罰される可能性があります。
+              %p.contents__content__main__btn__box__3
+                また、出品をもちまして
+                %a{:href => "#", :target => "_blank"} 加盟店規約
+                に同意したことになります。
+            .contents__content__main__btn__push
+              .contents__content__main__btn__push__box
+                %a.contents__content__main__btn__push__box__red
+                  出品する
+              .contents__content__main__btn__push__box
+                %a.contents__content__main__btn__push__box__gray
+                  もどる
 
 
 
-.footer
-  %a{:href => "#"} プライバシーポリシー
-  %a{:href => "#"} メルカリ利用規約
-  %a{:href => "#"} 特定商取引に関する表記
-  .footer__logo
-    = image_tag "logo-white.png", size: "120x70"
-  %small © FURIMA, Inc.
+    .footer
+      %a{:href => "#"} プライバシーポリシー
+      %a{:href => "#"} メルカリ利用規約
+      %a{:href => "#"} 特定商取引に関する表記
+      .footer__logo
+        = image_tag "logo-white.png", size: "120x70"
+      %small © FURIMA, Inc.
 
