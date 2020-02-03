@@ -21,75 +21,92 @@
                 %br
                 またはクリックしてファイルをアップロード
           .contents__content__main__text
-            %label.contents__content__main__text__1
+
+            .contents__content__main__text__1
               商品名
               %span.form 必須
-            
-            .contents__content__main__text__2
               = form_for "aaa" do |f|
-                = f.text_field :content, class: 'input',id:'area', placeholder: '  商品名 (必須40文字まで)'
-            %label.contents__content__main__text__3
+                = f.text_field :content, class: 'contents__content__main__text__1__name', placeholder: '  商品名 (必須40文字まで)'
+            .contents__content__main__text__2
               商品説明
               %span.form 必須
-            .contents__content__main__text__4
               = form_for "aaa" do |f|
-                = f.text_field :content, class: 'input', placeholder: '  商品の説明 (必須1,000文字以内) (色、素材、重さ、定価、注意点など)例)2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。'
+                = f.text_area :content, class: 'contents__content__main__text__2__names', placeholder: '商品名 （商品の説明(必須1,000文字以内）（色、素材、重さ、定価、注意点など）例）   2010年頃に1万円に購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。）'
           .contents__content__main__clearfix
-            .contents__content__main__clearfix__left
-              .contents__content__main__clearfix__left__1
-                商品の詳細
-              .contents__content__main__clearfix__right
-                .contents__content__main__clearfix__right__head
-                  .contents__content__main__clearfix__right__head__1
-                    カテゴリー
-                  .contents__content__main__clearfix__right__head__2
-                    必須
-                  .contents__content__main__clearfix__right__head__3
-                    
-                .contents__content__main__clearfix__right__foot
-                  .contents__content__main__clearfix__right__foot__1
-                    商品の状態
-                  .contents__content__main__clearfix__right__foot__2
-                    必須
-                  .contents__content__main__clearfix__right__foot__3
+            商品の詳細
+            .content__content__main__clearfix__box
+              .contents__content__main__clearfix__box__category
+                カテゴリー
+                %span.form 必須
+                = form_for 'aa' do |f|
+                  = f.select :theme, [ ["レディース",1], ["メンズ", 2], ["ベビー・キッズ", 3], ["インテリア・住まい・小物", 4], ["本・音楽・ゲーム", 5], ["おもちゃ・ホビー・グッズ", 6], ["コスメ・香水・美容", 7], ["家電・スマホ・カメラ", 8] ,["スポーツ・レジャー", 9], ["ハンドメイド", 10], ["チケット", 11], ["自動車・オートバイ", 12], ["その他", 13] ], prompt: "---"
+              .contents__content__main__clearfix__box__status
+                商品の状態
+                %span.form 必須
+                = form_for 'aa' do |f|
+                  = f.select :theme, [ ["新品、未使用",1], ["未使用に近い", 2], ["目立った傷や汚れなし", 3], ["やや傷や汚れなし", 4], ["傷や汚れなし", 5], ["傷や汚れあり", 6], ["全体的に状態が悪い", 7] ], prompt: "---", id: 'aa_theme'
+          .contents__content__main__delivery
+            配送について
+            %a.form-question{:href => "/#/", :target => "_blank"} ?
+
+            .contents__content__main__delivery__right
+              配送料の負担
+              %span.form 必須
+              = form_for 'aa' do |f|
+                = f.select :theme, [ ["送料込み(出品者負担)",1], ["着払い(購入者負担)", 2] ], prompt: "---", id: 'aa_theme'
+              .contents__content__main__delivery__right1
+                発送元の地域
+                %span.form 必須
+                = form_for 'aa' do |f|
+                  = f.select :theme, [ ["北海道",1], ["青森県", 2], ["岩手県", 3], ["宮城県", 4], ["秋田県", 5], ["山形県", 6], ["福島県", 7], ["茨城県", 8], ["栃木県", 9], ["群馬県", 10], ["埼玉県", 11], ["千葉県", 12], ["東京都", 13], ["神奈川県", 14], ["新潟県", 15], ["富山県", 16], ["石川県", 17], ["福井県", 18], ["山梨県", 19], ["長野県", 20], ["岐阜県", 21], ["静岡県", 22], ["愛知県", 23], ["三重県", 24], ["滋賀県", 25], ["京都府", 26], ["大阪府", 27], ["京都府", 28], ["奈良県", 29], ["和歌山県", 30], ["鳥取県", 31], ["島根県", 32], ["岡山県", 33], ["広島県", 34], ["山口県", 35], ["徳島県", 36], ["香川県", 37], ["愛媛県", 38], ["高知県", 39], ["福岡県", 40], ["佐賀県", 41], ["長崎県", 42], ["熊本県", 43], ["大分県", 44], ["宮崎県", 45], ["鹿児島県", 46], ["沖縄県", 47], ["未定", 48] ], prompt: "---", id: 'aa_theme'
+              .contents__content__main__delivery__right2
+                発送までの日数
+                %span.form 必須
+                = form_for 'aa' do |f|
+                  = f.select :theme, [ ["1~2日で発送",1], ["2~3日で発送", 2], ["4~7日で発送", 2] ], prompt: "---", id: 'aa_theme'
           .contents__content__main__price
-            .contents__content__main__price__left
-              販売価格(300~9,999,999)
-            .contents__content__main__price__right
-              .contents__content__main__price__right__1
-                価格
-              .contents__content__main__price__right__2
-                必須
-              .contents__content__main__price__right__3
-                ¥例) 300
-              .contents__content__main__price__right__4
-                販売手数料
-              .contents__content__main__price__right__5
+            販売価格(300~9,999,999)
+            %a.form-question{:href => "/#/", :target => "_blank"} ?
+            .contents__content__main__price__sub
+              .contents__content__main__price__sub__upper
+                .contents__content__main__price__sub__upper__1
+                  価格
+                  %span.form 必須
+                .contents__content__main__price__sub__upper__2
+                  ¥
+                  .contents__content__main__price__sub__upper__2__place
+                    = form_for "aaa" do |f|
+                      = f.text_field :content, class: 'right__money', placeholder: '  例） 300'
+              .contents__content__main__price__sub__middle
+                .contents__content__main__price__sub__middle__1
+                  販売手数料(10%)
+              .contents__content__main__price__sub__lower
                 販売利益
           .contents__content__main__btn
-            .contents__content__main__btn__box
-              %p.contents__content__main__btn__box__1
+            .contents__content__main__btn__message
+              %p.contents__content__main__btn__message__1
                 %a{:href => "#", :target => "_blank"} 禁止されている出品
                 、
                 %a{:href => "#", :target => "_blank"} 行為
                 を必ずご確認ください。
 
-              %p.contents__content__main__btn__box__2
+           
+
+              %p.contents__content__main__btn__message__2
                 またブランド品でシリアルナンバー等がある場合はご記載ください。
                 %a{:href => "#", :target => "_blank"} 偽ブランドの販売
                 は犯罪であり処罰される可能性があります。
-              %p.contents__content__main__btn__box__3
+              %p.contents__content__main__btn__message__3
                 また、出品をもちまして
                 %a{:href => "#", :target => "_blank"} 加盟店規約
                 に同意したことになります。
             .contents__content__main__btn__push
-              .contents__content__main__btn__push__box
-                %a.contents__content__main__btn__push__box__red
+              .contents__content__main__btn__push__1
+                %a.contents__content__main__btn__push__1__red
                   出品する
-              .contents__content__main__btn__push__box
-                %a.contents__content__main__btn__push__box__gray
+              .contents__content__main__btn__push__2
+                %a.contents__content__main__btn__push__2__gray
                   もどる
-
 
 
     .footer
