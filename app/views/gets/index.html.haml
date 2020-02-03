@@ -1,195 +1,191 @@
-.gets   
+.gets
   .index
-    .header
-    .contents
-      .contents__visual
-        .contents__visual__main
-
-          %h2.contents__visual__main__subtitle
-            %br/
-            人生を変えるフリマアプリ
-          %p.contents__visual__main__text
-
-          .contents__visual__main__subtitle
+    .index-contents
+      .index-contents__visual
+        .index-contents__visual__main
+          .index-contents__visual__main__subtitle
             %h2 
               %br  人生を変えるフリマアプリ 
-          %p.contents__visual__main__subtitle__text
+          %p.index-contents__visual__main__text
             FURIMAはだれでもかんたんに出品・購入できる
             %br/
             フリマアプリです
-          .contents__visual__main__btn
-            %a.contents__visual__main__btn__abtn{:href => "#"}
-              = image_tag "app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg",alt: "",size:"180x53.33"
-            %a.contents__visual__main__btn__gbtn{:href => "#"}
-              = image_tag "google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg",alt: "",size:"180x53.33"
-        .contents__visual__picture
-      .contents__introduction
-        %h2.contents__introduction__subtitle
+          .index-contents__visual__main__btn
+            %a{:href => "#"}
+              %img.index-contents__visual__main__btn__abtn{:src => "/assets/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg"}/
+            %a{:href => "#"}
+              %img.index-contents__visual__main__btn__gbtn{:src => "/assets/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg"}/
+        .index-contents__visual__picture
+      .index-contents__introduction
+        %h2.index-contents__introduction__subtitle
           FURIMAが選ばれる3つの理由
-        %ul.contents__introduction__lists
-          %li.contents__introduction__lists__list
-            .contents__introduction__lists__list__pict
-              %span.contents__introduction__lists__list__pict__number 1
+        %ul.index-contents__introduction__lists
+          %li.index-contents__introduction__lists__list
+            .index-contents__introduction__lists__list__pict
+              %span.index-contents__introduction__lists__list__pict__number 1
               = image_tag "pict-reason-01.jpg",alt: "",size:"306x306"
-            %h3.tcontents__introduction__lists__list__text
+            %h3.index-contents__introduction__lists__list__text
               %span 3分
               ですぐに出品
-            %p.contents__introduction__lists__list__description
+            %p.index-contents__introduction__lists__list__description
               スマホで入力するだけで簡単に出品できる！
-          %li.contents__introduction__lists__list
-            .contents__introduction__lists__list__pict
-              %span.contents__introduction__lists__list__pict__number 2
+          %li.index-contents__introduction__lists__list
+            .index-contents__introduction__lists__list__pict
+              %span.index-contents__introduction__lists__list__pict__number 2
               = image_tag "pict-reason-02.jpg",alt: "",size:"306x306"
-            %h3.contents__introduction__lists__list__text
+            %h3.index-contents__introduction__lists__list__text
               %span シンプル
               で使いやすい
-            %p.contents__introduction__lists__list__description
+            %p.index-contents__introduction__lists__list__description
               めんどくさい入力は必要なく、検索も購入もスムーズ！
-          %li.contents__introduction__lists__list-last
-            .contents__introduction__lists__list-last__pict
-              %span.contents__introduction__lists__list-last__pict__number 3
+          %li.index-contents__introduction__lists__list-last
+            .index-contents__introduction__lists__list-last__pict
+              %span.index-contents__introduction__lists__list-last__pict__number 3
               = image_tag "pict-reason-03.jpg",alt: "",size:"306x306"
-            %h3.contents__introduction__lists__list-last__text
+            %h3.index-contents__introduction__lists__list-last__text
               手数料
               %span 業界最安
-            %p.contents__introduction__lists__list-last__description
+            %p.index-contents__introduction__lists__list-last__description
               最大3%でお得に出品&amp;購入！
-      .contents__middledi
-        .contents__middledi__inner
-          %h2.contents__middledi__inner__subtitle 会員数日本一位
-          %p.contents__middledi__inner__text
+      .index-contents__middledi
+        .index-contents__middledi__inner
+          %h2.index-contents__middledi__inner__subtitle 会員数日本一位
+          %p.index-contents__middledi__inner__text
             FURIMAは、フリマアプリで最も人気。
             %br/
             出品・購入回数も業界最多です！
             %br/
             ほしかったあの商品に出会えるかもしれません。
-          .contents__middledi__inner__btn
+          .index-contents__middledi__inner__btn
             %a{:href => "#"}
-              = image_tag "app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg",alt: "",size:"180x53.33"
+              %img.banner__inner__icon__aBtn{:src => "/assets/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg"}/
             %a{:href => "#"}
-              = image_tag "google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg",alt: "",size:"180x53.33"
-      .contents__keyfeatures
-
-        %h2.contents__keyfeatures__head FURIMAの特徴
-        .contents__keyfeatures__items
-          %section.contents__keyfeatures__items__item
-            %figure.contents__keyfeatures__items__item__img
+              %img.banner__inner__icon__gBtn{:src => "/assets/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg"}/
+      .index-contents__keyfeatures
+        %h2.index-contents__keyfeatures__head FURIMAの特徴
+        .index-contents__keyfeatures__items
+          %section.index-contents__keyfeatures__items__item
+            %figure.index-contents__keyfeatures__items__item__img
               = image_tag "icon-01.png",alt: "",size:"306x306"
-            %h3.contents__keyfeatures__items__item__subtitle 簡単に売り買いできる
-            %p.contents__keyfeatures__items__item__detail
+            %h3.index-contents__keyfeatures__items__item__subtitle 簡単に売り買いできる
+            %p.index-contents__keyfeatures__items__item__detail
               スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
-          %section.contents__keyfeatures__items__item
-            %figure.contents__keyfeatures__items__item__img
+          %section.index-contents__keyfeatures__items__item
+            %figure.index-contents__keyfeatures__items__item__img
               = image_tag "icon-02.png",alt: "",size:"306x306"
-            %h3.contents__keyfeatures__items__item__subtitle 売上金は即日振込みに対応
-            %p.contents__keyfeatures__items__item__detail
+            %h3.index-contents__keyfeatures__items__item__subtitle 売上金は即日振込みに対応
+            %p.index-contents__keyfeatures__items__item__detail
               午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
-          %section.contents__keyfeatures__items__item
-            %figure.contents__keyfeatures__items__item__img
+          %section.index-contents__keyfeatures__items__item
+            %figure.index-contents__keyfeatures__items__item__img
               = image_tag "icon-03.png",alt: "",size:"306x306"
-            %h3.contents__keyfeatures__items__item__subtitle 様々な支払いに対応
-            %p.contents__keyfeatures__items__item__detail
+            %h3.index-contents__keyfeatures__items__item__subtitle 様々な支払いに対応
+            %p.index-contents__keyfeatures__items__item__detail
               お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
-      %section.contents__pickupContainer
-        %h2.contents__pickupContainer__head ピックアップカテゴリー
-        .contents__pickupContainer__productBox
-          .contents__pickupContainer__productBox__productHead
+      %section.index-contents__pickupContainer
+        %h2.index-contents__pickupContainer__head ピックアップカテゴリー
+        .index-contents__pickupContainer__productBox
+          .index-contents__pickupContainer__productBox__productHead
             %a{:href => "#"}
-              %h3.contents__pickupContainer__productBox__productHead__title 新規投稿商品
-          .contents__pickupContainer__productBox__productLists
-            .contents__pickupContainer__productBox__productLists__productList
+              %h3.index-contents__pickupContainer__productBox__productHead__title 新規投稿商品
+          .index-contents__pickupContainer__productBox__productLists
+            .index-contents__pickupContainer__productBox__productLists__productList
               %a{:href => "/products/1"}
-                %figure.contents__pickupContainer__productBox__productLists__productList__img
+                %figure.index-contents__pickupContainer__productBox__productLists__productList__img
                   = image_tag "a007.png",alt: "",size:"306x306"
-                .contents__pickupContainer__productBox__productLists__productList__body
-                  %h3.contents__pickupContainer__productBox__productLists__productList__body__name product1
-                  .contents__pickupContainer__productBox__productLists__productList__body__details
+                .index-contents__pickupContainer__productBox__productLists__productList__body
+                  %h3.index-contents__pickupContainer__productBox__productLists__productList__body__name product1
+                  .index-contents__pickupContainer__productBox__productLists__productList__body__details
                     %ul
-                      %li 10000円
+                      %li 300000000円
                       %li
-                        %i.contents__pickupContainer__productBox__productLists__productList__body__details__fa.fa-star.likeIcon
+                        %i.fas.fa-star
                         0
                     %p (税込)
-            .contents__pickupContainer__productBox__productLists__productList
+            .index-contents__pickupContainer__productBox__productLists__productList
               %a{:href => "/products/1"}
-                %figure.contents__pickupContainer__productBox__productLists__productList__img
+                %figure.index-contents__pickupContainer__productBox__productLists__productList__img
                   = image_tag "a004.png",alt: "",size:"306x306"
-                .contents__pickupContainer__productBox__productLists__productList__body
-                  %h3.contents__pickupContainer__productBox__productLists__productList__body__name product1
-                  .contents__pickupContainer__productBox__productLists__productList__body__details
+                .index-contents__pickupContainer__productBox__productLists__productList__body
+                  %h3.index-contents__pickupContainer__productBox__productLists__productList__body__name product1
+                  .index-contents__pickupContainer__productBox__productLists__productList__body__details
                     %ul
-                      %li 10000円
+                      %li 2000000000円
                       %li
-                        %i.contents__pickupContainer__productBox__productLists__productList__body__details__fa.fa-star.likeIcon
+                        %i.fas.fa-star
                         0
                     %p (税込)
-            .contents__pickupContainer__productBox__productLists__productList
+            .index-contents__pickupContainer__productBox__productLists__productList
               %a{:href => "/products/1"}
-                %figure.contents__pickupContainer__productBox__productLists__productList__img
+                %figure.index-contents__pickupContainer__productBox__productLists__productList__img
                   = image_tag "a001.png",alt: "",size:"306x306"
-                .contents__pickupContainer__productBox__productLists__productList__body
-                  %h3.contents__pickupContainer__productBox__productLists__productList__body__name product1
-                  .contents__pickupContainer__productBox__productLists__productList__body__details
+                .index-contents__pickupContainer__productBox__productLists__productList__body
+                  %h3.index-contents__pickupContainer__productBox__productLists__productList__body__name product1
+                  .index-contents__pickupContainer__productBox__productLists__productList__body__details
                     %ul
-                      %li 10000円
+                      %li 1000000000円
                       %li
-                        %i.contents__pickupContainer__productBox__productLists__productList__body__details__fa.fa-star.likeIcon
+                        %i.fas.fa-star
                         0
                     %p (税込)
-      %section.contents__pickupContainer
-        %h2.contents__pickupContainer__head ピックアップブランド
-        .contents__pickupContainer__productBox
-          .contents__pickupContainer__productBox__productHead
+      %section.index-contents__pickupContainer
+        %h2.index-contents__pickupContainer__head ピックアップブランド
+        .index-contents__pickupContainer__productBox
+          .index-contents__pickupContainer__productBox__productHead
             %a{:href => "#"}
-              %h3.contents__pickupContainer__productBox__productHead__title アーカイバ
-          .contents__pickupContainer__productBox__productLists
-            .contents__pickupContainer__productBox__productLists__productList
+              %h3.index-contents__pickupContainer__productBox__productHead__title アーカイバ
+          .index-contents__pickupContainer__productBox__productLists
+            .index-contents__pickupContainer__productBox__productLists__productList
               %a{:href => "/products/1"}
-                %figure.contents__pickupContainer__productBox__productLists__productList__img
+                %figure.index-contents__pickupContainer__productBox__productLists__productList__img
                   = image_tag "a007.png",alt: "",size:"306x306"
-                .contents__pickupContainer__productBox__productLists__productList__body
-                  %h3.contents__pickupContainer__productBox__productLists__productList__body__name product1
-                  .contents__pickupContainer__productBox__productLists__productList__body__details
+                .index-contents__pickupContainer__productBox__productLists__productList__body
+                  %h3.index-contents__pickupContainer__productBox__productLists__productList__body__name product1
+                  .index-contents__pickupContainer__productBox__productLists__productList__body__details
                     %ul
-                      %li 10000円
+                      %li 3000000000円
                       %li
-                        %i.contents__pickupContainer__productBox__productLists__productList__body__details__fa.fa-star.likeIcon
+                        %i.fas.fa-star
                         0
                     %p (税込)
-            .contents__pickupContainer__productBox__productLists__productList
+            .index-contents__pickupContainer__productBox__productLists__productList
               %a{:href => "/products/1"}
-                %figure.contents__pickupContainer__productBox__productLists__productList__img
+                %figure.index-contents__pickupContainer__productBox__productLists__productList__img
                   = image_tag "a004.png",alt: "",size:"306x306"
-                .contents__pickupContainer__productBox__productLists__productList__body
-                  %h3.contents__pickupContainer__productBox__productLists__productList__body__name product1
-                  .contents__pickupContainer__productBox__productLists__productList__body__details
+                .index-contents__pickupContainer__productBox__productLists__productList__body
+                  %h3.index-contents__pickupContainer__productBox__productLists__productList__body__name product1
+                  .index-contents__pickupContainer__productBox__productLists__productList__body__details
                     %ul
-                      %li 10000円
+                      %li 2000000000円
                       %li
-                        %i.contents__pickupContainer__productBox__productLists__productList__body__details__fa.fa-star.likeIcon
+                        %i.fas.fa-star
                         0
                     %p (税込)
-            .contents__pickupContainer__productBox__productLists__productList
+            .index-contents__pickupContainer__productBox__productLists__productList
               %a{:href => "/products/1"}
-                %figure.contents__pickupContainer__productBox__productLists__productList__img
+                %figure.index-contents__pickupContainer__productBox__productLists__productList__img
                   = image_tag "a001.png",alt: "",size:"306x306"
-                .contents__pickupContainer__productBox__productLists__productList__body
-                  %h3.contents__pickupContainer__productBox__productLists__productList__body__name product1
-                  .contents__pickupContainer__productBox__productLists__productList__body__details
+                .index-contents__pickupContainer__productBox__productLists__productList__body
+                  %h3.index-contents__pickupContainer__productBox__productLists__productList__body__name product1
+                  .index-contents__pickupContainer__productBox__productLists__productList__body__details
                     %ul
-                      %li 10000円
+                      %li 1000000000円
                       %li
-                        -# = icon('fab', 'facebook-square')
+                        %i.fas.fa-star
                         0
                     %p (税込)
+      .banner
+        .banner__inner
+          %h2.banner__inner__title だれでもかんたん、人生を変えるフリマアプリ
+          %p.banner__inner__text 今すぐ無料ダウンロード！
+          .banner__inner__icon
+            %a{:href => "#"}
+              %img.banner__inner__icon__aBtn{:src => "/assets/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg"}/
+            %a{:href => "#"}
+              %img.banner__inner__icon__gBtn{:src => "/assets/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg"}/
 
-    .banner
-
-      .contents__pickcontainer
-      .contents__pickcontainer
-    .banner  
-
-    %a
-    .footer
-
+    %a{:href => "#"}
+      .purchaseBtn
+        %span.purchaseBtn__text 出品する
+        %img.purchaseBtn__icon{:src => "/assets/icon_camera.png"}/
 
