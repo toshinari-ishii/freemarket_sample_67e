@@ -10,6 +10,11 @@ FactoryBot.define do
     first_hurigana        {"けんいち"}
     last_hurigana         {"たかだ"}
     birthday              {Faker::Date.birthday}
+    postcode              {"542-0076"}
+    prefecture            {"大阪府"}
+    city                  {"大阪市中央区"}
+    block                 {"難波５丁目１−６０"}
+    room                  {"なんばスカイオ１５階"}
+    phone_number          {"050-3187-3522"}
   end
-
 end
