@@ -1,21 +1,127 @@
-%header
-  .header__top
-    .heder__top__up
-      .heder__top__up__logo
-        = "FURIMA"
-      .heder__top__up__form
-        = form_tag(method: :get) do
-          = text_field_tag :hoge, "", {placeholder: "キーワードから探す",class:"heder__top__up__form__text"}
-          = submit_tag '検索', {class:"heder__top__up__form__submit"}
-    .heder__top__down
-      .heder__top__down__left
-        = "カテゴリー"
-        = "ブランド"
-      .heder__top__down__right
-        = "ログイン"
-        = "新規会員登録" 
-  .heder__bottom
-    = "FURIMA > レディース > トップス > Tシャツ/カットソー > product1"
+-# 伊東が担当
+.items
+  .show
+    = render partial:"module/header"
+    .breadcrumbs
+      .breadcrumbs__content
+        .breadcrumbs__content__list
+          = link_to "FURIMA"
+        .breadcrumbs__content__list
+          = ">"
+        .breadcrumbs__content__list
+          = link_to "レディース"
+        .breadcrumbs__content__list
+          = ">"
+        .breadcrumbs__content__list
+          = link_to "トップス"
+        .breadcrumbs__content__list
+          = ">"
+        .breadcrumbs__content__list
+          = link_to "Tシャツ/カットソー(半袖/袖なし)"
+        .breadcrumbs__content__list
+          = ">"
+        .breadcrumbs__content__list
+          = "product1"
+    .main
+      .main__content
+        .main__content__top
+          .main__content__top__items
+            .main__content__top__items__name
+              = "name"
+            .main__content__top__items__body
+              .main__content__top__items__body__main
+                = image_tag "a001.png",height:"346px",width:"560px"
+              .main__content__top__items__body__bar
+                .main__content__top__items__body__bar__image
+                  = image_tag "a001.png",width:"140px",height:"87px"
+                .main__content__top__items__body__bar__image
+                  = image_tag "a004.png",width:"140px",height:"87px"
+                .main__content__top__items__body__bar__image
+                  = image_tag "a007.png",width:"140px",height:"87px"
+            .main__content__top__items__price
+              = "¥10000"
+            .main__content__top__items__tax
+              = "(税込) 送料込み"
+            .main__content__top__items__detail
+              = "product1"
+            .main__content__top__items__table
+              %table
+                %tr
+                  %th
+                    = "出品者"
+                  %td
+                    = "hoge"
+                %tr
+                  %th
+                    = "カテゴリー"
+                  %td
+                    = "レディース"
+                    %br
+                    = "トップス"
+                    %br
+                    = "Tシャツ/カットソー(半袖/袖なし)"
+                %tr
+                  %th
+                    = "ブランド"
+                  %td
+                    = "hoge" 
+                %tr
+                  %th
+                    = "商品の状態"
+                  %td
+                    = "新品/未使用" 
+                %tr
+                  %th
+                    = "配送料の負担"
+                  %td
+                    = "送料込み（出品者負担）" 
+                %tr
+                  %th
+                    = "発送元の地域"
+                  %td
+                    = "青森" 
+            .main__content__top__btn-box
+              .main__content__top__btn-box__left
+                = "お気に入り 0"
+              .main__content__top__btn-box__right
+                = "不適切な商品の通報"
+          .main__content__top__comment
+            = form_for "hoge" do |f|
+              = f.text_area :hoge,class:"main__content__top__comment__area"
+              .main__content__top__comment__message
+                = "相手のことを考え丁寧なコメントを心がけましょう。"
+                %br
+                = "不快な言葉遣いなどは利用制限や退会処分となることがあります"
+              .main__content__top__comment__btn
+                = "コメントする"
+        .main__content__links
+          .main__content__links__left
+            = link_to "< 前の商品"
+          .main__content__links__right
+            = link_to "後ろの商品 >"
+        .main__content__bottom
+          = link_to "レディースをもっと見る"
+    .banner
+      .banner__background
+        .banner__background__content 
+          .banner__background__content__main
+            .banner__background__content__main__title
+              = "だれでもかんたん、人生を変えるフリマアプリ"
+            .banner__background__content__main__text
+              = "今すぐ無料ダウンロード！"
+            .banner__background__content__main__icon
+              .banner__background__content__main__icon__app
+                = link_to image_tag "app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg",width:"180px"
+              .banner__background__content__main__icon__google
+                = link_to image_tag "google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg",width:"180px"
+            
+
+        
+          -# = link_to image_tag("fmarket_logo_red.svg", class: "banner__background__google__icon"),root_path
+    = render partial:"module/footer"
+
+
+    
 
 
 
