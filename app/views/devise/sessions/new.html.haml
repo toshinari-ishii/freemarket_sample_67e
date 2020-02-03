@@ -1,44 +1,37 @@
-.contents.row
-  .container
-    %img{src: ""}
-    %h2 ログイン
-
-    %p アカウントをお持ちでない方はこちら
-    %a{href: "http://localhost:3000/users/sign_up"} 新規会員登録
-
-    = form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f|
-      .field
-        -# = f.label :email
+-# sessions#new
+.sessions
+  .new
+    .contents.row
+      .container
+        = image_tag "logo.png", size: "300x100", id: "logo-white"
+        %p アカウントをお持ちでない方はこちら
+        %a.btn{href: "http://localhost:3000/users/sign_up"} 新規会員登録
         %br/
-        = f.email_field :email, autofocus: true, placeholder: "メールアドレス"
-      .field
-        -# = f.label :password
         %br/
-        = f.password_field :password, autocomplete: "off", placeholder: "パスワード"
-      -# - if devise_mapping.rememberable?
-      -#   .field
-      -#     = f.label :remember_me
-      -#     %br/
-      -#     = f.check_box :remember_me
-      .actions
-        = f.submit "ログイン"
+        %br/
+        -# %h2 ログイン
+        = form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f|
+          .field
+            -# = f.label :email
+            %br/
+            = f.email_field :email, autofocus: true, class: "input-box", placeholder: "メールアドレス"
+          .field
+            -# = f.label :password
+            %br/
+            = f.password_field :password, autocomplete: "off", class: "input-box", placeholder: "パスワード"
+          -# - if devise_mapping.rememberable?
+          -#   .field
+          -#     = f.label :remember_me
+          -#     %br/
+          -#     = f.check_box :remember_me
+          .actions
+            = f.submit "ログイン", class: "btn"
+          %a{id: "forgot-password", href: "#"} パスワードをお忘れの方
 
-
--# デフォルトのHTML
--# %h2 Log in
--# = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
--#   .field
--#     = f.label :email
--#     %br/
--#     = f.email_field :email, autofocus: true, autocomplete: "email"
--#   .field
--#     = f.label :password
--#     %br/
--#     = f.password_field :password, autocomplete: "current-password"
--#   - if devise_mapping.rememberable?
--#     .field
--#       = f.check_box :remember_me
--#       = f.label :remember_me
--#   .actions
--#     = f.submit "Log in"
--# = render "devise/shared/links"
+    .footer
+      %a{:href => "#"} プライバシーポリシー
+      %a{:href => "#"} メルカリ利用規約
+      %a{:href => "#"} 特定商取引に関する表記
+      .footer__logo
+        = image_tag "logo-white.png", size: "120x70"
+      %small © FURIMA, Inc.
