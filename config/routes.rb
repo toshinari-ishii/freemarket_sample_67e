@@ -4,3 +4,4 @@ Rails.application.routes.draw do
   resources :items, only:[:new, :show]
   resources :gets, only:[:show]
 end
+   
