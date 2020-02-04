@@ -10,7 +10,6 @@ Rails.application.routes.draw do
       get 'confirm'
     end
   end
-  resources :gets, only:[:show]
   resources :users, only: [:show]
 end
    
