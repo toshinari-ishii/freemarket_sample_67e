@@ -10,3 +10,4 @@ Rails.application.routes.draw do
   resources :gets, only:[:show]
   resources :users, only: [:show]
 end
+   
