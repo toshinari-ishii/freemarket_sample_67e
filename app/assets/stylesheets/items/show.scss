@@ -51,14 +51,17 @@
           }
           &__right{
             display: flex;
+            &__logout{
+              padding-right: 16px;
+            }
+            &__mypage{
+
+            }
             &__login{
               padding-right: 16px;
              
             }
             &__new{
-              &__font{
-                text-decoration: none;
-              }
             }
           }
         }
