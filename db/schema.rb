@@ -47,12 +47,6 @@ ActiveRecord::Schema.define(version: 2020_02_04_053546) do
     t.string "first_hurigana"
     t.string "last_hurigana"
     t.date "birthday"
-    t.string "postcode"
-    t.string "prefecture"
-    t.string "city"
-    t.string "block"
-    t.string "room"
-    t.string "phone_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
