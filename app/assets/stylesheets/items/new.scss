@@ -57,6 +57,7 @@
           &__text{
             border-bottom: solid 1px whitesmoke;
             padding: 40px;
+            height: 350px;
             &__1{
               font-weight: 600;
               &__name{
@@ -67,6 +68,7 @@
             }
             &__2{
               margin-bottom: 40px;
+              margin-top: 30px;
               font-weight: 600;
               &__names{
                 height: 132px;
@@ -89,6 +91,7 @@
           &__clearfix{
             border-bottom: solid 1px whitesmoke;
             padding: 40px;
+            height: 250px;
             width: 100%;
             color: #888;
             font-size: 14px;
@@ -116,11 +119,11 @@
           }
           &__delivery{
             padding: 40px;
-            height: 291px;
+            height: 350px;
             border-bottom: solid 1px whitesmoke;
             color: #888;
             font-size: 14px;
-            a{
+            &__hatena1{
               background-color: #0099E8;
               color: #ffffff;
             }
@@ -151,8 +154,7 @@
             border-bottom: solid 1px rgb(245, 245, 245);
             color: #888;
             font-size: 14px;
-            height: 220px;
-            a{
+            &__hatena{
               background-color: #0099E8;
               color: #ffffff;
             }
@@ -163,12 +165,12 @@
                 justify-content: space-between;
                 display: flex;
                 padding: 0 0 24px;
-                border-bottom: solid 1px rgb(245, 245, 245);
                 &__1{
                   height: 48px;
                   width: 200px;
                   line-height: 48px;
                   color: black;
+                  font-weight: 600;
                   span.form{
                     background-color: #ea352d;
                     margin: 0 0 0 8px;
@@ -189,39 +191,36 @@
                     display: inline-block;
                     padding-left: 10px;
                   }
+                    &__box{
+                      height: 44px;
+                      width: 165px;
+                      font-size: 16px;
+                      text-align: right;
+                    }
                 }
               }
-              &__middle{
-                height: 44px;
-                width: 165px;
-                font-size: 16px;
-                &__1{
-                  height: 15px;
-                  width: 400px;
-                  padding: 24px 0;
-                  color: black;
-                }
-              &__lower{
-                height: 15px;
-                width: 400px;
-                padding: 24px 0;
-                color: black;
-                }
-
-              }
-            }
-            #aa_theme {
-              height: 48px;
-              width: 400px;
             }
           }
           &__btn{
             padding:40px;
             &__message{
               font-size: 14px;
-             a{
-               color: #0099e8;
-             } 
+             &__1__word1{
+               color: #0099E8;
+               text-decoration: none;
+             }
+             &__1__word2{
+              color: #0099E8;
+              text-decoration: none;
+             }
+             &__2__word3{
+              color: #0099E8;
+              text-decoration: none;
+             }
+             &__2__word4{
+              color: #0099E8;
+              text-decoration: none;
+             }
             }
 
             &__push{
@@ -261,8 +260,18 @@
       background-color: rgb(245, 245, 245);
       text-align: center;
       padding: 40px;
-      a{
+      &__word1{
         font-size: 12px;
+        color: #333333;
+        text-decoration: none;
+      }
+      &__word2{
+        font-size: 14px;
+        color: #333333;
+        text-decoration: none;
+      }
+      &__word3{
+        font-size: 14px;
         color: #333333;
         text-decoration: none;
       }
@@ -270,10 +279,14 @@
         padding-top: 20px;
       }
     }
+    #aa_theme {
+      height: 48px;
+      width: 400px;
+      background-color: white;
+    }
+    
+    .contents__content__main__price__sub__upper__2__place__box {
+      height: 50px;
+    }
   }
-}
-
-#aa_theme {
-  height: 48px;
-  width: 400px;
 }
