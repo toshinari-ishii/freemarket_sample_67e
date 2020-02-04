@@ -40,17 +40,17 @@
         &__btn{
           display: flex;
           margin: 24px 0 0 0;
-          &__abtn{
+          &__applebox{
             margin-right: 10px;
             width: 180px;
           }
-          &__abtn:hover {
+          &__applebox:hover {
             opacity: 0.5;
           }
-          &__gbtn{
+          &__googlebox{
             width: 180px;
           }
-          &__gbtn:hover {
+          &__googlebox:hover {
             opacity: 0.5;
           }
         }
@@ -214,16 +214,16 @@
         }
         &__btn{
           display: flex;
-          &__aBtn{
+          &__applebox{
             width: 180px;
           }
-          &__aBtn:hover {
+          &__applebox:hover {
             opacity: 0.5;
           }
-          &__gBtn{
+          &__googlebox{
             width: 180px;
           }
-          &__gBtn:hover {
+          &__googlebox:hover {
             opacity: 0.5;
           }
         }
@@ -357,7 +357,6 @@
   span{
     color: #3CCACE;
   }
-
   .banner{
     background-image: url(/assets/bg-appBanner-pict.jpg);
     padding: 100px 40px;
@@ -383,22 +382,21 @@
         display: flex;
         justify-content: center;
         margin: 20px auto 0;
-        &__aBtn{
+        &__applebox{
           width: 180px;
         }
-        &__aBtn:hover {
+        &__applebox:hover {
           opacity: 0.5;
         }
-        &__gBtn{
+        &__googlebox{
           width: 180px;
         }
-        &__gBtn:hover {
+        &__googlebox:hover {
           opacity: 0.5;
         }
       }
     }
   }
-
   .purchaseBtn{
     width: 120px;
     background: #3CCACE;
