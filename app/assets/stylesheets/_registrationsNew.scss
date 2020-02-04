@@ -1,10 +1,3 @@
-.boxes__field__birthday {
-  background-color: green;
-}
-.boxes__field__prefecture {
-  background-color: red;
-}
-
 .registrations {
   .new {
     &__h2 {
@@ -44,9 +37,21 @@
           height: 40px;
           font-size: 15px;
         }
-        &__birthday {
-          background-color: red;
-          color: green;
+        #user_prefecture {
+          width: 300px;
+          height: 40px;
+        }
+        .year{
+          width: 100px;
+          height: 40px;
+        }
+        .month{
+          width: 100px;
+          height: 40px;
+        }
+        .day{
+          width: 100px;
+          height: 40px;
         }
       }
       .actions {
