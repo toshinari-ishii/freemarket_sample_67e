@@ -25,8 +25,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :prefecture
       t.string :city
       t.string :block
-      t.string :room
-      t.string :phone_number
+      t.string :room, null: true
+      t.string :phone_number, null: true
       
       ## Trackable
       # t.integer  :sign_in_count, default: 0, null: false
