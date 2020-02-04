@@ -2,7 +2,6 @@
   .new
     .header
       = image_tag "logo.png", size: "185x49"
-
     .contents
       .contents__content
         %h2.contents__content__head
@@ -34,7 +33,7 @@
                 = f.text_area :content, class: 'contents__content__main__text__2__names', placeholder: '商品名 （商品の説明(必須1,000文字以内）（色、素材、重さ、定価、注意点など）例）   2010年頃に1万円に購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。）'
           .contents__content__main__clearfix
             商品の詳細
-            .content__content__main__clearfix__box
+            .contents__content__main__clearfix__box
               .contents__content__main__clearfix__box__category
                 カテゴリー
                 %span.form 必須
@@ -47,8 +46,7 @@
                   = f.select :theme, [ ["新品、未使用",1], ["未使用に近い", 2], ["目立った傷や汚れなし", 3], ["やや傷や汚れなし", 4], ["傷や汚れなし", 5], ["傷や汚れあり", 6], ["全体的に状態が悪い", 7] ], prompt: "---", id: 'aa_theme'
           .contents__content__main__delivery
             配送について
-            %a.form-question{:href => "/#/", :target => "_blank"} ?
-
+            = link_to '?', '/#', class: 'contents__content__main__delivery__hatena1'
             .contents__content__main__delivery__right
               配送料の負担
               %span.form 必須
@@ -66,7 +64,7 @@
                   = f.select :theme, [ ["1~2日で発送",1], ["2~3日で発送", 2], ["4~7日で発送", 2] ], prompt: "---", id: 'aa_theme'
           .contents__content__main__price
             販売価格(300~9,999,999)
-            %a.form-question{:href => "/#/", :target => "_blank"} ?
+            = link_to '?', '/#', class: 'contents__content__main__price__hatena'
             .contents__content__main__price__sub
               .contents__content__main__price__sub__upper
                 .contents__content__main__price__sub__upper__1
@@ -76,29 +74,21 @@
                   ¥
                   .contents__content__main__price__sub__upper__2__place
                     = form_for "aaa" do |f|
-                      = f.text_field :content, class: 'right__money', placeholder: '  例） 300'
-              .contents__content__main__price__sub__middle
-                .contents__content__main__price__sub__middle__1
-                  販売手数料(10%)
-              .contents__content__main__price__sub__lower
-                販売利益
+                      = f.text_field :content, class: 'contents__content__main__price__sub__upper__2__place__box', placeholder: '  例） 300'
           .contents__content__main__btn
             .contents__content__main__btn__message
               %p.contents__content__main__btn__message__1
-                %a{:href => "#", :target => "_blank"} 禁止されている出品
+                = link_to '禁止されている出品', '/#', class: 'contents__content__main__btn__message__1__word1'
                 、
-                %a{:href => "#", :target => "_blank"} 行為
+                = link_to '行為', '/#', class: 'contents__content__main__btn__message__1__word2'
                 を必ずご確認ください。
-
-           
-
               %p.contents__content__main__btn__message__2
                 またブランド品でシリアルナンバー等がある場合はご記載ください。
-                %a{:href => "#", :target => "_blank"} 偽ブランドの販売
+                = link_to '偽ブランドの販売', '/#', class: 'contents__content__main__btn__message__2__word3'
                 は犯罪であり処罰される可能性があります。
               %p.contents__content__main__btn__message__3
                 また、出品をもちまして
-                %a{:href => "#", :target => "_blank"} 加盟店規約
+                = link_to '加盟店規約', '/#', class: 'contents__content__main__btn__message__2__word4'
                 に同意したことになります。
             .contents__content__main__btn__push
               .contents__content__main__btn__push__1
@@ -107,12 +97,10 @@
               .contents__content__main__btn__push__2
                 %a.contents__content__main__btn__push__2__gray
                   もどる
-
-
     .footer
-      %a{:href => "#"} プライバシーポリシー
-      %a{:href => "#"} メルカリ利用規約
-      %a{:href => "#"} 特定商取引に関する表記
+      = link_to 'プライバシーポリシー', '/#', class: 'footer__word1'
+      = link_to 'メルカリ利用規約', '/#', class: 'footer__word2'
+      = link_to '特定商取引に関する表記', '/#', class: 'footer__word3'
       .footer__logo
         = image_tag "logo-white.png", size: "120x70"
       %small © FURIMA, Inc.
