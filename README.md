@@ -29,7 +29,7 @@
 |day|integer|null: false|
 |price|integer|null: false|
 |category_id|references|null: false, foreign_key: true|
-|buyer_id|null: ture|
+|buyer|null: ture|
 |user_id|references|null: false, foreign_key: true|
 ### Association
 - has_many :comments
