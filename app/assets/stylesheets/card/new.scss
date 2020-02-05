@@ -1,0 +1,125 @@
+.card{ 
+  .new{
+    .wrapper{
+        height: 100%;
+        width: 100%;
+        background-color:#EEEEEE;
+      .header{
+        font-size: 24px;
+        padding: 8px 24px;
+        width: 512px; 
+        height: 50px;
+        margin: 0px auto 0;
+        justify-content: center;
+        background-color: white;
+        font-weight: 600;
+        text-align: center;
+        border-bottom: 1px solid #f5f5f5;
+      }
+      .main{
+        height: 600px;
+        width: 512px;  
+        padding-top: 50px;
+        margin: 0px auto 0;
+        justify-content: center;
+        background-color: white;
+        p{
+          font-weight: 600;
+          font-size: 15px;
+          text-align: left;
+          padding-left: 80px;
+          position: relative;
+        }
+        &__numberbox{
+          margin: auto;
+          text-align: center;
+          bottom: 10px;
+        }
+        .number{
+          height: 50px;
+          width: 350px;
+          margin: auto;
+          background-color: white;
+        } 
+        .cardimages{
+          height: 35px;
+          width: 350px;
+          background-color:white;
+          margin: auto;
+          padding-top: 15px;
+          margin-bottom: 15px;
+        }
+          &__deadline__box1{
+            margin-left: 80px;
+            padding-left: 20;
+            text-align: center;
+            bottom: 10px;
+            height: 50px;
+            width: 130px;
+            // display: flex;
+          }
+          &__deadline__box2{
+            margin-left: 50px;
+            justify-content: space-between;
+            padding-left: 20;
+            text-align: center;
+            bottom: 10px;
+            height: 50px;
+            width: 130px;
+            padding-bottom: 10px;
+            }
+        &__security__box{
+          margin: auto;
+          text-align: left;
+          bottom: 10px;
+          height: 50px;
+          width: 350px;
+          margin: auto;
+          background-color: white;
+          margin-bottom: 50px;
+         
+          &__add{
+            background-color: red;
+            margin: auto;
+            padding-left: 20;
+            text-align: center;
+            bottom: 10px;
+            height: 50px;
+            width: 350px;
+            color: white;
+            
+          }
+
+        }
+        
+      }
+      .smallbox{
+        background-color: red;
+        height: 20px;
+        width: 32px;
+        border-radius: 2px;
+        color: #fff;
+        font-size: 12px;
+        vertical-align: top;
+        text-align: center;
+        margin-left:165px;
+        position: absolute;
+        
+      }  
+      .smallbox__security {
+        background-color: red;
+        height: 20px;
+        width: 32px;
+        border-radius: 2px;
+        color: #fff;
+        font-size: 12px;
+        vertical-align: top;
+        text-align: center;
+        margin-left:240px;
+        position: absolute;
+    
+    
+      }
+    } 
+  }
+} 
