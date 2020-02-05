@@ -3,9 +3,11 @@ class ItemsController < ApplicationController
     @items = Item.where(buyer: nil).order(id:"DESC")
     @photos = Photo.all
   end
+
   def new
 
   end
+
   def show
     @item = Item.find(params[:id])
     @photos = @item.photos
@@ -16,6 +18,12 @@ class ItemsController < ApplicationController
   end
   def confirm
     
+  end
+
+  def destroy
+    item = Item.find(params[:id])
+    item.destroy
+    redirect_to '/'
   end
 
   
