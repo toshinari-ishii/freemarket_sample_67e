@@ -7,7 +7,12 @@ class ItemsController < ApplicationController
 
   end
   def show
-    
+    # binding.pry
+    @item = Item.find(params[:id])
+    @photos = Photo.where(item_id:params[:id])
+    @user = User.find(@item.user_id)
+    # binding.pry
+    # binding.pry
   end
   def buy
     
