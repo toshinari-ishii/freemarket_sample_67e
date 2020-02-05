@@ -186,7 +186,8 @@
         }
       }
     &__middledi{
-      background-image: url(/assets/bg-topMiddleDl-pict.jpg);
+      background-image: image-url("bg-topMiddleDl-pict.jpg");
+      // background-image: url(/assets/bg-topMiddleDl-pict.jpg);
       background-position: bottom right;
       height: 400px;
       background-size: cover;
@@ -355,7 +356,8 @@
     color: #3CCACE;
   }
   .banner{
-    background-image: url(/assets/bg-appBanner-pict.jpg);
+    background-image: image-url("bg-appBanner-pict.jpg");
+    // background-image: url(/assets/bg-appBanner-pict.jpg);
     padding: 100px 40px;
     margin-top: 60px;
     position: relative;
@@ -408,7 +410,6 @@
       color: #fff;
       display: block;
       font-size: 18px;
-      text-decoration: none;
       margin-bottom: 5px;
     }
     &__icon{
