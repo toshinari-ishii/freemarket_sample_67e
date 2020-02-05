@@ -9,10 +9,8 @@ class ItemsController < ApplicationController
   def show
     # binding.pry
     @item = Item.find(params[:id])
-    @photos = Photo.where(item_id:params[:id])
-    @user = User.find(@item.user_id)
-    # binding.pry
-    # binding.pry
+    @photos = @item.photos
+    @user = @item.user
   end
   def buy
     
