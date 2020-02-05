@@ -1,4 +1,7 @@
 .items
+  .show
+    = render partial:"module/header"
+.gets
   .index
     .index-contents
       .index-contents__visual
@@ -214,11 +217,10 @@
               %img.banner__inner__icon__aBtn{:src => "/assets/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg"}/
             %a{:href => "#"}
               %img.banner__inner__icon__gBtn{:src => "/assets/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg"}/
-
-    %a{:href => "#"}
-      .purchaseBtn
-        %span.purchaseBtn__text 出品する
-        %img.purchaseBtn__icon{:src => "/assets/icon_camera.png"}/
-
-        
-
+      %a{:href => "#"}
+        .purchaseBtn
+          %span.purchaseBtn__text 出品する
+          %img.purchaseBtn__icon{:src => "/assets/icon_camera.png"}/
+.items
+  .show
+    = render partial:"module/footer"
