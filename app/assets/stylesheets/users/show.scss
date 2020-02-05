@@ -59,8 +59,7 @@
             padding-top: 14px;
             width: 360px;
             background-color: white;
-            margin: auto;
-            // justify-content: space-between;
+            margin: auto;          
             display: flex;
             &__goodbox{
               width: 100px;
@@ -106,30 +105,7 @@
         }     
 
     }    
-        // .main__snsbox{
-        //   height: 124px;
-        //   width: 700px;
-        //   background-color: white;
-        //   margin: 24px auto;
-        //   padding: 32px 0 24px;
-        //   width: 700px;
-        //   display: flex;
 
-        //   &__items{
-        //     margin: 16px 0 0;
-        //     text-align: center;
-        //     font-size: 0;
-        //     &__icon-f{
-
-        //     }
-        //     &__icon-t{
-
-        //     }
-        //     &__icon-l{
-
-        //     }
-        //   }
-        // }
         .main__itembox{
           height: 100%;
           width: 700px;
