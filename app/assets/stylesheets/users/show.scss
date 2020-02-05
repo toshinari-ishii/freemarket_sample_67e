@@ -14,7 +14,7 @@
           background-image: url(https://dotup.org/uploda/dotup.org2055166.jpg_DxUImdbK5SogV6HIKBeO/dotup.org2055166.jpg);
           background-size: cover;
           padding-top: 50px;
-          margin: 40px auto 0;
+          margin: 0px auto 0;
           &__image{
             background-image: url(https://dotup.org/uploda/dotup.org2055124.jpg_FVNd37EKiERSpBjLiuOA/dotup.org2055124.jpg);
             width: 180px;
@@ -131,9 +131,9 @@
         //   }
         // }
         .main__itembox{
-          height: 1000px;
+          height: 100%;
           width: 700px;
-          background-color:greenyellow;
+          background-color:white;
           margin:auto;
           justify-content: space-around;
           &__header{
@@ -144,23 +144,28 @@
           &__itemsbox{
             padding: 0;
             width: 700px;
-            height: 100%;
+            height: 500px;
+            overflow: scroll;
+            justify-content: space-around;
             &__room{
               float: left;
               display: block;
-              width: 220px;
-              margin: 0 0 20px 20px;
+              width: 200px;
+              margin: 0 18px 20px 15px;
               vertical-align: inherit;
               height: 330px;
               background-color: white; 
               &__item{
                 height: 220px;
-                width: 220px;
-                background-color: blue;
+                width: 200px;
+                background-color:white;
+                image{
+                  margin: auto;
+                }
               }
               &__detail{
                 height: 110px;
-                width: 220px;
+                width: 200px;
                 padding: 16px;
                 &__name{
                   overflow: hidden;
@@ -170,23 +175,20 @@
                   line-height: 1.5;
                   word-break: break-word;
                   white-space: normal;
-                  background-color: red;
+                  background-color: white;
                 }
                 &__price-box{
                   height: 25px;
-                  width: 188px;
+                  width: 168px;
                   display: flex;
                   justify-content: space-between;
                   margin: 8px 0 0;
-                  background-color: blue;
+                  background-color: white;
                 }
               }
-
             }
           }
-        }   
-
-    }     
-  
+       }   
+    }      
 }
    
