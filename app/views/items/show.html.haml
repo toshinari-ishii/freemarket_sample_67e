@@ -27,30 +27,27 @@
         .main__content__top
           .main__content__top__items
             .main__content__top__items__name
-              = "name"
+              = @item.name
             .main__content__top__items__body
               .main__content__top__items__body__main
-                = image_tag "a001.png",height:"346px",width:"560px"
+                = image_tag ("#{@photos.find_by(item_id:params[:id]).image}"),width:"400px",height:"400px"
               .main__content__top__items__body__bar
                 .main__content__top__items__body__bar__image
-                  = image_tag "a001.png",width:"140px",height:"87px"
-                .main__content__top__items__body__bar__image
-                  = image_tag "a004.png",width:"140px",height:"87px"
-                .main__content__top__items__body__bar__image
-                  = image_tag "a007.png",width:"140px",height:"87px"
+                  - @photos.each do |p|
+                    = image_tag ("#{p.image}"),width:"140px",height:"140px"
             .main__content__top__items__price
-              = "¥10000"
+              = "¥#{@item.price}"
             .main__content__top__items__tax
               = "(税込) 送料込み"
             .main__content__top__items__detail
-              = "product1"
+              = @item.name
             .main__content__top__items__table
               %table
                 %tr
                   %th
                     = "出品者"
                   %td
-                    = "hoge"
+                    = @user.nickname
                 %tr
                   %th
                     = "カテゴリー"
@@ -69,17 +66,17 @@
                   %th
                     = "商品の状態"
                   %td
-                    = "新品/未使用" 
+                    = @item.condition
                 %tr
                   %th
                     = "配送料の負担"
                   %td
-                    = "送料込み（出品者負担）" 
+                    = @item.burden 
                 %tr
                   %th
                     = "発送元の地域"
                   %td
-                    = "青森" 
+                    = @item.area 
             .main__content__top__btn-box
               .main__content__top__btn-box__left
                 = "お気に入り 0"

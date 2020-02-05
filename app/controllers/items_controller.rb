@@ -7,7 +7,9 @@ class ItemsController < ApplicationController
 
   end
   def show
-    
+    @item = Item.find(params[:id])
+    @photos = @item.photos
+    @user = @item.user
   end
   def buy
     
