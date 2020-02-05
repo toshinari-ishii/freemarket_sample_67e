@@ -1,9 +1,9 @@
 .users{ 
   .show{
     .wrapper{
-      height: 1000px;
+        height: 100%;
         width: 100%;
-        background-color: white;
+        background-color:#EEEEEE;
       .main{
         height: 100%;
         width: 100%;
@@ -14,7 +14,7 @@
           background-image: url(https://dotup.org/uploda/dotup.org2055166.jpg_DxUImdbK5SogV6HIKBeO/dotup.org2055166.jpg);
           background-size: cover;
           padding-top: 50px;
-          margin: 40px auto 0;
+          margin: 0px auto 0;
           &__image{
             background-image: url(https://dotup.org/uploda/dotup.org2055124.jpg_FVNd37EKiERSpBjLiuOA/dotup.org2055124.jpg);
             width: 180px;
@@ -45,34 +45,126 @@
               text-align: center;
               margin-right: 20px;
             }
-  
-          }   
+           }  
+          }
+         } 
         }
-        &__stampbox{
+        .main__stampbox{
           height: 52px;
           width: 700px;
-          background-color: red;
+          background-color:white;
           margin:auto;
-          
-        }
-        &__snsbox{
-          height: 124px;
-          width: 700px;
-          background-color: greenyellow;
-          margin: auto;
-        }
-        &__itembox{
-          height: 1000px;
-          width: 700px;
-          background-color:black;
-          margin:auto;
+          &__stamps{
+            height: 50px;
+            padding-top: 14px;
+            width: 360px;
+            background-color: white;
+            margin: auto;          
+            display: flex;
+            &__goodbox{
+              width: 100px;
+              line-height: 26px;
+              background-color:white;
+              display: flex;
+              justify-content: space-between;
+              &__icon{
+                font-size: 25px ;
+              }
+              &__number{
+                font-weight: bold;
+              }
+            }
+            &__normalbox{
+              width: 100px;
+              line-height: 26px;
+              background-color:white;
+              margin-left: 30px;
+              display: flex;
+              justify-content: space-between;
+              &__icon{
+                font-size: 25px ;
+              }
+            &__number{
+              font-weight: bold;
+              }
+          }
+            &__badbox{
+              width: 100px;
+              line-height: 26px;
+              background-color:white;
+              margin-left: 30px;
+              display: flex;
+              justify-content: space-between;
+              &__icon{
+                font-size: 25px ;
+            }
+              &__number{
+                font-weight: bold;
+              }
+          }
         }     
-  
-      }
-  
-    }
 
- }
- 
+    }    
 
+        .main__itembox{
+          height: 100%;
+          width: 700px;
+          background-color:white;
+          margin:auto;
+          justify-content: space-around;
+          &__header{
+            font-size: 22px;
+            font-weight: bold;
+            padding: 24px 0 8px;
+          }
+          &__itemsbox{
+            padding: 0;
+            width: 700px;
+            height: 500px;
+            overflow: scroll;
+            justify-content: space-around;
+            &__room{
+              float: left;
+              display: block;
+              width: 200px;
+              margin: 0 18px 20px 15px;
+              vertical-align: inherit;
+              height: 330px;
+              background-color: white; 
+              &__item{
+                height: 220px;
+                width: 200px;
+                background-color:white;
+                image{
+                  margin: auto;
+                }
+              }
+              &__detail{
+                height: 110px;
+                width: 200px;
+                padding: 16px;
+                &__name{
+                  overflow: hidden;
+                  position: relative;
+                  font-weight: 400;
+                  height: 3em;
+                  line-height: 1.5;
+                  word-break: break-word;
+                  white-space: normal;
+                  background-color: white;
+                }
+                &__price-box{
+                  height: 25px;
+                  width: 168px;
+                  display: flex;
+                  justify-content: space-between;
+                  margin: 8px 0 0;
+                  background-color: white;
+                }
+              }
+            }
+          }
+       }   
+    }      
 }
+   
