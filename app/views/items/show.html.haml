@@ -78,11 +78,14 @@
                   %td
                     = @item.area 
             .main__content__top__btn-box
-              .main__content__top__btn-box__left
-                = "お気に入り 0"
-              .main__content__top__btn-box__right
-                = "不適切な商品の通報"
-          .main__content__top__comment
+              - if user_signed_in? && current_user.id == @item.user_id
+                .main__content__top__btn-box__center
+                  = link_to "出品を取り消す", "/items/#{@item.id}", method: :delete
+              - else
+                .main__content__top__btn-box__left
+                  = "お気に入り 0"
+                .main__content__top__btn-box__right
+                  = "不適切な商品の通報"
             = form_for "hoge" do |f|
               = f.text_area :hoge,class:"main__content__top__comment__area"
               .main__content__top__comment__message
