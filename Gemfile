@@ -81,3 +81,5 @@ gem "ancestry"
 
 gem "font-awesome-sass"
 gem "jp_prefecture"
+
+gem 'payjp'
