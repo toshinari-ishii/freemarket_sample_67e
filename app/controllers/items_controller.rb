@@ -4,12 +4,13 @@ class ItemsController < ApplicationController
     @photos = Photo.all
   end
   def new
-
   end
   def show
     @item = Item.find(params[:id])
     @photos = @item.photos
     @user = @item.user
+  end
+  def create
   end
   def buy
     
