@@ -158,10 +158,8 @@
           %a{:href => "#"}
         .purchaseBtn1
           %span.purchaseBtn1__text カード登録
-          %img.purchaseBtn1__icon{:src => "/assets/39894.png"}/
-
-
-
+          = link_to image_tag("39894.png", alt: "アップルリンク画像", class: "purchaseBtn1__icon"),new_card_path
+          
 .items
   .show
     = render partial:"module/footer"            
