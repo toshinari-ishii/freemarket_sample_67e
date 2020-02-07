@@ -83,3 +83,5 @@ gem "font-awesome-sass"
 gem "jp_prefecture"
 
 gem 'payjp'
+gem 'carrierwave'
+gem 'mini_magick'

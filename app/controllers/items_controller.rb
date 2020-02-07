@@ -5,6 +5,17 @@ class ItemsController < ApplicationController
   end
 
   def new
+    @item = Item.new
+    @photos = @item.photos.new
+    # binding.pry
+  end
+  def create
+    # binding.pry
+    @item = Item.new(item_params)
+    # binding.pry
+    if @item.save
+    end
+    # binding.pry
   end
 
   def show
@@ -12,8 +23,7 @@ class ItemsController < ApplicationController
     @photos = @item.photos
     @user = @item.user
   end
-  def create
-  end
+  
   def buy
     
   end
@@ -25,6 +35,11 @@ class ItemsController < ApplicationController
     item = Item.find(params[:id])
     item.destroy
     redirect_to '/'
+  end
+  
+  private
+  def item_params
+    params.require(:item).permit(:name, :text,:condition,:burden, :area, :day, :price, :category_id, :user_id, :buyer , photos_attributes: [:image]).merge(user_id: current_user.id)
   end
 
   
