@@ -1,7 +1,7 @@
 # 1番目
 user1 = User.new(
   email: "firsts@gmail.com", 
-  password: "First1111", 
+  password: "Firsts1111", 
   created_at: DateTime.now, 
   updated_at: DateTime.now,
   nickname: "小松菜奈",
