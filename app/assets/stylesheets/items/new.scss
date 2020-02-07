@@ -2,11 +2,13 @@
     display: flex;
     &__font{
       font-size: 16px;
+      font-weight: 600;
       
     }
     &__required{
       font-size: 12px;
-      margin-left: 8px;
+      font-weight: 600;
+      margin: 0 0 0 8px;
       background-color: #ea352d;
       color: #fff;
       padding: 2px 4px;
@@ -14,10 +16,10 @@
   }
   @mixin content{
     background-color: white;
-      width: 700px;
-      margin: 0 auto;
-      padding: 40px;
-      border-bottom: solid 1px black;
+    width: 700px;
+    margin: 0 auto;
+    padding: 40px;
+    border-bottom: solid 1px #eee;
   }
 
 .items{
@@ -37,15 +39,19 @@
     .contents{
       background-color: rgb(245, 245, 245);
       &__header{
+        @include content;
         text-align: center;
         font-size: 22px;
+        font-weight: 600;
       }
       &__image{
         @include content;
           &__top{
           @include topbox;
           }
-          &__text{}
+          &__text{
+            margin-bottom: 20px;
+          }
           &__form{
             label{
               .contents__image__form__text{
@@ -65,8 +71,7 @@
       @include content;
       &__top{
         @include topbox;
-        // &__font{}
-        // &__required{}
+        margin-bottom: 10px;
       }
       &__field{
         width: 100%;
@@ -79,6 +84,7 @@
       @include content;
       &__top{
         @include topbox;
+        margin-bottom: 10px;
       }
       &__area{
         height: 132px;
@@ -89,88 +95,158 @@
     }
     &__detail{
       @include content;
-      &__name{}
-      &__box{
-        float: right;
-        width: 400px;
-        &__cate{
-          &__top{
-            @include topbox;
-          }
-          &__select{
-            width: 100%;
-            height: 48px;
-            background-color: #fff;
-          }
+      &__main{
+        display: flex;
+        justify-content: space-between;
+        &__name{
+          color: #888888;
         }
-        &__condition{
-          &__top{
-            @include topbox;
+        &__box{
+          width: 400px;
+          &__cate{
+            &__top{
+              @include topbox;
+              margin-bottom: 10px;
+            }
+            &__select{
+              width: 100%;
+              height: 48px;
+              background-color: #fff;
+              margin-bottom: 30px;
+            }
           }
-          &__select{
-            width: 100%;
-            height: 48px;
-            background-color: #fff;
+          &__condition{
+            &__top{
+              @include topbox;
+              margin-bottom: 10px;
+            }
+            &__select{
+              width: 100%;
+              height: 48px;
+              background-color: #fff;
+            }
           }
         }
       }
     }
     &__deal{
       @include content;
-      &__name{ 
-      }
-      &__box{
-        float: right;
-        width: 400px;
-        &__burden{
-          &__top{
-            @include topbox;
-          }
-          &__select{
-            width: 100%;
-            height: 48px;
-            background-color: #fff;
-          }
+      &__main{
+        display: flex;
+        justify-content: space-between;
+        &__name{
+          color: #888888;
+
         }
-        &__area{
-          &__top{
-            @include topbox;
+        &__box{
+          float: right;
+          width: 400px;
+          &__burden{
+            &__top{
+              @include topbox;
+              margin-bottom: 10px;
+            }
+            &__select{
+              width: 100%;
+              height: 48px;
+              background-color: #fff;
+              margin-bottom: 30px;
+            }
           }
-          &__select{
-            width: 100%;
-            height: 48px;
-            background-color: #fff;
+          &__area{
+            &__top{
+              @include topbox;
+              margin-bottom: 10px;
+            }
+            &__select{
+              width: 100%;
+              height: 48px;
+              background-color: #fff;
+              margin-bottom: 30px;
+            }
           }
-        }
-        &__days{
-          &__top{
-            @include topbox;
-          }
-          &__select{
-            width: 100%;
-            height: 48px;
-            background-color: #fff;
+          &__days{
+            &__top{
+              @include topbox;
+              margin-bottom: 10px;
+            }
+            &__select{
+              width: 100%;
+              height: 48px;
+              background-color: #fff;
+            }
           }
         }
       }
     }
     &__money{
       @include content;
-      &__name{
-
-      }
-      &__box{
-        float: right;
-      &__price{
+      &__main{
         display: flex;
-        &__top{
-          @include topbox;
+        justify-content: space-between;
+        &__name{
+          color: #888888;
         }
-      } 
+        &__box{
+          &__frame{
+            display: flex;
+            &__left{
+              &__top{
+                @include topbox;
+                margin-right: 120px;
+              }
+            }
+            &__right{
+              font-size: 16px;
+              margin-right: 10px;
+              margin-top: 20px;
+              &__yen{
+              }
+              &__price{
+                height: 48px;
+                padding: 10px 16px 8px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                background: #fff;
+                line-height: 1.5;
+                font-size: 16px;
+
+
+              }
+
+            }
+          }
+        }
       }
     }
     &__text{
       @include content;
+      &__main{
+        font-size: 14px;
+        &__first{
+          
+          &__box1{
+            color :#0099e8;
+            text-decoration: none;
+          }
+          &__box2{
+            color :#0099e8;
+            text-decoration: none;
+          }
+        }
+        &__second{
+          &__box1{
+            color :#0099e8;
+            text-decoration: none;
+          }
+        }
+        &__third{
+          &__box1{
+            color :#0099e8;
+            text-decoration: none;
+          }
+        }
+      }
     }
     &__submit{
       @include content;
@@ -184,13 +260,17 @@
           line-height: 48px;
           cursor:pointer;
        }
-      &__back{
-        &__button{
-          line-height: 48px;
-          width: 45%;
-        }
-
       }
+      &__back{
+          line-height: 48px;
+          background-color: #aaa;
+          width: 45%;
+          margin: 24px auto 0;
+          cursor: pointer;
+        &__button{
+          color: #fff;
+          text-decoration: none;
+        }
       }
     }
   }
