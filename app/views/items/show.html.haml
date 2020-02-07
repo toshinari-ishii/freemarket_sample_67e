@@ -88,6 +88,8 @@
                     = "お気に入り 0"
                   .main__content__top__btn-box__right
                     = "不適切な商品の通報"
+                  .main__content__top__btn-box__buybtn
+                    = link_to "購入画面に進む", "/items/#{@item.id}/confirm"
           .main__content__top__comment
             = form_for "hoge" do |f|
               = f.text_area :hoge,class:"main__content__top__comment__area"

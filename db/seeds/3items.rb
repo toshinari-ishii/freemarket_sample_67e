@@ -9,7 +9,7 @@ Item.create!(
   price: 2000,
   category_id: 68,
   user_id: 1,
-  buyer: 0,
+  buyer: nil,
   created_at: "2020-02-07",
   updated_at: "2020-02-07"
 )
@@ -25,7 +25,7 @@ Item.create!(
   price: 2000,
   category_id: 324,
   user_id: 2,
-  buyer: 0,
+  buyer: nil,
   created_at: "2020-02-07",
   updated_at: "2020-02-07"
 )
@@ -41,7 +41,7 @@ Item.create!(
   price: 2000,
   category_id: 442,
   user_id: 3,
-  buyer: 0,
+  buyer: nil,
   created_at: "2020-02-07",
   updated_at: "2020-02-07"
 )
@@ -56,7 +56,7 @@ Item.create!(
   price: 2000,
   category_id: 577,
   user_id: 4,
-  buyer: 0,
+  buyer: nil,
   created_at: "2020-02-07",
   updated_at: "2020-02-07"
 )
@@ -71,7 +71,7 @@ Item.create!(
   price: 2000,
   category_id: 644,
   user_id: 5,
-  buyer: 0,
+  buyer: nil,
   created_at: "2020-02-07",
   updated_at: "2020-02-07"
 )
@@ -87,7 +87,7 @@ Item.create!(
   price: 2000,
   category_id: 728,
   user_id: 1,
-  buyer: 1,
+  buyer: nil,
   created_at: "2020-02-07",
   updated_at: "2020-02-07"
 )
@@ -103,7 +103,7 @@ Item.create!(
   price: 2000,
   category_id: 837,
   user_id: 2,
-  buyer: 1,
+  buyer: nil,
   created_at: "2020-02-07",
   updated_at: "2020-02-07"
 )
@@ -135,7 +135,7 @@ Item.create!(
   price: 2000,
   category_id: 1002,
   user_id: 4,
-  buyer: 1,
+  buyer: 2,
   created_at: "2020-02-07",
   updated_at: "2020-02-07"
 )
@@ -151,7 +151,7 @@ Item.create!(
   price: 2000,
   category_id: 1150,
   user_id: 5,
-  buyer: 1,
+  buyer: 3,
   created_at: "2020-02-07",
   updated_at: "2020-02-07"
 )
