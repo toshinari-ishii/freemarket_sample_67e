@@ -1,22 +1,22 @@
 # 1番目
-user1 = User.new(
-  email: "first@gmail.com", 
-  password: "First1111", 
-  created_at: DateTime.now, 
-  updated_at: DateTime.now,
-  nickname: "first",
-  last_name: "一",
-  first_name: "一一",
-  first_hurigana: "いちいち",
-  last_hurigana: "いち",
-  birthday: "2000-01-01",
-  postcode: "111-1111",
-  prefecture: "一県",
-  city: "一市",
-  block: "一番地",
-  room: "一号",
-  phone_number: "11-1111-1111"
-)
+# user1 = User.new(
+#   email: "first@gmail.com", 
+#   password: "First1111", 
+#   created_at: DateTime.now, 
+#   updated_at: DateTime.now,
+#   nickname: "first",
+#   last_name: "一",
+#   first_name: "一一",
+#   first_hurigana: "いちいち",
+#   last_hurigana: "いち",
+#   birthday: "2000-01-01",
+#   postcode: "111-1111",
+#   prefecture: "一県",
+#   city: "一市",
+#   block: "一番地",
+#   room: "一号",
+#   phone_number: "11-1111-1111"
+# )
 
 # 2番目
 user2 = User.new(
