@@ -5,12 +5,7 @@ lock '3.11.2'
 
 
 # ここまでで設定した環境変数をcapistranoでの自動デプロイで利用するため
-set :default_env, {
-  rbenv_root: "/usr/local/rbenv",
-  path: "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH",
-  AWS_ACCESS_KEY_ID: Rails.application.credentials.aws[:access_key_id],
-  AWS_SECRET_ACCESS_KEY: Rails.application.credentials.aws[:secret_access_key],
-}
+
 
 
 # Capistranoのログの表示に利用する
@@ -45,7 +40,7 @@ namespace :deploy do
 end
 
 # secrets.yml用のシンボリックリンクを追加
-set :linked_files, %w{ config/secrets.yml }
+set :linked_files, %w{ config/master.key }
 
 # 元々記述されていた after 「'deploy:publishing', 'deploy:restart'」以下を削除して、次のように書き換え
 
@@ -55,13 +50,13 @@ namespace :deploy do
     invoke 'unicorn:restart'
   end
 
-  desc 'upload credentials.yml.enc'
+  desc 'upload master.key'
   task :upload do
     on roles(:app) do |host|
       if test "[ ! -d #{shared_path}/config ]"
         execute "mkdir -p #{shared_path}/config"
       end
-      upload!('config/credentials.yml.enc', "#{shared_path}/config/credentials.yml.enc")
+      upload!('config/master.key', "#{shared_path}/config/master.key")
     end
   end
   before :starting, 'deploy:upload'
