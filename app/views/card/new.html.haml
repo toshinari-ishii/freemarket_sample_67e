@@ -48,11 +48,10 @@
 
       Payjp.createToken(card, function(status, response){
         if (status == 200){ //Payjpとの通信が成功した場合
-          document.getElementById("card_number").removeAttribute("name")
-          document.getElementById("cvc").removeAttribute("name")
-          document.getElementById("exp_month").removeAttribute("name")
-          document.getElementById("exp_year").removeAttribute("name") //カード情報を自分のサーバーにPOSTせずに削除
-          )
+          $("#card_number").removeAttr("name");
+          $("#cvc").removeAttr("name");
+          $("#exp_month").removeAttr("name");
+          $("#exp_year").removeAttr("name");
           console.log("OK");
         } else {
           console.log("NG");
