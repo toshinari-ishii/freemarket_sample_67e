@@ -2,13 +2,12 @@ class CardController < ApplicationController
   require "payjp"
   before_action :set_card
 
-  def index
-  end
 
   def new # カードの登録画面。送信ボタンを押すとcreateアクションへ
     card = Card.where(user_id: current_user.id).first
-    redirect_to action: "index" if card.present?
+    redirect_to action: "show" if card.present?
   end
+
 
   def create #PayjpとCardのデータベースを作成
     Payjp.api_key = "sk_test_265301405b3342f54b10a319"
@@ -25,18 +24,23 @@ class CardController < ApplicationController
       )
       @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
-        redirect_to action: "index"
+        redirect_to action: "show"
       else
         redirect_to action: "create"
       end
     end
   end
 
+
+
+
+
+
   def delete #PayjpとCardデータベースを削除します
     card = Card.where(user_id: current_user.id).first
     if card.blank?
     else
-      Payjp.api_key = "sk_test_ce027fe0327f98d0ac645919"
+      Payjp.api_key = "sk_test_265301405b3342f54b10a319"
       customer = Payjp::Customer.retrieve(card.customer_id)
       customer.delete
       card.delete
@@ -44,12 +48,17 @@ class CardController < ApplicationController
       redirect_to action: "new"
   end
 
-  def show #Cardのデータpayjpに送り情報を取り出します
+
+
+
+
+
+  def show #Cardのデータをpayjpに送り情報を取り出します
     card = Card.where(user_id: current_user.id).first
     if card.blank?
       redirect_to action: "new" 
     else
-      Payjp.api_key = "sk_test_ce027fe0327f98d0ac645919"
+      Payjp.api_key = "sk_test_265301405b3342f54b10a319"
       customer = Payjp::Customer.retrieve(card.customer_id)
       @default_card_information = customer.cards.retrieve(card.card_id)
     end
