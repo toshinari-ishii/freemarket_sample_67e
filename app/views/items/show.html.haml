@@ -31,6 +31,8 @@
             .main__content__top__items__body
               .main__content__top__items__body__main
                 = image_tag ("#{@photos.find_by(item_id:params[:id]).image}"),width:"400px",height:"400px"
+                - if @item.buyer
+                  %p 売り切れ
               .main__content__top__items__body__bar
                 .main__content__top__items__body__bar__image
                   - @photos.each do |p|
@@ -89,7 +91,7 @@
                   .main__content__top__btn-box__right
                     = "不適切な商品の通報"
                   .main__content__top__btn-box__buybtn
-                    = link_to "購入画面に進む", "/items/#{@item.id}/confirm"
+                    = link_to "購入画面に進む", "/items/#{@item.id}/confirm" 
           .main__content__top__comment
             = form_for "hoge" do |f|
               = f.text_area :hoge,class:"main__content__top__comment__area"

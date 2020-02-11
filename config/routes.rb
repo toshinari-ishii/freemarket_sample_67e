@@ -10,10 +10,10 @@ Rails.application.routes.draw do
       get 'confirm'
     end
   end
-  resources :card, only: [:new, :show] do
+  resources :card, only: [:new, :create, :show] do
     collection do
       post 'show', to: 'card#show'
-      post 'pay', to: 'card#pay'
+      post 'create', to: 'card#create'
       post 'delete', to: 'card#delete'
     end
   end
