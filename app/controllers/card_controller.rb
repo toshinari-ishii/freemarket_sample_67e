@@ -7,7 +7,7 @@ class CardController < ApplicationController
 
   def new # カードの登録画面。送信ボタンを押すとcreateアクションへ
     card = Card.where(user_id: current_user.id).first
-    redirect_to action: "show" if card.present?
+    redirect_to "/card/#{@card.user_id}" if card.present?
   end
 
 
@@ -26,7 +26,8 @@ class CardController < ApplicationController
       )
       @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
-        redirect_to action: "show"
+        redirect_to "/card/#{@card.user_id}"
+        # redirect_to action: "show"
       else
         redirect_to action: "create"
       end
