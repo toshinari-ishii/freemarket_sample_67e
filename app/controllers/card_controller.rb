@@ -6,7 +6,7 @@ class CardController < ApplicationController
 
 
   def new # カードの登録画面。送信ボタンを押すとcreateアクションへ
-    card = current_user.card
+    card = set_card
     redirect_to card_path(id: @card.user_id) if card.present?
   end
 
@@ -34,7 +34,7 @@ class CardController < ApplicationController
   end
   
   def delete #PayjpとCardデータベースを削除します
-    card = current_user.card
+    card = set_card
     if card.blank?
     else
       Payjp.api_key = ENV['PAYJP_SECRET_KEY']
@@ -46,7 +46,7 @@ class CardController < ApplicationController
   end
 
   def show #Cardのデータをpayjpに送り情報を取り出します
-    card = current_user.card
+    card = set_card
     if card.blank?
       redirect_to action: "new" 
     else
