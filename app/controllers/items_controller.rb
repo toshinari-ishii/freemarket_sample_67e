@@ -16,11 +16,11 @@ class ItemsController < ApplicationController
     # @children = Category.find_by
   end
   def grandchildren
+    
     @grandchildren = Category.where(['ancestry LIKE ?', "%#{params[:child_name]}%"])
     # binding.pry
   end
   def create
-    # binding.pry
     @item = Item.new(item_params)
     # binding.pry
     if @item.save
@@ -38,8 +38,6 @@ class ItemsController < ApplicationController
     
   end
 
-  def create
-  end
 
   def confirm
     @item = Item.find(params[:id])
