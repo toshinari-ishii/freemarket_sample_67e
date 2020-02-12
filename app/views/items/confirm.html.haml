@@ -32,11 +32,10 @@
           %p= "#{@user.prefecture + @user.city + @user.block}"
           %p= "#{@user.last_name + @user.first_name}"
         .buy__third--address--red 
-          %p この商品はラクラクフリマ便、アプリ
-          %p からのみ購入できます。
+          %p この商品はラクラクフリマ便、アプリからのみ購入できます。
 
         .buy__third--address--btn
-          = link_to "購入する", "/items/#{@item.id}/buy", class:"buy-btn"
+          = link_to "[購入する]", "/items/#{@item.id}/buy", class:"buy-btn"
 
           
         .buy__third--address--comment
