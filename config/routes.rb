@@ -5,7 +5,9 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
 
-  resources :items, only:[:new, :show, :destroy,:create] do
+ 
+  resources :items, only:[:new, :show, :destroy,:create, :edit] do
+
     member do
       get 'buy'
       get 'confirm'
