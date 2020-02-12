@@ -2,12 +2,11 @@ require "payjp"
 
 class CardController < ApplicationController
   
-  before_action :set_card
+  before_action :set_card, only: [:new, :delete, :show]
 
 
   def new # カードの登録画面。送信ボタンを押すとcreateアクションへ
-    card = set_card
-    redirect_to card_path(id: @card.user_id) if card.present?
+    redirect_to card_path(id: @card.user_id) if @card.present?
   end
 
 
@@ -34,25 +33,23 @@ class CardController < ApplicationController
   end
   
   def delete #PayjpとCardデータベースを削除します
-    card = set_card
-    if card.blank?
+    if @card.blank?
     else
       Payjp.api_key = ENV['PAYJP_SECRET_KEY']
-      customer = Payjp::Customer.retrieve(card.customer_id)
+      customer = Payjp::Customer.retrieve(@card.customer_id)
       customer.delete
-      card.delete
+      @card.delete
     end
       redirect_to action: "new"
   end
 
   def show #Cardのデータをpayjpに送り情報を取り出します
-    card = set_card
-    if card.blank?
+    if @card.blank?
       redirect_to action: "new" 
     else
       Payjp.api_key = ENV['PAYJP_SECRET_KEY']
-      customer = Payjp::Customer.retrieve(card.customer_id)
-      @default_card_information = customer.cards.retrieve(card.card_id)
+      customer = Payjp::Customer.retrieve(@card.customer_id)
+      @default_card_information = customer.cards.retrieve(@card.card_id)
     end
   end
 
