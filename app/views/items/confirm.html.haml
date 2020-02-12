@@ -35,7 +35,7 @@
           %p この商品はラクラクフリマ便、アプリからのみ購入できます。
 
         .buy__third--address--btn
-          = link_to "[購入する]", "/items/#{@item.id}/buy", class:"buy-btn"
+          = link_to "[購入する]", buy_item_path(id: @item.id), class:"buy-btn"
 
           
         .buy__third--address--comment
