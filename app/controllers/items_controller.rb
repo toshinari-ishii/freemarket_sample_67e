@@ -10,19 +10,13 @@ class ItemsController < ApplicationController
     @categories = Category.where(ancestry: nil)
   end
   def children
-    # binding.pry
-    # @children = Category.find_by(ancestry: params[:parent_name])
     @children = Category.where(ancestry: params[:parent_name])
-    # @children = Category.find_by
   end
   def grandchildren
-    
     @grandchildren = Category.where(['ancestry LIKE ?', "%#{params[:child_name]}%"])
-    # binding.pry
   end
   def create
     @item = Item.new(item_params)
-    # binding.pry
     if @item.save
     end
     redirect_to :root
@@ -56,7 +50,20 @@ class ItemsController < ApplicationController
     item.destroy
     redirect_to '/'
   end
-  
+
+  def edit
+    @item = Item.find(params[:id])
+    @categories = Category.where(ancestry: nil)
+  end
+  def update
+    @item = Item.find(params[:id])
+    if @item.update_attributes(item_params)
+      # 更新に成功したときの処理
+    else
+      render 'edit'
+    end
+  end
+
   private
   def item_params
     params.require(:item).permit(:name, :text,:condition,:burden, :area, :day, :price, :category_id, :user_id, :buyer , photos_attributes: [:image]).merge(user_id: current_user.id)
