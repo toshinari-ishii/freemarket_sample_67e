@@ -20,14 +20,9 @@
             支払金額
           %p.buy__third--price--int
             = "¥#{@item.price}"
-        -# .buy__third--price--point
-        -#   %tr= check_box :item, :item_ids, {class: "check_box"}, true, false
-        -#   %tr ポイントを使用する
         .buy__third--choice
           %p お支払方法はクレジットカードのみになります
         .buy__third--address
-          -# %tr 配送先
-          -# %tr=link_to "変更する", url:'#'
           %p= "〒#{@user.postcode}"
           %p= "#{@user.prefecture + @user.city + @user.block}"
           %p= "#{@user.last_name + @user.first_name}"
