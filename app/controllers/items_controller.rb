@@ -23,10 +23,8 @@ class ItemsController < ApplicationController
   end
 
   def buy
-    binding.pry
     @item = Item.find(params[:id])
     @item.update(buyer: current_user.id)
-
     @card = Card.find_by(user_id: current_user.id)
     @buy = @card.customer_id
 
