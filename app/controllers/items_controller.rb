@@ -35,14 +35,6 @@ class ItemsController < ApplicationController
       # card: params['payjp-token'], フォームを送信すると作成・送信されてくるトークン
       currency: 'jpy'
     )
-
-    # Payjp.api_key = "sk_test_ce027fe0327f98d0ac645919"
-    # Payjp::Charge.create(
-    #   amount: 809, # 決済する値段
-    #   card: "#{@buy}",
-    #   # card: params['payjp-token'], フォームを送信すると作成・送信されてくるトークン
-    #   currency: 'jpy'
-    # )
     
     redirect_to '/'
   end

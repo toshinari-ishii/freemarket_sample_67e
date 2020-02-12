@@ -14,7 +14,6 @@ Rails.application.routes.draw do
 
   resources :card, only: [:new, :create, :show] do
     collection do
-      post 'show', to: 'card#show'
       post 'create', to: 'card#create'
       post 'delete', to: 'card#delete'
     end
