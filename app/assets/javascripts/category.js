@@ -32,8 +32,10 @@ $('.contents__detail__main__box__cate').append(grandChildSelect);
       })
       .done(function(children){
         // console.log(children);
-        // $('#children_wrapper').remove(); //親が変更された時、子以下を削除する
-        // $('#grandchildren_wrapper').remove();
+        $('#child-cate').remove(); //親が変更された時、子以下を削除する
+        $('#grandchild-cate').remove();
+        console.log("child");
+        // $('#grandchildren-cate').remove();
         // $('#size_wrapper').remove();
         // $('#brand_wrapper').remove();
         var insertHTML = '';
@@ -59,6 +61,8 @@ $('.contents__detail__main__box__cate').append(grandChildSelect);
         dataType: 'json'
       })
       .done(function(grandchildren){
+        $('#grandchild-cate').remove();
+        console.log("grand");
         // console.log(grandchildren);
         // $('#children_wrapper').remove(); //親が変更された時、子以下を削除する
         // $('#grandchildren_wrapper').remove();

@@ -14,6 +14,24 @@ $(function(){
     const html = `<img data-index="${index}" src="${url}" width="100px" height="100px">`;
     return html;
   }
+  (function(num){
+    var buildBox = `<div class="contents__image__form">
+    <div class="contents__image__form__text">
+    <b>
+    ドラッグアンドドロップ
+    <br>
+    またはクリックしてファイルをアップロード
+    </b>
+    <div id="image-box">
+    <div class="contents__image__form__text__js-file_group" data-index="0">
+    <input class="contents__image__form__text__js-file_group__file" type="file" name="item[photos_attributes][0][image]" id="item_photos_attributes_0_image">
+    <div class="js-remove">削除</div>
+    </div>
+    </div>
+    </div>
+    </div>`
+    return buildBox;
+  });
   //file_fieldのnameに動的なindexをつけるための配列
   let fileIndex = [1,2,3,4,5,6,7,8,9,10];
     lastIndex = $('.contents__image__form__text__js-file_group:last').data("index")
@@ -39,4 +57,5 @@ $(function(){
     // 画像入力欄が0個にならないようにしておく
     if ($(".contents__image__form__text__js-file_group__file").length == 0) $("image-box").append(buildFile(fileIndex[0]));
   });
+ 
 });

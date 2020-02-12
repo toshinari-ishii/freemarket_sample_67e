@@ -15,17 +15,17 @@
           .contents__image__text
             最大10枚までアップロードします
           .contents__image__form
-            %label
-              .contents__image__form__text
-                %b
-                  ドラッグアンドドロップ
-                  %br
-                  またはクリックしてファイルをアップロード
-                #image-box
-                  = f.fields_for :photos do |i|
-                    .contents__image__form__text__js-file_group{data:{index:i.index}}
-                      = i.file_field :image,class:"contents__image__form__text__js-file_group__file"
-                      .js-remove 削除
+            -# %label
+            .contents__image__form__text
+              %b
+                ドラッグアンドドロップ
+                %br
+                またはクリックしてファイルをアップロード
+              #image-box
+                = f.fields_for :photos do |i|
+                  .contents__image__form__text__js-file_group{data:{index:i.index}}
+                    = i.file_field :image,class:"contents__image__form__text__js-file_group__file"
+                    .js-remove 削除
           .contents__name__top
             .contents__name__top__font
               商品名
@@ -51,9 +51,6 @@
                   .contents__detail__main__box__cate__top__required
                     必須
                 = f.collection_select :category_id, @categories, :id, :name,{prompt: "---"},class:"contents__detail__main__box__cate__select",id:"parent_category"
-                #grandchild-cate
-
-
               .contents__detail__main__box__condition
                 .contents__detail__main__box__condition__top
                   .contents__detail__main__box__condition__top__font
@@ -114,7 +111,7 @@
               またブランド品でシリアルナンバー等がある場合はご記載ください。
               = link_to '偽ブランドの販売', '/#', class: 'contents__text__main__second__box1'
               は犯罪であり処罰される可能性があります。
-            .contents__text__main__third{}
+            .contents__text__main__third
               また、出品をもちまして
               = link_to '加盟店規約', '/#', class: 'contents__text__main__third__box1'
               に同意したことになります。
