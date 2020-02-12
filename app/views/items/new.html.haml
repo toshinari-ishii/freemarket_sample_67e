@@ -21,11 +21,11 @@
                   ドラッグアンドドロップ
                   %br
                   またはクリックしてファイルをアップロード
-              = f.fields_for :photos do |i|
-                -# = i.text_field :image,class:"contents__image__form__file"
-                = i.file_field :image,class:"contents__image__form__file"
-                -# = f.file_field :image,class:"contents__image__form__file"
-        .contents__name
+                #image-box
+                  = f.fields_for :photos do |i|
+                    .contents__image__form__text__js-file_group{data:{index:i.index}}
+                      = i.file_field :image,class:"contents__image__form__text__js-file_group__file"
+                      .js-remove 削除
           .contents__name__top
             .contents__name__top__font
               商品名
@@ -50,8 +50,10 @@
                     カテゴリー
                   .contents__detail__main__box__cate__top__required
                     必須
-                  -# = f.text_field :category_id
-                = f.select :category_id,[ ["レディース",1], ["メンズ", 200], ["ベビー・キッズ", 346], ["インテリア・住まい・小物", 481], ["本・音楽・ゲーム", 625], ["おもちゃ・ホビー・グッズ", 685], ["コスメ・香水・美容", 798], ["家電・スマホ・カメラ", 898] ,["スポーツ・レジャー", 984], ["ハンドメイド", 1093], ["チケット", 1147], ["自動車・オートバイ", 1207], ["その他", 1270] ],{prompt: "---"},class:"contents__detail__main__box__cate__select"
+                = f.collection_select :category_id, @categories, :id, :name,{prompt: "---"},class:"contents__detail__main__box__cate__select",id:"parent_category"
+                #grandchild-cate
+
+
               .contents__detail__main__box__condition
                 .contents__detail__main__box__condition__top
                   .contents__detail__main__box__condition__top__font

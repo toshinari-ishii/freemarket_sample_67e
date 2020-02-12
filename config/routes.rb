@@ -9,6 +9,10 @@ Rails.application.routes.draw do
       get 'buy'
       get 'confirm'
     end
+    collection do
+      get 'children', defaults: { format: 'json' }
+      get 'grandchildren', defaults: { format: 'json' }
+    end
   end
   resources :card, only: [:new, :show] do
     collection do

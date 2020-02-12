@@ -7,6 +7,16 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @photos = @item.photos.new
+    @categories = Category.where(ancestry: nil)
+  end
+  def children
+    # binding.pry
+    # @children = Category.find_by(ancestry: params[:parent_name])
+    @children = Category.where(ancestry: params[:parent_name])
+    # @children = Category.find_by
+  end
+  def grandchildren
+    @grandchildren = Category.where(['ancestry LIKE ?', "%#{params[:child_name]}%"])
     # binding.pry
   end
   def create
@@ -15,7 +25,7 @@ class ItemsController < ApplicationController
     # binding.pry
     if @item.save
     end
-    # binding.pry
+    redirect_to :root
   end
 
   def show
