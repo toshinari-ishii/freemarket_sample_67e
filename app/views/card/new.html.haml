@@ -6,7 +6,6 @@
       = f.label :"カード番号", class: "label" 
       %span 必須
       = f.text_field :card_number, autofocus: true, type: 'text', class: 'input-number', placeholder: '半角数字のみ', maxlength: "16"
-      -# = f.text_field :card_number, type: 'text', class: 'input-number', placeholder: '半角数字のみ', maxlength: "16"
       .cards-expire
         = f.label :"有効期限", class: "label"
         %span 必須
@@ -21,8 +20,7 @@
       .cards-expire
         = f.label :セキュリティコード, class: "label"
         %span 必須
-        = f.text_field :cvc, value: 123, type: 'text', class: 'input-number', placeholder: 'カード背面4桁もしくは3桁の番号', maxlength: "4"
-        -# = f.text_field :cvc, type: 'text', class: 'input-number', placeholder: 'カード背面4桁もしくは3桁の番号', maxlength: "4"
+        = f.text_field :cvc, type: 'text', class: 'input-number', placeholder: 'カード背面4桁もしくは3桁の番号', maxlength: "4"
       .content-bottom#card_token
         = f.submit '追加する', class: 'content-bottom--add-btn', id: 'token_submit'
 

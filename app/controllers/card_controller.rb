@@ -6,8 +6,8 @@ class CardController < ApplicationController
 
 
   def new # カードの登録画面。送信ボタンを押すとcreateアクションへ
-    card = Card.find_by(user_id: current_user.id)
-    redirect_to "/card/#{@card.user_id}" if card.present?
+    card = current_user.card
+    redirect_to card_path(id: @card.user_id) if card.present?
   end
 
 
@@ -26,8 +26,7 @@ class CardController < ApplicationController
       )
       @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
-        redirect_to "/card/#{@card.user_id}"
-        # redirect_to action: "show"
+        redirect_to card_path(id: @card.user_id)
       else
         redirect_to action: "create"
       end
@@ -35,7 +34,7 @@ class CardController < ApplicationController
   end
   
   def delete #PayjpとCardデータベースを削除します
-    card = Card.find_by(user_id: current_user.id)
+    card = current_user.card
     if card.blank?
     else
       Payjp.api_key = ENV['PAYJP_SECRET_KEY']
@@ -46,13 +45,8 @@ class CardController < ApplicationController
       redirect_to action: "new"
   end
 
-
-
-
-
-
   def show #Cardのデータをpayjpに送り情報を取り出します
-    card = Card.find_by(user_id: current_user.id)
+    card = current_user.card
     if card.blank?
       redirect_to action: "new" 
     else
@@ -65,7 +59,7 @@ class CardController < ApplicationController
   private
 
   def set_card
-    @card = Card.find_by(user_id: current_user.id) if Card.where(user_id: current_user.id).present?
+    @card = current_user.card if Card.where(user_id: current_user.id).present?
   end
   
 end
