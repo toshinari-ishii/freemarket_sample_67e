@@ -37,8 +37,20 @@ class ItemsController < ApplicationController
   def buy
     
   end
+
+  def create
+  end
+
   def confirm
-    
+    @item = Item.find(params[:id])
+    @photos = @item.photos
+    @user = @item.user
+  end
+
+  def buy
+    @item = Item.find(params[:id])
+    @item.update(buyer: current_user.id)
+    redirect_to '/'
   end
 
   def destroy

@@ -8,31 +8,36 @@
         購入内容の確認
       .buy__second
         .buy__second--image
-          = image_tag "shirt.jpg", size: "100x97", alt: "商品画像"
+          = image_tag ("#{@photos.find_by(item_id:params[:id]).image}"), size: "100x97", alt: "商品画像"
         .buy__second--price
-          %p.buy__second--price--name 限定 ナイキ エアマックス 90 NIKE AIR MAX LTR GS
-          %p.buy__second--price--price ¥14,999 （税込）送料込み
+          %p.buy__second--price--name
+            = @item.name
+          %p.buy__second--price--price
+            = "¥#{@item.price}"
       .buy__third
         .buy__third--price
-          %p.buy__third--price--text 支払金額 
-          %p.buy__third--price--int ¥14.999
-        .buy__third--price--point
-          %tr= check_box :item, :item_ids, {class: "check_box"}, true, false
-          %tr ポイントを使用する
+          %p.buy__third--price--text 
+            支払金額 
+          %p.buy__third--price--int
+            = "¥#{@item.price}"
+        -# .buy__third--price--point
+        -#   %tr= check_box :item, :item_ids, {class: "check_box"}, true, false
+        -#   %tr ポイントを使用する
         .buy__third--choice
-          %p 支払方法
-          %p 登録してください
+          %p お支払方法はクレジットカードのみになります
         .buy__third--address
-          %tr 配送先
-          %tr=link_to "変更する", url:'#'
-          %p 〒XXX-XXX
-          %p XXX府XXX市XXX町XXX丁目
-          %p 購入者の名前
+          -# %tr 配送先
+          -# %tr=link_to "変更する", url:'#'
+          %p= "〒#{@user.postcode}"
+          %p= "#{@user.prefecture + @user.city + @user.block}"
+          %p= "#{@user.last_name + @user.first_name}"
         .buy__third--address--red 
           %p この商品はラクラクフリマ便、アプリ
           %p からのみ購入できます。
+
         .buy__third--address--btn
           %btn= submit_tag "購入する",  class:"buy-btn"
+          
         .buy__third--address--comment
           %p アプリをお持ちでない方は以下より
           %p インストールしてご利用いただけます
