@@ -34,6 +34,7 @@ class ItemsController < ApplicationController
       currency: 'jpy'
     )
     redirect_to '/'
+    flash[:notice] = "購入が完了しました　また貯金が減ったで！！！"
   end
 
   def destroy
