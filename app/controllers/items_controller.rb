@@ -43,5 +43,13 @@ class ItemsController < ApplicationController
     redirect_to '/'
   end
 
+  def edit
+    @item = Item.find(params[:id])
+
+  end
+
+  def update
+    
+  end
   
 end
