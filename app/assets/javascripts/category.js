@@ -21,7 +21,6 @@ $('.contents__detail__main__box__cate').append(grandChildSelect);
 }
 // 親カテゴリーを選択した場合
   $(".contents__detail__main__box__cate").on("change","#parent_category",function(){
-    // $(".contents__detail__main__box__cate").append(buildSelect);
     var parentCategory = document.getElementById('parent_category').value;
     if (parentCategory != "---"){ //親カテゴリーが初期値でないことを確認
       $.ajax({
@@ -34,10 +33,6 @@ $('.contents__detail__main__box__cate').append(grandChildSelect);
         // console.log(children);
         $('#child-cate').remove(); //親が変更された時、子以下を削除する
         $('#grandchild-cate').remove();
-        console.log("child");
-        // $('#grandchildren-cate').remove();
-        // $('#size_wrapper').remove();
-        // $('#brand_wrapper').remove();
         var insertHTML = '';
         children.forEach(function(child){
           insertHTML += appendOption(child);
@@ -62,12 +57,6 @@ $('.contents__detail__main__box__cate').append(grandChildSelect);
       })
       .done(function(grandchildren){
         $('#grandchild-cate').remove();
-        console.log("grand");
-        // console.log(grandchildren);
-        // $('#children_wrapper').remove(); //親が変更された時、子以下を削除する
-        // $('#grandchildren_wrapper').remove();
-        // $('#size_wrapper').remove();
-        // $('#brand_wrapper').remove();
         var insertHTML = '';
         grandchildren.forEach(function(grandchild){
           insertHTML += appendOption(grandchild);
