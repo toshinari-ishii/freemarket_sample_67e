@@ -84,7 +84,7 @@
                 - if user_signed_in? && current_user.id == @item.user_id
                   .main__content__top__btn-box__center
                     = link_to "出品を取り消す", "/items/#{@item.id}", method: :delete
-                    = link_to "編集する"
+                    = link_to "編集する", "/items/#{@item.id}/edit", method: :get
                 - else
                   .main__content__top__btn-box__left
                     = "お気に入り 0"
