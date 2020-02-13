@@ -24,9 +24,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    # binding.pry
-    if @item.save
-    end
+    @item.save
     redirect_to :root
   end
 
@@ -76,17 +74,13 @@ class ItemsController < ApplicationController
 
   def edit
     @categories = Category.where(ancestry: nil)
-    # binding.pry
     @item = Item.find(params[:id])
-    # binding.pry
     @photos = @item.photos
     @user = @item.user
-    @grandchild = Category.find(@item.category_id)
-    
+    @grandchild = Category.find(@item.category_id)    
     @grandchildren = @grandchild.siblings
     @child = @grandchild.parent
     @parent = @child.parent
-
     @children = @child.siblings
     @parents = @parent.siblings
     @photos = Photo.where(item_id: params[:id])
@@ -95,6 +89,7 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params)
+      redirect_to root_path
     else
       render 'edit'
     end

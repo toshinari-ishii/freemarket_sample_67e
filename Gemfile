@@ -90,4 +90,5 @@ gem 'fog-aws'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'dotenv-rails'
+gem 'active_hash'
 
