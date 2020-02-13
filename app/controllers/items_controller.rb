@@ -23,10 +23,16 @@ class ItemsController < ApplicationController
 
 
   def create
-    @item = Item.new(item_params)
-    @item.save
-    redirect_to :root
+    if  @item = Item.new(item_params)
+      @item.save
+      redirect_to root_path
+    else
+      flash[:notice] = "完了しておりません"
+    end
   end
+
+ 
+
 
   def show
     @item = Item.find(params[:id])
