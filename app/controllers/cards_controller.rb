@@ -6,9 +6,6 @@ class CardsController < ApplicationController
     redirect_to card_path(id: @card.user_id) if @card.present?
   end
 
-
-  
-  
   def create #PayjpとCardのデータベースを作成
     Payjp.api_key = ENV['PAYJP_SECRET_KEY']
 
@@ -30,12 +27,6 @@ class CardsController < ApplicationController
       end
     end
   end
-  
-  
-  
-  
-  
-  
 
   def show #Cardのデータをpayjpに送り情報を取り出します
     if @card.blank?
@@ -46,7 +37,6 @@ class CardsController < ApplicationController
       @default_card_information = customer.cards.retrieve(@card.card_id)
     end
   end
-
 
   def delete #PayjpとCardデータベースを削除します
     if @card.blank?
@@ -59,12 +49,10 @@ class CardsController < ApplicationController
       redirect_to action: "new"
   end
 
-
   private
 
   def set_card
     @card = current_user.card if Card.where(user_id: current_user.id).present?
   end
-
 
 end
