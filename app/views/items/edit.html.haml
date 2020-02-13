@@ -57,14 +57,6 @@
                 = f.collection_select :category_id,@parents, :id, :name,{prompt: @parent},class:"contents__detail__main__box__cate__select",id:"parent_category"
                 = f.collection_select :category_id,@children, :id, :name,{prompt: "---"},class:"contents__detail__main__box__cate__select",id:"parent_category"
                 = f.collection_select :category_id,@grandchildren, :id, :name,{prompt: "---"},class:"contents__detail__main__box__cate__select",id:"parent_category"
-                -# = f.collection_select :category_id, @parents, :id, :name,{prompt: "---"},class:"contents__detail__main__box__cate__select",id:"parent_category"
-                -# = f.collection_select :category_id, @children, :id, :name,{prompt: "---"},class:"contents__detail__main__box__cate__select",id:"child-cate"
-                -# = f.collection_select :category_id, @grandchildren, :id, :name,{prompt: "---"},class:"contents__detail__main__box__cate__select",id:"grandchild-cate"
-
-
-
-
-
               .contents__detail__main__box__condition
                 .contents__detail__main__box__condition__top
                   .contents__detail__main__box__condition__top__font

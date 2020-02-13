@@ -1,4 +1,7 @@
 .items
+  .notification
+    - if flash[:notice]
+      %p= flash[:notice]
   .show
     = render partial: 'module/header'
 .items

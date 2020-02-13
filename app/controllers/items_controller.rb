@@ -50,7 +50,21 @@ class ItemsController < ApplicationController
   def buy
     @item = Item.find(params[:id])
     @item.update(buyer: current_user.id)
-    redirect_to '/'
+
+    card = Card.find_by(user_id: current_user.id)
+    if card == nil
+      redirect_to new_card_path
+      flash[:noCard] = "Cardが登録されていませんので登録してください"
+    else
+      Payjp.api_key = ENV['PAYJP_SECRET_KEY']
+      Payjp::Charge.create(
+        amount: @item.price, # Payjpに載る金額
+        customer: card.customer_id, # 顧客ID
+        currency: 'jpy'
+      )
+      redirect_to '/'
+      flash[:notice] = "購入が完了しました　また貯金が減ったで！！！"
+    end
   end
 
   def destroy
