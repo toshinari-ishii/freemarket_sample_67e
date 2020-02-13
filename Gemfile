@@ -84,8 +84,11 @@ gem "font-awesome-sass"
 gem "jp_prefecture"
 
 gem 'payjp'
+gem 'jquery-rails'
+
 gem 'fog-aws'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'dotenv-rails'
+gem 'active_hash'
 

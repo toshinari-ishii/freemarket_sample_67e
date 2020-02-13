@@ -23,7 +23,7 @@
 }
 
 .items{
-.new{
+.edit{
   .clearfix::after{
     content: "";
     display: block;
@@ -60,9 +60,13 @@
               padding: 56px 20px 56px;
               border: 1px dashed #ccc;
               cursor: pointer;
-            }
-            .contents__image__form__file{
-              display: none;
+            .contents__image__form__text__js-file_group{
+              &__file{
+              }
+              .js-remove{
+                color: black;
+              }
+          }
         }
       }
     }
