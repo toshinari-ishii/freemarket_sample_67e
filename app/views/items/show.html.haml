@@ -72,8 +72,10 @@
                 %tr
                   %th
                     = "配送料の負担"
-                  %td
-                    = @item.burden 
+                    - if @item.burden == 0
+                      %td="出品者負担"
+                    - else
+                      %td="購入者負担"
                 %tr
                   %th
                     = "発送元の地域"
