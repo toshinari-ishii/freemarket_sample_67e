@@ -14,10 +14,10 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :card, only: [:new, :create, :show] do
+  resources :cards, only: [:new, :create, :show] do
     collection do
-      post 'create', to: 'card#create'
-      post 'delete', to: 'card#delete'
+      post 'create', to: 'cards#create'
+      post 'delete', to: 'cards#delete'
     end
   end
   resources :users, only: [:show]

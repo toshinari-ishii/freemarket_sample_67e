@@ -1,15 +1,14 @@
-require "payjp"
+class CardsController < ApplicationController
 
-class CardController < ApplicationController
-  
   before_action :set_card, only: [:new, :delete, :show]
 
-
-  def new # カードの登録画面。送信ボタンを押すとcreateアクションへ
+  def new
     redirect_to card_path(id: @card.user_id) if @card.present?
   end
 
 
+  
+  
   def create #PayjpとCardのデータベースを作成
     Payjp.api_key = ENV['PAYJP_SECRET_KEY']
 
@@ -25,23 +24,18 @@ class CardController < ApplicationController
       )
       @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
-        redirect_to card_path(id: @card.user_id)
+        redirect_to cards_path(id: @card.user_id)
       else
         redirect_to action: "create"
       end
     end
   end
   
-  def delete #PayjpとCardデータベースを削除します
-    if @card.blank?
-    else
-      Payjp.api_key = ENV['PAYJP_SECRET_KEY']
-      customer = Payjp::Customer.retrieve(@card.customer_id)
-      customer.delete
-      @card.delete
-    end
-      redirect_to action: "new"
-  end
+  
+  
+  
+  
+  
 
   def show #Cardのデータをpayjpに送り情報を取り出します
     if @card.blank?
@@ -53,10 +47,24 @@ class CardController < ApplicationController
     end
   end
 
+
+  def delete #PayjpとCardデータベースを削除します
+    if @card.blank?
+    else
+      Payjp.api_key = ENV['PAYJP_SECRET_KEY']
+      customer = Payjp::Customer.retrieve(@card.customer_id)
+      customer.delete
+      @card.delete
+    end
+      redirect_to action: "new"
+  end
+
+
   private
 
   def set_card
     @card = current_user.card if Card.where(user_id: current_user.id).present?
   end
-  
+
+
 end
