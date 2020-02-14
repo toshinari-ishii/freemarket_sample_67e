@@ -8,19 +8,31 @@ class ItemsController < ApplicationController
     @item = Item.new
     @photos = @item.photos.new
     @categories = Category.where(ancestry: nil)
+    
   end
+
+
   def children
     @children = Category.where(ancestry: params[:parent_name])
   end
+
+
   def grandchildren
     @grandchildren = Category.where(['ancestry LIKE ?', "%#{params[:child_name]}%"])
   end
+
+
   def create
-    @item = Item.new(item_params)
-    if @item.save
+    if  @item = Item.new(item_params)
+      @item.save
+      redirect_to root_path
+    else
+      flash[:notice] = "完了しておりません"
     end
-    redirect_to :root
   end
+
+ 
+
 
   def show
     @item = Item.find(params[:id])
@@ -64,19 +76,35 @@ class ItemsController < ApplicationController
     item.destroy
     redirect_to '/'
   end
+
+
+  def edit
+    @categories = Category.where(ancestry: nil)
+    @item = Item.find(params[:id])
+    @photos = @item.photos
+    @user = @item.user
+    @grandchild = Category.find(@item.category_id)    
+    @grandchildren = @grandchild.siblings
+    @child = @grandchild.parent
+    @parent = @child.parent
+    @children = @child.siblings
+    @parents = @parent.siblings
+    @photos = Photo.where(item_id: params[:id])
+
+  end
+
+  def update
+    if @item.update(item_params)
+      redirect_to root_path
+    else
+      render 'edit'
+    end
+  end
   
   private
   def item_params
     params.require(:item).permit(:name, :text,:condition,:burden, :area, :day, :price, :category_id, :user_id, :buyer , photos_attributes: [:image]).merge(user_id: current_user.id)
   end
 
-  def edit
-    @item = Item.find(params[:id])
-
-  end
-
-  def update
-    
-  end
   
 end

@@ -4,13 +4,12 @@ Rails.application.routes.draw do
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
-
- 
-  resources :items, only:[:new, :show, :destroy,:create, :edit] do
-
+  resources :items, only:[:new, :show, :destroy,:create,:edit, :update] do
     member do
       get 'buy'
       get 'confirm'
+      get 'children'
+      get 'grandchildren'
     end
     collection do
       get 'children', defaults: { format: 'json' }

@@ -1,20 +1,20 @@
-$(function(){
-  function appendOption(category){
+$(function () {
+  function appendOption(category) {
     var html = `<option value="${category.id}" data-category="${category.name}">${category.name}</option>`;
     return html;
   }
-//子カテゴリーの表示
-  function buildChild(insertHTML){
+  //子カテゴリーの表示
+  function buildChild(insertHTML) {
     var childSelect = ``
-    var childSelect=`<select class="contents__detail__main__box__cate__select" name="item[category_id]" id="child-cate"><option value="">---</option>
+    var childSelect = `<select class="contents__detail__main__box__cate__select" name="item[category_id]" id="child-cate"><option value="">---</option>
     ${insertHTML}
   </select>`
-  $('.contents__detail__main__box__cate').append(childSelect);
-}
-// 孫カテゴリーの表示
-function buildGrandChild(insertHTML){
-  var grandChildSelect = '';
-  var grandChildSelect=`<select class="contents__detail__main__box__cate__select" name="item[category_id]" id="grandchild-cate"><option value="">---</option>
+    $('.contents__detail__main__box__cate').append(childSelect);
+  }
+  // 孫カテゴリーの表示
+  function buildGrandChild(insertHTML) {
+    var grandChildSelect = '';
+    var grandChildSelect = `<select class="contents__detail__main__box__cate__select" name="item[category_id]" id="grandchild-cate"><option value="">---</option>
   ${insertHTML}
 </select>`
 $('.contents__detail__main__box__cate').append(grandChildSelect);
@@ -22,7 +22,7 @@ $('.contents__detail__main__box__cate').append(grandChildSelect);
 // 親カテゴリーを選択した場合
   $(".contents__detail__main__box__cate").on("change","#parent_category",function(){
     var parentCategory = document.getElementById('parent_category').value;
-    if (parentCategory != "---"){ //親カテゴリーが初期値でないことを確認
+    if (parentCategory != "---") { //親カテゴリーが初期値でないことを確認
       $.ajax({
         url: 'children',
         type: 'GET',
@@ -46,9 +46,9 @@ $('.contents__detail__main__box__cate').append(grandChildSelect);
 
   });
   // 子カテゴリーを選択した場合
-  $(".contents__detail__main__box__cate").on("change","#child-cate",function(){
+  $(".contents__detail__main__box__cate").on("change", "#child-cate", function () {
     var childCategory = document.getElementById("child-cate").value;
-    if (childCategory != "---"){ //子カテゴリーが初期値でないことを確認
+    if (childCategory != "---") { //子カテゴリーが初期値でないことを確認
       $.ajax({
         url: 'grandchildren',
         type: 'GET',

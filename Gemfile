@@ -91,4 +91,5 @@ gem 'mini_magick'
 gem 'active_hash'
 
 gem 'dotenv-rails'
+gem 'active_hash'
 
