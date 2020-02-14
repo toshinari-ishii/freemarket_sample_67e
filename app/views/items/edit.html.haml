@@ -85,7 +85,7 @@
                     発想元の地域
                   .contents__deal__main__box__area__top__required
                     必須
-                = f.select collection_select :area,Area.all, :id, :name,{prompt: "---"}, class:"contents__deal__main__box__area__select" 
+                = f.collection_select :area, Area.all,:id, :name, {prompt: "---"}, class:"contents__deal__main__box__area__select" 
               .contents__deal__main__box__days
                 .contents__deal__main__box__days__top
                   .contents__deal__main__box__days__top__font
