@@ -4,6 +4,7 @@ $(function(){
                     <input class="contents__image__form__text__js-file_group__file" type="file"
                     name="item[photos_attributes][${index}][image]"
                     id="item_photos_attributes_${index}_image"><br>
+                    <div class="js-remove"　data-index="${index}">削除</div>
                   </div>`;
     return html;
   }
