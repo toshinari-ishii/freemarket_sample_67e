@@ -47,6 +47,10 @@
             display: flex;
             &__cate{
               padding-right: 30px;
+              .parent_list {
+                z-index: 1;
+                background-color: blue;
+              }
             }
             &__brand{}
           }
