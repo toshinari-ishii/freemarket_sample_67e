@@ -54,16 +54,17 @@
                   %th
                     = "カテゴリー"
                   %td
-                    = "レディース"
+                    = @parent.name
                     %br
-                    = "トップス"
+                    = @child.name
                     %br
-                    = "Tシャツ/カットソー(半袖/袖なし)"
+                    = @grandchild.name
+                    
                 %tr
                   %th
                     = "ブランド"
                   %td
-                    = "hoge" 
+                    = @item.text 
                 %tr
                   %th
                     = "商品の状態"
@@ -80,7 +81,7 @@
                   %th
                     = "発送元の地域"
                   %td
-                    = @item.area 
+                    = @area.name
             .main__content__top__btn-box
               .main__content__top__btn-box__left
                 - if user_signed_in? && current_user.id == @item.user_id
