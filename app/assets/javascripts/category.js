@@ -17,10 +17,10 @@ $(function () {
     var grandChildSelect = `<select class="contents__detail__main__box__cate__select" name="item[category_id]" id="grandchild-cate"><option value="">---</option>
   ${insertHTML}
 </select>`
-    $('.contents__detail__main__box__cate').append(grandChildSelect);
-  }
-  // 親カテゴリーを選択した場合
-  $(".contents__detail__main__box__cate").on("change", "#parent_category", function () {
+$('.contents__detail__main__box__cate').append(grandChildSelect);
+}
+// 親カテゴリーを選択した場合
+  $(".contents__detail__main__box__cate").on("change","#parent_category",function(){
     var parentCategory = document.getElementById('parent_category').value;
     if (parentCategory != "---") { //親カテゴリーが初期値でないことを確認
       $.ajax({
@@ -29,16 +29,19 @@ $(function () {
         data: { parent_name: parentCategory },
         dataType: 'json'
       })
-        .done(function (children) {
-          var insertHTML = '';
-          children.forEach(function (child) {
-            insertHTML += appendOption(child);
-          });
-          buildChild(insertHTML);
-        })
-        .fail(function () {
-          alert('カテゴリー取得に失敗しました');
-        })
+      .done(function(children){
+        // console.log(children);
+        $('#child-cate').remove(); //親が変更された時、子以下を削除する
+        $('#grandchild-cate').remove();
+        var insertHTML = '';
+        children.forEach(function(child){
+          insertHTML += appendOption(child);
+        });
+        buildChild(insertHTML);
+      })
+      .fail(function(){
+        alert('カテゴリー取得に失敗しました');
+      })
     }
 
   });
@@ -52,16 +55,17 @@ $(function () {
         data: { child_name: childCategory },
         dataType: 'json'
       })
-        .done(function (grandchildren) {
-          var insertHTML = '';
-          grandchildren.forEach(function (grandchild) {
-            insertHTML += appendOption(grandchild);
-          });
-          buildGrandChild(insertHTML);
-        })
-        .fail(function () {
-          alert('カテゴリー取得に失敗しました');
-        })
+      .done(function(grandchildren){
+        $('#grandchild-cate').remove();
+        var insertHTML = '';
+        grandchildren.forEach(function(grandchild){
+          insertHTML += appendOption(grandchild);
+        });
+        buildGrandChild(insertHTML);
+      })
+      .fail(function(){
+        alert('カテゴリー取得に失敗しました');
+      })
     }
 
   });
