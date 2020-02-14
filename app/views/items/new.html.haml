@@ -50,17 +50,14 @@
                     カテゴリー
                   .contents__detail__main__box__cate__top__required
                     必須
-              = f.collection_select :category_id, @categories, :id, :name,{prompt: "---"},class:"contents__detail__main__box__cate__select",id:"parent_category"
-                #grandchild-cate
-
-
+                = f.collection_select :category_id, @categories, :id, :name,{prompt: "---"},class:"contents__detail__main__box__cate__select",id:"parent_category"
               .contents__detail__main__box__condition
                 .contents__detail__main__box__condition__top
                   .contents__detail__main__box__condition__top__font
                     商品の状態
                   .contents__detail__main__box__condition__top__required
                     必須
-                = f.select :condition, [ ["新品、未使用",1], ["未使用に近い", 2], ["目立った傷や汚れなし", 3], ["やや傷や汚れなし", 4], ["傷や汚れなし", 5], ["傷や汚れあり", 6], ["全体的に状態が悪い", 7] ], {prompt: "---"}, class:"contents__detail__main__box__condition__select"
+                = f.select :condition, [ ["新品、未使用","新品、未使用"], ["未使用に近い", "未使用に近い"], ["目立った傷や汚れなし", "目立った傷や汚れなし"], ["やや傷や汚れなし", "やや傷や汚れなし"], ["傷や汚れなし", "傷や汚れなし"], ["傷や汚れあり", "傷や汚れあり"], ["全体的に状態が悪い", "全体的に状態が悪い"] ], {prompt: "---"}, class:"contents__detail__main__box__condition__select"
         .contents__deal
           .contents__deal__main
             .contents__deal__main__name
@@ -80,7 +77,7 @@
                   .contents__deal__main__box__area__top__required
                     必須
                
-                = f.select collection_select :area,Area.all, :id, :name,{prompt: "---"}, class:"contents__deal__main__box__area__select"
+                = f.collection_select :area,Area.all, :id, :name,{prompt: "---"}, class:"contents__deal__main__box__area__select"
 
               .contents__deal__main__box__days
                 .contents__deal__main__box__days__top
