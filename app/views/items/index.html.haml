@@ -92,8 +92,8 @@
         %h2.index-contents__pickupContainer__head ピックアップカテゴリー
         .index-contents__pickupContainer__productBox
           .index-contents__pickupContainer__productBox__productHead
-            = link_to, item
-              %h3.index-contents__pickupContainer__productBox__productHead__title 新規投稿商品
+            -# = link_to, item
+            %h3.index-contents__pickupContainer__productBox__productHead__title 新規投稿商品
           .index-contents__pickupContainer__productBox__productLists
             - @items.first(3).each do |t|
               .index-contents__pickupContainer__productBox__productLists__productList
