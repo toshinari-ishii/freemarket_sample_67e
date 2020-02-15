@@ -36,7 +36,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-    @area = Area.find(params[:id])
+    @area = Area.find(@item.area)
     @photos = @item.photos
     @user = @item.user
     @grandchild = Category.find(@item.category_id)  

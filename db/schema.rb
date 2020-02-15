@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2020_02_13_122616) do
     t.string "condition", null: false
     t.integer "burden", null: false
     t.string "area", null: false
-    t.integer "day", null: false
+    t.string "day", null: false
     t.integer "price", null: false
     t.bigint "category_id", null: false
     t.bigint "user_id", null: false

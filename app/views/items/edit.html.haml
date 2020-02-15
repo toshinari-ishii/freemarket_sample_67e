@@ -34,16 +34,8 @@
                     = i.check_box :_destroy, data:{ index: i.index }, class: 'hidden-destroy'
                 - if @item.persisted?
                   .contents__image__form__text__js-file_group{data:{index:"#{@photos.count}"}}
-                    = file_field_tag :image, name: "item[images_attributes][#{@photos.count}][image]",class:"contents__image__form__text__js-file_group__file"
-                    .js-remove 削除
-                  -# .contents__image__form__text__js-file_group{data:{index:@photos.count}}
-                    -#   = file_field_tag :image, name: "item[images_attributes][#{@photos.count}][image]", class: 'contents__image__form__text__js-file_group__file'
-                    -#     .js-remove 削除
-
-            -# .image
-            -#   -@photos.each do |p|
-            -#     = image_tag ("#{p.image}"),width:"100px",height:"100px"
-            -#     = "削除"            
+                    = file_field_tag :image, name: "item[photos_attributes][#{@photos.count}][image]",class:"contents__image__form__text__js-file_group__file"
+                    .js-remove 削除       
           .contents__name__top
             .contents__name__top__font
               商品名
@@ -68,16 +60,16 @@
                     カテゴリー
                   .contents__detail__main__box__cate__top__required
                     必須
-                = f.collection_select :category_id,@categories, :id, :name,{prompt: @parent},class:"contents__detail__main__box__cate__select",id:"parent_category"
-                = f.collection_select :category_id,@children, :id, :name,{prompt: "---"},class:"contents__detail__main__box__cate__select",id:"parent_category"
-                = f.collection_select :category_id,@grandchildren, :id, :name,{prompt: "---"},class:"contents__detail__main__box__cate__select",id:"parent_category"
+                = f.collection_select :category_id,@categories, :id, :name,{prompt: "---"},class:"contents__detail__main__box__cate__select",id:"parent_category"
+                = f.collection_select :category_id,@children, :id, :name,{prompt: "---"},class:"contents__detail__main__box__cate__select",id:"edit-children"
+                = f.collection_select :category_id,@grandchildren, :id, :name,{prompt: "---"},class:"contents__detail__main__box__cate__select",id:"edit-grandchildren"
               .contents__detail__main__box__condition
                 .contents__detail__main__box__condition__top
                   .contents__detail__main__box__condition__top__font
                     商品の状態
                   .contents__detail__main__box__condition__top__required
                     必須
-                = f.select :condition, [ ["新品、未使用",1], ["未使用に近い", 2], ["目立った傷や汚れなし", 3], ["やや傷や汚れなし", 4], ["傷や汚れなし", 5], ["傷や汚れあり", 6], ["全体的に状態が悪い", 7] ], {prompt: "---"}, class:"contents__detail__main__box__condition__select"
+                = f.select :condition, [ ["新品、未使用","新品、未使用"], ["未使用に近い", "未使用に近い"], ["目立った傷や汚れなし", "目立った傷や汚れなし"], ["やや傷や汚れなし", "やや傷や汚れなし"], ["傷や汚れなし", "傷や汚れなし"], ["傷や汚れあり", "傷や汚れあり"], ["全体的に状態が悪い", "全体的に状態が悪い"] ], {prompt: "---"}, class:"contents__detail__main__box__condition__select"
         .contents__deal
           .contents__deal__main
             .contents__deal__main__name
@@ -103,7 +95,7 @@
                     発送までの日数
                   .contents__deal__main__box__days__top__required
                     必須
-                = f.select :day, [ ["1~2日で発送",1], ["2~3日で発送", 2], ["4~7日で発送", 2] ], {prompt: "---"}, class:"contents__deal__main__box__days__select"
+                = f.select :day, [ ["1~2日で発送","1~2日で発送"], ["2~3日で発送", "2~3日で発送"], ["4~7日で発送", "4~7日で発送"] ], {prompt: "---"}, class:"contents__deal__main__box__days__select"
         .contents__money
           .contents__money__main
             .contets__money__main__name
