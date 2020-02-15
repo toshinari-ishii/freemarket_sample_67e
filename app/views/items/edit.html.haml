@@ -18,21 +18,32 @@
           .contents__image__text
             最大10枚までアップロードします
           .contents__image__form
-            %label
-              .contents__image__form__text
-                %b
-                  ドラッグアンドドロップ
-                  %br
-                  またはクリックしてファイルをアップロード
-                #image-box
-                  = f.fields_for :photos do |i|
-                    .contents__image__form__text__js-file_group{data:{index:i.index}}
-                      = i.file_field :image,class:"contents__image__form__text__js-file_group__file"
-                      .js-remove 削除
-              .image
-                -@photos.each do |p|
-                  = image_tag ("#{p.image}"),width:"100px",height:"100px"
-                  = "削除"            
+            .contents__image__form__text
+              -@photos.each_with_index do |p,i|
+                = image_tag ("#{p.image}"),width:"100px",height:"100px" 
+              %b
+                ドラッグアンドドロップ
+                %br
+                またはクリックしてファイルをアップロード
+              #image-box
+                = f.fields_for :photos do |i|
+                  .contents__image__form__text__js-file_group{data:{index:i.index}}
+                    = i.file_field :image,class:"contents__image__form__text__js-file_group__file"
+                    .js-remove 削除
+                  - if @item.persisted?
+                    = i.check_box :_destroy, data:{ index: i.index }, class: 'hidden-destroy'
+                - if @item.persisted?
+                  .contents__image__form__text__js-file_group{data:{index:"#{@photos.count}"}}
+                    = file_field_tag :image, name: "item[images_attributes][#{@photos.count}][image]",class:"contents__image__form__text__js-file_group__file"
+                    .js-remove 削除
+                  -# .contents__image__form__text__js-file_group{data:{index:@photos.count}}
+                    -#   = file_field_tag :image, name: "item[images_attributes][#{@photos.count}][image]", class: 'contents__image__form__text__js-file_group__file'
+                    -#     .js-remove 削除
+
+            -# .image
+            -#   -@photos.each do |p|
+            -#     = image_tag ("#{p.image}"),width:"100px",height:"100px"
+            -#     = "削除"            
           .contents__name__top
             .contents__name__top__font
               商品名
@@ -57,7 +68,7 @@
                     カテゴリー
                   .contents__detail__main__box__cate__top__required
                     必須
-                = f.collection_select :category_id,@parents, :id, :name,{prompt: @parent},class:"contents__detail__main__box__cate__select",id:"parent_category"
+                = f.collection_select :category_id,@categories, :id, :name,{prompt: @parent},class:"contents__detail__main__box__cate__select",id:"parent_category"
                 = f.collection_select :category_id,@children, :id, :name,{prompt: "---"},class:"contents__detail__main__box__cate__select",id:"parent_category"
                 = f.collection_select :category_id,@grandchildren, :id, :name,{prompt: "---"},class:"contents__detail__main__box__cate__select",id:"parent_category"
               .contents__detail__main__box__condition
@@ -136,4 +147,3 @@
       .footer__logo
         = image_tag "logo-white.png", size: "120x70"
       %small © FURIMA, Inc.
-    
