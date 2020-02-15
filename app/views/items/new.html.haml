@@ -15,13 +15,6 @@
           .contents__image__text
             最大10枚までアップロードします
           .contents__image__form
-            -# .contents__image__form__text
-            -#   #image-box
-            -#     = f.fields_for :photos do |i|
-            -#       .contents__image__form__text__js-file_group{data:{index:i.index}}
-            -#         = i.file_field :image,class:"contents__image__form__text__js-file_group__file"
-            -#         .contents__image__form__text__js-file_group__js-remove 削除
-            -# %label
             .contents__image__form__text
               %br
                 ドラッグアンドドロップ
@@ -31,9 +24,7 @@
                 = f.fields_for :photos do |i|
                   .contents__image__form__text__js-file_group{data:{index:i.index}}
                     = i.file_field :image,class:"contents__image__form__text__js-file_group__file"
-                    -# .js-remove 削除
                     .js-remove{data:{index:i.index}}　削除
-                    -#   削除
           .contents__name__top
             .contents__name__top__font
               商品名
