@@ -6,7 +6,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string :condition, null: false
       t.integer :burden, null: false
       t.string :area, null: false
-      t.integer :day, null: false
+      t.string :day, null: false
       t.integer :price, null: false
       t.references :category, null: false, foreign_key: true
       t.references :user, null: false, foreign_key: true

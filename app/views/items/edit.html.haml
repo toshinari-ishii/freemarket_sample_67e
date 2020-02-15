@@ -69,7 +69,7 @@
                     商品の状態
                   .contents__detail__main__box__condition__top__required
                     必須
-                = f.select :condition, [ ["新品、未使用",1], ["未使用に近い", 2], ["目立った傷や汚れなし", 3], ["やや傷や汚れなし", 4], ["傷や汚れなし", 5], ["傷や汚れあり", 6], ["全体的に状態が悪い", 7] ], {prompt: "---"}, class:"contents__detail__main__box__condition__select"
+                = f.select :condition, [ ["新品、未使用","新品、未使用"], ["未使用に近い", "未使用に近い"], ["目立った傷や汚れなし", "目立った傷や汚れなし"], ["やや傷や汚れなし", "やや傷や汚れなし"], ["傷や汚れなし", "傷や汚れなし"], ["傷や汚れあり", "傷や汚れあり"], ["全体的に状態が悪い", "全体的に状態が悪い"] ], {prompt: "---"}, class:"contents__detail__main__box__condition__select"
         .contents__deal
           .contents__deal__main
             .contents__deal__main__name
@@ -95,7 +95,7 @@
                     発送までの日数
                   .contents__deal__main__box__days__top__required
                     必須
-                = f.select :day, [ ["1~2日で発送",1], ["2~3日で発送", 2], ["4~7日で発送", 2] ], {prompt: "---"}, class:"contents__deal__main__box__days__select"
+                = f.select :day, [ ["1~2日で発送","1~2日で発送"], ["2~3日で発送", "2~3日で発送"], ["4~7日で発送", "4~7日で発送"] ], {prompt: "---"}, class:"contents__deal__main__box__days__select"
         .contents__money
           .contents__money__main
             .contets__money__main__name
