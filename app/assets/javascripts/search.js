@@ -2,15 +2,15 @@ $(function() {
   // 親カテゴリーを表示するための処理です。
   function buildParentHTML(parent){
     var html =`<a class="parent_category" id="${parent.id}" 
-                href="/category/${parent.id}">${parent.name}</a><br>`;
+                href="/category/${parent.id}">${parent.name}</a><br class="parent_category">`;
     return html;
   }
 
   $(".rootCategory").on("mouseover", function() {
+    $(".parent_category").remove();
     $.ajax({
       type: 'GET',
-      url: '/categories/new',//とりあえずここでは、newアクションに飛ばしてます
-      // data: {parent_id: id},//どの親の要素かを送ります　params[:parent_id]で送られる
+      url: '/category_parent',
       dataType: 'json'
     })
     .done(function(parents) {
@@ -24,23 +24,23 @@ $(function() {
     });
   });
 
+
+
   // 子カテゴリーを追加するための処理です。
   function buildChildHTML(child){
     var html =`<a class="child_category" id="${child.id}" 
-                href="/category/${child.id}">${child.name}</a>`;
+                href="/category/${child.id}">${child.name}</a><br class="child_category">`;
     return html;
   }
 
-  $(".parent_category").on("mouseover", function() {
+  $(document).on("mouseover", ".parent_category", function() {
     var id = this.id//どのリンクにマウスが乗ってるのか取得します
-    $(".now-selected-red").removeClass("now-selected-red")//赤色のcssのためです
-    $('#' + id).addClass("now-selected-red");//赤色のcssのためです
-    $(".child_category").remove();//一旦出ている子カテゴリ消します！
-    $(".grand_child_category").remove();//孫、てめえもだ！
+    $(".child_category").remove();
+    $(".grand_child_category").remove();
     $.ajax({
       type: 'GET',
-      url: '/category/new',//とりあえずここでは、newアクションに飛ばしてます
-      data: {parent_id: id},//どの親の要素かを送ります　params[:parent_id]で送られる
+      url: '/category_child',
+      data: {parent_id: id},
       dataType: 'json'
     })
     .done(function(children) {
@@ -51,5 +51,29 @@ $(function() {
     });
   });
 
+
+  // 孫カテゴリーを追加するための処理です。
+  function buildGrandChildHTML(child){
+    var html =`<a class="grand_child_category" id="${child.id}" 
+                href="/category/${child.id}">${child.name}</a><br class="grand_child_category">`;
+    return html;
+  }
+
+  $(document).on("mouseover", ".child_category", function() {
+    var id = this.id//どのリンクにマウスが乗ってるのか取得します
+    $(".grand_child_category").remove();
+    $.ajax({
+      type: 'GET',
+      url: '/category_grand_child',
+      data: {child_id: id},
+      dataType: 'json'
+    })
+    .done(function(children) {
+      children.forEach(function (child) {//帰ってきた子カテゴリー（配列）
+        var html = buildGrandChildHTML(child);//HTMLにして
+        $(".grand_children_list").append(html);//リストに追加します
+      })
+    });
+  });
 
 });

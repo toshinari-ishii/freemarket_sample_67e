@@ -38,3 +38,4 @@
 
     });
   },false);
+console.log(document)

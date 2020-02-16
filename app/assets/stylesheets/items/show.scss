@@ -52,6 +52,18 @@
                 position: absolute;
                 background-color: blue;
               }
+              .children_list {
+                z-index: 100;
+                position: absolute;
+                left: 240px;
+                background-color: red;
+              }
+              .grand_children_list {
+                z-index: 100;
+                position: absolute;
+                left: 450px;
+                background-color: green;
+              }
             }
             &__brand{}
           }
