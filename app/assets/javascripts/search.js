@@ -16,7 +16,7 @@ $(function() {
     .done(function(parents) {
       parents.forEach(function (parent) {//帰ってきた子カテゴリー（配列）
         var html = buildParentHTML(parent);//HTMLにして
-        $(".parent_list").append(html);//リストに追加します
+        $(".parents_list").append(html);//リストに追加します
       })
     })
     .fail(function(){
