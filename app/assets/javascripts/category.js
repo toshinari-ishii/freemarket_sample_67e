@@ -31,8 +31,8 @@ $('.contents__detail__main__box__cate').append(grandChildSelect);
       })
       .done(function(children){
         // console.log(children);
-        $("#edit-children").remove();
-        $("#edit-grandchildren").remove();
+        // $("#edit-children").remove();
+        // $("#edit-grandchildren").remove();
         $('#child-cate').remove(); //親が変更された時、子以下を削除する
         $('#grandchild-cate').remove();
         var insertHTML = '';

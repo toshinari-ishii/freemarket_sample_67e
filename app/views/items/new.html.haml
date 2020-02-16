@@ -2,8 +2,8 @@
   .new
     .header
       = image_tag "logo.png", size: "185x49"
-    .contents
-      = form_for @item do |f|
+    = form_for @item do |f|
+      .contents
         .contents__header
           商品の情報を入力
         .contents__image
@@ -14,17 +14,19 @@
               必須
           .contents__image__text
             最大10枚までアップロードします
-          .contents__image__form
-            .contents__image__form__text
-              %br
-                ドラッグアンドドロップ
-                %br
-                またはクリックしてファイルをアップロード
+          .contents__image__main
+            .contents__image__main__left
+              -# .contents__image__main__left__box
+              -#   .contents__image__main__left__box__image
+                -# .contents__image__main__left__box__btns
+                -#   .contents__image__main__left__box__btns__remove
+            %label.contents__image__main__right
               #image-box
                 = f.fields_for :photos do |i|
-                  .contents__image__form__text__js-file_group{data:{index:i.index}}
-                    = i.file_field :image,class:"contents__image__form__text__js-file_group__file"
-                    .js-remove{data:{index:i.index}}　削除
+                  .contents__image__main__right__group{data:{index:i.index}}
+                    = i.file_field :image,class:"contents__image__main__right__group__file"
+                  = "画像を選択"
+        .contents__name
           .contents__name__top
             .contents__name__top__font
               商品名
@@ -128,3 +130,72 @@
       .footer__logo
         = image_tag "logo-white.png", size: "120x70"
       %small © FURIMA, Inc.
+
+
+
+    -# -# .header
+    -# -#   = image_tag "logo.png", size: "185x49"
+    -# -# .contents
+    -# -#   = form_for @item do |f|
+    -# -#     .contents__header
+    -#       商品の情報を入力
+    -#     .contents__image
+    -#       .contents__image__top
+    -#         .contents__image__top__font
+    -#           出品画像
+    -#         .contents__image__top__required
+    -#           必須
+    -#       .contents__image__text
+    -#         最大10枚までアップロードします
+    -#       .contents__image__form
+    -#         .contents__image__form__text
+    -#           %br
+    -#             ドラッグアンドドロップ
+    -#             %br
+    -#             またはクリックしてファイルをアップロード
+              -# #image-box
+              -#   = f.fields_for :photos do |i|
+              -#     .contents__image__form__text__js-file_group{data:{index:i.index}}
+              -#       = i.file_field :image,class:"contents__image__form__text__js-file_group__file"
+              -#       .js-remove{data:{index:i.index}}　削除
+
+-# .item
+-#   .new
+-#     = form_for @item do |f|
+-#     .contents
+-#       .contents__left
+-#       %label.contents__right
+-#         #image-box
+-#           = f.fields_for :photos do |i|
+-#             .contents__right__group{data:{index:i.index}}
+-#               = i.file_field :name,class:"contents__right__group__file"
+-#             = "ドラッグアンドドロップ "
+-#       .contents__left2
+-#       %label.contents__right
+-#         #image-box
+-#           = f.fields_for :photos do |i|
+-#             .contents__right__group{data:{index:i.index}}
+-#               = i.file_field :name,class:"contents__right__group__file"
+-#             = "ドラッグアンドドロップ "
+    -# = form_for @item do |f|
+    -#   .contents__header
+    -#     商品の情報を入力
+    -#   .contents__image
+    -#     .contents__image__top
+    -#       .contents__image__top__font
+    -#         出品画像
+    -#       .contents__image__top__required
+    -#         必須
+    -#     .contents__image__text
+    -#       最大10枚までアップロードします
+    -#     .contents__image__form
+    -#       .contents__image__form__text
+    -#         %br
+    -#           ドラッグアンドドロップ
+    -#           %br
+    -#           またはクリックしてファイルをアップロード
+    -#         #image-box
+    -#           = f.fields_for :photos do |i|
+    -#             .contents__image__form__text__js-file_group{data:{index:i.index}}
+    -#               = i.file_field :image,class:"contents__image__form__text__js-file_group__file"
+    -#               .js-remove{data:{index:i.index}}　削除
