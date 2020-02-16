@@ -48,7 +48,8 @@
             &__cate{
               padding-right: 30px;
               .parent_list {
-                z-index: 1;
+                z-index: 100;
+                position: absolute;
                 background-color: blue;
               }
             }
