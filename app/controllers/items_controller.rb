@@ -63,7 +63,7 @@ class ItemsController < ApplicationController
       redirect_to new_card_path
       flash[:noCard] = "Cardが登録されていませんので登録してください"
     else
-      Payjp.api_key = ENV['PAYJP_SECRET_KEY']
+      Payjp.api_key = Rails.application.credentials.payjp[:secret_access_key]
       Payjp::Charge.create(
         amount: @item.price, # Payjpに載る金額
         customer: card.customer_id, # 顧客ID
