@@ -36,8 +36,15 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @area = Area.find(@item.area)
     @photos = @item.photos
     @user = @item.user
+    @grandchild = Category.find(@item.category_id)  
+    @grandchildren = @grandchild.siblings
+    @child = @grandchild.parent
+    @parent = @child.parent
+    @children = @child.siblings
+    @parents = @parent.siblings
   end
   
   def buy
@@ -89,11 +96,12 @@ class ItemsController < ApplicationController
     @parent = @child.parent
     @children = @child.siblings
     @parents = @parent.siblings
-    @photos = Photo.where(item_id: params[:id])
+    # @photos = Photo.where(item_id: params[:id])
 
   end
 
   def update
+    @item = Item.find(params[:id])
     if @item.update(item_params)
       redirect_to root_path
     else
@@ -103,7 +111,7 @@ class ItemsController < ApplicationController
   
   private
   def item_params
-    params.require(:item).permit(:name, :text,:condition,:burden, :area, :day, :price, :category_id, :user_id, :buyer , photos_attributes: [:image]).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :text,:condition,:burden, :area, :day, :price, :category_id, :user_id, :buyer , photos_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
   end
 
   
