@@ -54,16 +54,17 @@
                   %th
                     = "カテゴリー"
                   %td
-                    = "レディース"
+                    = @parent.name
                     %br
-                    = "トップス"
+                    = @child.name
                     %br
-                    = "Tシャツ/カットソー(半袖/袖なし)"
+                    = @grandchild.name
+                    
                 %tr
                   %th
                     = "ブランド"
                   %td
-                    = "hoge" 
+                    = @item.text 
                 %tr
                   %th
                     = "商品の状態"
@@ -72,15 +73,15 @@
                 %tr
                   %th
                     = "配送料の負担"
-                    - if @item.burden == 0
-                      %td="出品者負担"
+                    - if @item.burden == 1
+                      %td="送料込み(出品者負担)"
                     - else
-                      %td="購入者負担"
+                      %td="着払い(購入者負担)"
                 %tr
                   %th
                     = "発送元の地域"
                   %td
-                    = @item.area 
+                    = @area.name
             .main__content__top__btn-box
               .main__content__top__btn-box__left
                 - if user_signed_in? && current_user.id == @item.user_id
