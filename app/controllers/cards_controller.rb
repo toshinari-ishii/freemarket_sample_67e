@@ -3,7 +3,9 @@ class CardsController < ApplicationController
   before_action :set_card, only: [:new, :delete, :show]
 
   def new
-    redirect_to card_path(id: @card.user_id) if @card.present?
+    if @card.present?
+      redirect_to card_path(id: @card.user_id)
+    end
   end
 
   def create #PayjpとCardのデータベースを作成
@@ -54,4 +56,4 @@ class CardsController < ApplicationController
   def set_card
     @card = current_user.card if Card.where(user_id: current_user.id).present?
   end
-
+end
