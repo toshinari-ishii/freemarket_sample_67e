@@ -26,7 +26,7 @@ $(function(){
     if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
       img.setAttribute('image', blobUrl);
     } else {  // 新規画像追加の処理
-      $('.contents__image__form__text').prepend(buildImg(targetIndex, blobUrl));
+      $('.contents__image__form__text').append(buildImg(targetIndex, blobUrl));
       // fileIndexの先頭の数字を使ってinputを作る
       $('#image-box').append(buildFile(fileIndex[0]));
       fileIndex.shift();
@@ -36,10 +36,11 @@ $(function(){
   });
   $("#image-box").on("click", ".js-remove",function(){
     const targetIndex = $(this).parent().data('index');
+    const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
+    if (hiddenCheck) hiddenCheck.prop('checked', true);
     $(this).parent().remove();
     $(`img[data-index="${targetIndex}"]`).remove();
     // 画像入力欄が0個にならないようにしておく
     if ($(".contents__image__form__text__js-file_group__file").length == 0) $("image-box").append(buildFile(fileIndex[0]));
   });
- 
 });

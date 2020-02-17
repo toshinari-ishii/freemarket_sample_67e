@@ -15,17 +15,16 @@
           .contents__image__text
             最大10枚までアップロードします
           .contents__image__form
-            %label
-              .contents__image__form__text
-                %b
-                  ドラッグアンドドロップ
-                  %br
-                  またはクリックしてファイルをアップロード
-                #image-box
-                  = f.fields_for :photos do |i|
-                    .contents__image__form__text__js-file_group{data:{index:i.index}}
-                      = i.file_field :image,class:"contents__image__form__text__js-file_group__file"
-                      .js-remove 削除
+            .contents__image__form__text
+              %br
+                ドラッグアンドドロップ
+                %br
+                またはクリックしてファイルをアップロード
+              #image-box
+                = f.fields_for :photos do |i|
+                  .contents__image__form__text__js-file_group{data:{index:i.index}}
+                    = i.file_field :image,class:"contents__image__form__text__js-file_group__file"
+                    .js-remove{data:{index:i.index}}　削除
           .contents__name__top
             .contents__name__top__font
               商品名
@@ -85,7 +84,7 @@
                     発送までの日数
                   .contents__deal__main__box__days__top__required
                     必須
-                = f.select :day, [ ["1~2日で発送",1], ["2~3日で発送", 2], ["4~7日で発送", 2] ], {prompt: "---"}, class:"contents__deal__main__box__days__select"
+                = f.select :day, [ ["1~2日で発送","1~2日で発送"], ["2~3日で発送", "2~3日で発送"], ["4~7日で発送", "4~7日で発送"] ], {prompt: "---"}, class:"contents__deal__main__box__days__select"
         .contents__money
           .contents__money__main
             .contets__money__main__name
