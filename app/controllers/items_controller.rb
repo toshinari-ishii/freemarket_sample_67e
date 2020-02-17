@@ -46,10 +46,6 @@ class ItemsController < ApplicationController
     @children = @child.siblings
     @parents = @parent.siblings
   end
-  
-  def buy
-    
-  end
 
 
   def confirm
