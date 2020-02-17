@@ -24,6 +24,9 @@ Rails.application.routes.draw do
     end
   end
   resources :users, only: [:show]
-  resources :categories, only: [:new], format: "json"
+  
+  get "category_parent", to: "categories#parent"
+  get "category_child", to: "categories#child"
+  get "category_grand_child", to: "categories#grand_child"
 end
    
