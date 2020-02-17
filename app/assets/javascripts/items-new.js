@@ -43,5 +43,4 @@ $(function(){
     // 画像入力欄が0個にならないようにしておく
     if ($(".contents__image__form__text__js-file_group__file").length == 0) $("image-box").append(buildFile(fileIndex[0]));
   });
- 
 });
