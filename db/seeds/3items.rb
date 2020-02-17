@@ -4,7 +4,7 @@ Item.create!(
   text: "数回しか使っていません",
   condition: "良好",
   burden: 0, # 0は発送者負担、1は購入者負担
-  area: "北海道",
+  area: 1,
   day: 1,
   price: 20000,
   category_id: 68,
@@ -20,7 +20,7 @@ Item.create!(
   text: "数回しか使っていません",
   condition: "良好",
   burden: 0, # 0は発送者負担、1は購入者負担
-  area: "青森県",
+  area: 2,
   day: 2,
   price: 1000000,
   category_id: 324,
@@ -36,7 +36,7 @@ Item.create!(
   text: "数回しか使っていません",
   condition: "普通",
   burden: 0, # 0は発送者負担、1は購入者負担
-  area: "秋田県",
+  area: 3,
   day: 3,
   price: 1200,
   category_id: 442,
@@ -51,7 +51,7 @@ Item.create!(
   text: "数回しか使っていません",
   condition: "良好",
   burden: 0, # 0は発送者負担、1は購入者負担
-  area: "福島県",
+  area: 4,
   day: 4,
   price: 4500,
   category_id: 577,
@@ -66,7 +66,7 @@ Item.create!(
   text: "数回しか使っていません",
   condition: "良好",
   burden: 0, # 0は発送者負担、1は購入者負担
-  area: "新潟県",
+  area: 5,
   day: 5,
   price: 500,
   category_id: 644,
@@ -82,7 +82,7 @@ Item.create!(
   text: "数回しか使っていません",
   condition: "良好",
   burden: 1, # 0は発送者負担、1は購入者負担
-  area: "石川県",
+  area: 6,
   day: 6,
   price: 12000,
   category_id: 728,
@@ -98,7 +98,7 @@ Item.create!(
   text: "数回しか使っていません",
   condition: "良好",
   burden: 1, # 0は発送者負担、1は購入者負担
-  area: "静岡県",
+  area: 7,
   day: 7,
   price: 5000,
   category_id: 837,
@@ -114,7 +114,7 @@ Item.create!(
   text: "数回しか使っていません",
   condition: "良好",
   burden: 1, # 0は発送者負担、1は購入者負担
-  area: "山梨県",
+  area: 8,
   day: 8,
   price: 35000,
   category_id: 900,
@@ -130,7 +130,7 @@ Item.create!(
   text: "数回しか使っていません",
   condition: "良好",
   burden: 1, # 0は発送者負担、1は購入者負担
-  area: "栃木県",
+  area: 9,
   day: 9,
   price: 100000,
   category_id: 1002,
@@ -146,7 +146,7 @@ Item.create!(
   text: "希少",
   condition: "残りわずか",
   burden: 1, # 0は発送者負担、1は購入者負担
-  area: "千葉県",
+  area: 10,
   day: 10,
   price: 15000,
   category_id: 1150,
