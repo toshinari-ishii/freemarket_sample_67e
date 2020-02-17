@@ -3,7 +3,9 @@ class CardsController < ApplicationController
   before_action :set_card, only: [:new, :delete, :show]
 
   def new
-    redirect_to card_path(id: @card.user_id) if @card.present?
+    if @card.present?
+      redirect_to card_path(id: @card.user_id)
+    end
   end
 
   def create #PayjpとCardのデータベースを作成
@@ -19,13 +21,13 @@ class CardsController < ApplicationController
         card: params['payjp-token'], # 直前のnewアクションで発行され、送られてくるトークンをここで顧客に紐付けて永久保存します。
         metadata: {user_id: current_user.id} # 無くてもOK。
       )
+    end
       @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
         redirect_to cards_path(id: @card.user_id)
       else
         redirect_to action: "create"
       end
-    end
   end
 
   def show #Cardのデータをpayjpに送り情報を取り出します
@@ -53,5 +55,7 @@ class CardsController < ApplicationController
 
   def set_card
     @card = current_user.card if Card.where(user_id: current_user.id).present?
+    end
   end
+  
 
