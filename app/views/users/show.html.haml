@@ -42,7 +42,7 @@
             - @items.each do |item|
               .main__itembox__itemsbox__room
                 .main__itembox__itemsbox__room__item
-                  -# = image_tag item.photos[0].image, size: "200x220"
+                  = image_tag "a007.png", size: "200x220"
                 .main__itembox__itemsbox__room__detail
                   .main__itembox__itemsbox__room__detail__name
                     = item.name
@@ -51,18 +51,47 @@
                       = "¥#{item.price.to_s(:delimited)}"
                     .main__itembox__itemsbox__room__detail__price-box__icon
                       %i.far.fa-heart 30
+              .main__itembox__itemsbox__room
+                .main__itembox__itemsbox__room__item
+                  = image_tag "a007.png", size: "200x220"
+                .main__itembox__itemsbox__room__detail
+                  .main__itembox__itemsbox__room__detail__name
+                    = item.name
+                  .main__itembox__itemsbox__room__detail__price-box
+                    .main__itembox__itemsbox__room__detail__price-box__price
+                      = "¥#{item.price.to_s(:delimited)}"
+                    .main__itembox__itemsbox__room__detail__price-box__icon
+                      %i.far.fa-heart 30
+              .main__itembox__itemsbox__room
+                .main__itembox__itemsbox__room__item
+                  = image_tag "a007.png", size: "200x220"
+                .main__itembox__itemsbox__room__detail
+                  .main__itembox__itemsbox__room__detail__name
+                    = item.name
+                  .main__itembox__itemsbox__room__detail__price-box
+                    .main__itembox__itemsbox__room__detail__price-box__price
+                      = "¥#{item.price.to_s(:delimited)}"
+                    .main__itembox__itemsbox__room__detail__price-box__icon
+                      %i.far.fa-heart 30                
+       
 
-          %a{:href => "#"}
+          %a{:href => "items/new"}
         .purchaseBtn
           %span.purchaseBtn__text 出品する
-          %img.purchaseBtn__icon{:src => "/assets/icon_camera.png"}/
-          %a{:href => "#"}
+          = link_to image_tag("icon_camera.png", alt: "アップルリンク画像", class: "purchaseBtn__icon")
+
         .purchaseBtn1
           %span.purchaseBtn1__text
             = link_to "カード登録", new_card_path
           %span.purchaseBtn1__text
             = link_to "カード確認", card_path
           = image_tag '39894.png', class: "purchaseBtn1__icon"
+
+        
+          
+
+
+
 
 .items
   .show
