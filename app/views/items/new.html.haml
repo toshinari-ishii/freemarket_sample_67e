@@ -15,12 +15,16 @@
           .contents__image__text
             最大10枚までアップロードします
           .contents__image__main
-            .contents__image__main__left
+            -# .contents__image__main__box
+            -#   .contents__image__main__box__image
+            -#   .contents__image__main__box__btns
+            -#     .contents__image__main__box__btns__remove
+            -# .contents__image__main__left
               -# .contents__image__main__left__box
               -#   .contents__image__main__left__box__image
                 -# .contents__image__main__left__box__btns
                 -#   .contents__image__main__left__box__btns__remove
-            %label.contents__image__main__right
+            %label.contents__image__main__right#label{for: "item_photos_attributes_0_image"}
               #image-box
                 = f.fields_for :photos do |i|
                   .contents__image__main__right__group{data:{index:i.index}}

@@ -45,7 +45,7 @@
         font-weight: 600;
       }
       &__image{
-        height: 600px;
+        height: 400px;
         @include content;
           &__top{
           @include topbox;
@@ -56,12 +56,12 @@
     &__main{
         // background-color: blue;
         display: flex;
-        width: 600px;
-        height: 120px;
         flex-wrap: wrap;
-        &__left{
-          display: flex;
-          flex-wrap: wrap;
+        width: 550px;
+        height: 120px;
+        // &__left{
+        //   display: flex;
+        //   flex-wrap: wrap;
           &__box{
             margin: 5px;
           &__image{
@@ -76,7 +76,7 @@
             }
           }
         }
-        }
+        // }
         &__right{
           height: 140px;
           flex: 1;
@@ -88,7 +88,7 @@
           cursor: pointer;
           &__group{
             &__file{
-              // display: none; 
+              display: none; 
             }
           }
         }

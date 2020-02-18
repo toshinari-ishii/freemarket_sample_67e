@@ -61,7 +61,7 @@
                   .contents__detail__main__box__cate__top__required
                     必須
                 = f.collection_select :category_id,@categories, :id, :name,{prompt: "---"},class:"contents__detail__main__box__cate__select",id:"parent_category"
-                = f.collection_select :category_id,@children, :id, :name,{prompt: "---"},class:"contents__detail__main__box__cate__select",id:"edit-children"
+                = f.collection_select :category_id,@children, :id, :name,{prompt: "---", selected: @child.id},class:"contents__detail__main__box__cate__select",id:"edit-children"
                 = f.collection_select :category_id,@grandchildren, :id, :name,{prompt: "---"},class:"contents__detail__main__box__cate__select",id:"edit-grandchildren"
               .contents__detail__main__box__condition
                 .contents__detail__main__box__condition__top
