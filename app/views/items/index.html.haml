@@ -92,7 +92,6 @@
         %h2.index-contents__pickupContainer__head ピックアップカテゴリー
         .index-contents__pickupContainer__productBox
           .index-contents__pickupContainer__productBox__productHead
-            -# = link_to, item
             %h3.index-contents__pickupContainer__productBox__productHead__title 新規投稿商品
           .index-contents__pickupContainer__productBox__productLists
             - @items.first(3).each do |t|
@@ -143,10 +142,9 @@
               = link_to image_tag("app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg", alt: "アップルリンク画像")
             .banner__inner__icon__googlebox
               = link_to image_tag("google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg", alt: "グーグルリンク画像")
-    %a{:href => "items/new"}
       .purchaseBtn
         %span.purchaseBtn__text 出品する
-        = link_to image_tag("icon_camera.png", alt: "アップルリンク画像", class: "purchaseBtn__icon")
+        = link_to image_tag("icon_camera.png", class: "purchaseBtn__icon"), "items/new"
   .show
     = render partial: 'module/footer'
 
