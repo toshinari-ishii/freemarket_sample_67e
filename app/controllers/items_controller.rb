@@ -70,7 +70,7 @@ class ItemsController < ApplicationController
         currency: 'jpy'
       )
       redirect_to '/'
-      flash[:notice] = "購入が完了しました　また貯金が減ったで！！！"
+      flash[:notice] = "購入が完了しました"
     end
   end
 
