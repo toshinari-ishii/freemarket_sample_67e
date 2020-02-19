@@ -44,11 +44,11 @@ user3 = User.new(
   password: "Third3333", 
   created_at: DateTime.now, 
   updated_at: DateTime.now,
-  nickname: "中条あやみ",
-  last_name: "中条",
-  first_name: "あやみ",
-  first_hurigana: "あやみ",
-  last_hurigana: "なかじょう",
+  nickname: "出品太郎",
+  last_name: "出品",
+  first_name: "太郎",
+  first_hurigana: "たろう",
+  last_hurigana: "しゅっぴん",
   birthday: "1997-02-04",
   postcode: "333-3333",
   prefecture: "富山県",
@@ -104,11 +104,11 @@ user6 = User.new(
   password: "Sixth6666", 
   created_at: DateTime.now, 
   updated_at: DateTime.now,
-  nickname: "橋本環奈",
-  last_name: "橋本",
-  first_name: "環奈",
-  first_hurigana: "かんな",
-  last_hurigana: "はしもと",
+  nickname: "購入花子",
+  last_name: "購入",
+  first_name: "花子",
+  first_hurigana: "花子",
+  last_hurigana: "購入",
   birthday: "1999-02-03",
   postcode: "555-5555",
   prefecture: "新潟県",
@@ -118,11 +118,14 @@ user6 = User.new(
   phone_number: "66-6666-6666"
 )
 
+
+
 user1.save!
 user2.save!
 user3.save!
 user4.save!
 user5.save!
 user6.save!
+
 
 
