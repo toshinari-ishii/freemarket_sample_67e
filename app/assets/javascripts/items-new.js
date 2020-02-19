@@ -57,7 +57,6 @@ $(function(){
       fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
     }
   });
-  // $(".contents__image__main").on("click", ".contents__image__main__box__btns__remove",function(){
     $(document).on("click", ".contents__image__main__box__btns__remove",function(){
     const targetIndex = $(this).data('index');
     const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
@@ -65,31 +64,10 @@ $(function(){
     $(this).parent().parent().remove();
     // console.log(a);
       $(`img[data-index="${targetIndex}"]`).remove();
-      // buildImg()
-      // console.log($(`img[data-index="${targetIndex}"]`));
-      // console.log(buildFile(targetIndex));
-      // buildFile(targetIndex).remove();
-      // $(".contents__image__main__right__group__file").remove();
-      // $(`<input class="contents__image__main__right__group__file" type="file" name="item[photos_attributes][${targetIndex}][image]" id="item_photos_attributes_${targetIndex}_image">`)[targetIndex].remove();
-      // $(`<input class="contents__image__main__right__group__file" type="file" name="item[photos_attributes][${targetIndex}][image]" id="item_photos_attributes_${targetIndex}_image">`)[0].remove();
-      // $("input[type='item[photos_attributes][${targetIndex}][image]']").remove();
-      // console.log(group(targetIndex));
-      // $('.contents__image__main__right').remove(group(targetIndex));
-      $(`<div class="contents__image__main__right__group" data-index="${targetIndex}">
-      <input class="contents__image__main__right__group__file" type="file" name="item[photos_attributes][${targetIndex}][image]" id="item_photos_attributes_${targetIndex}_image">
-      </div>`).remove();
-      // $(group(targetIndex)).remove();
-      // console.log($(`<input class="contents__image__main__right__group__file" type="file" name="item[photos_attributes][${targetIndex}][image]" id="item_photos_attributes_${targetIndex}_image">`))
-      // console.log($(`<input class="contents__image__main__right__group__file" type="file" name="item[photos_attributes][${targetIndex}][image]" id="item_photos_attributes_${targetIndex}_image">`));
-    });
-  
 
-    // console.log(targetIndex);
-    // $(`<input class="contents__image__main__right__group__file" type="file" name="item[photos_attributes][0][image]" id="item_photos_attributes_0_image">`).removeAttr("name");
-    // // a = $(`${inputfile(targetIndex)}`)
-    // // console.log(a);
-    // $(`<input class="contents__image__main__right__group__file" type="file" name="item[photos_attributes][${targetIndex}][image]" id="item_photos_attributes_${targetIndex}_image">`).removeAttr("id");
-    // 画像入力欄が0個にならないようにしておく
+      console.log($(`.contents__image__main__right__group[data-index="${targetIndex}"]`));
+      $(`.contents__image__main__right__group[data-index="${targetIndex}"]`).remove();
+    });
     if ($(".contents__image__form__text__js-file_group__file").length == 0) $("image-box").append(buildFile(fileIndex[0]));
  
 });
