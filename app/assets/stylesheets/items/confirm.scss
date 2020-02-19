@@ -1,133 +1,108 @@
 .items{
   .confirm{
     .buy{
-    padding:0 200px 0 550px;
-    width: 100%;
-    height: 100vh;
-    background-color: #f5f5f5;
+      width: 100%;
+      height: 100vh;
+      position: relative;
 
-    &__head{
-      height: 90px;
-      width: 800px;
-      padding-left: 250px;
-    }
-
-    &__head--title{
-      background-color: #ffffff;
-      text-align: center;
-      width:800px;
-      padding: 32px;
-      font-size: 22px;
-      font-weight: bold;
-      border-bottom: solid 1px #f5f5f5;
-      height: 100px;
-    }
-
-    &__second{
-      background-color: #ffffff;
-      width:800px;
-      border-bottom: solid 1px #f5f5f5;
-      height: 130px;
-      display: flex;
-      background-color: #ffffff;
-    }
-      &__second--image{
-        border: solid 1px;
-        width: 120px;
+      .buy__header{
+        text-align: center;
+        position: relative;
+        background-color: #f5f5f5;
+        width: 100%;
         height: 100px;
-        margin: 15px 10px 15px 200px;
       }
-      &__second--price{
-        margin: 15px 100px 15px 0;
+        
+      .buy__wrraper{
+        text-align: center;
+        position: relative;
+        margin: 0 auto;
+        width: 100%;
+        height: calc(100vh - 200px);
       }
+        .buy__head--title{
+          font-size: 30px;
+          font-weight: 30px;
+          border-bottom: solid 1px #f5f5f5;
+          height: 90px;
+          line-height: 90px;
+          width: 100%;
+        }
+        .buy__second{
+          display: flex;
+          justify-content: center;
+          border-bottom: solid 1px #f5f5f5;
+          height: 130px;
+          width: 100%;
+        }
+
+        .buy__second--image{
+          height: 92px;
+          margin-right: 100px;
+          margin-top: 20px;
+        }
+
         p.buy__second--price--name{
-          font-size: 14px;
+          margin: 20px 0 10px 0;
+          font-size: 20px;
         }
-
         p.buy__second--price--price{
-          font-size: 15px;
-          font-weight: bold;
+          font-size: 20px;
+          padding-right: 20px;
+          padding-top: 20px;
         }
-    
 
-    &__third{
-      background-color: #ffffff;
-      width:800px;
-      border-bottom: solid 1px #f5f5f5;
-      height: 500px;
-      background-color: #ffffff;
-    }
+        .buy__third{
+          width: 100%;
+        }
 
-    &__third--price{
-      margin: 0 0 15px 200px;
-      padding: 10px;
-      display: flex;
-    }
-    
-      p.buy__third--price--text{
-        margin-right: 200px;
+        .buy__third--price{
+          display: flex;
+          justify-content: center;
+        }
+
+        p.buy__third--price--text{
+          margin-right: 80px;
+          font-size: 30px;
+        }
+        p.buy__third--price--int{
+          font-size: 30px;
+          padding-right: 40px
+        }
+        .buy__third--red{
+          color: #FF0000;
+          border-bottom: solid 1px #f5f5f5;
+        }
+        .buy__third--address--red{
+          padding-right: ９０px
+        }
+        .mini{
+          width: 15%;
+          background-color: #00FFFF;
+          margin: 0 auto;
+        }
+        .buy-btn{
+          color: #000000;
+          background-color:#00FFFF;
+          font-size: 20px;
+        }
+
+
+      .foot{
+        position: relative;
+        text-align: center;
+        height: 165px;
+        width: 100%;
+        background-color: #f5f5f5;
       }
-
-    
-    &__third--choice{
-      border-bottom: solid 1px #f5f5f5;
-      padding-bottom: 20px;
-      padding-top: 20px;
-      margin: 30px 180px 0 200px;
+      a {
+        text-decoration: none;
+        }
+        
+      a:hover {
+        color: red;
+        }
     }
-
-    &__third--address{
-      border-bottom: solid 1px #f5f5f5;
-      margin: 30px 180px 0 200px;
-      font-size: 14px;
-    }
-
-    &__third--address--red{
-      color: red;
-      margin: 20px 60px 0 190px;
-    }
-
-    &__third--address--btn{
-      font-weight: bold;
-    }
-
-    .buy-btn{
-    font-size: 30px;
-    margin-left: 320px;
-    }
-
-    &__third--address--comment{
-      margin-left: 250px;
-    }
-
-    a {
-      text-decoration: none;
-    }
-
-    a:hover {
-      color: red;
-    }
-
   }
 }
-  
 
-  .foot{
-    height: 100px;
-    width: 100%;
-    
-    &__link{
-      padding-left: 200px;
-    }
-
-    &__icon {
-      padding-left: 250px;
-    }
-
-    p.foot__copy--mini{
-      padding-left: 350px;
-    }
-
-
-  }
-}  
