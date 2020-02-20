@@ -3,10 +3,149 @@
     - if flash[:notice]
       %p= flash[:notice]
   .edit
+    -# .header
+    -#   = image_tag "logo.png", size: "185x49"
+    -# .contents
+    -#   = form_for @item do |f|
+    -#     .contents__header
+    -#       商品の情報を入力
+    -#     .contents__image
+    -#       .contents__image__top
+    -#         .contents__image__top__font
+    -#           出品画像
+    -#         .contents__image__top__required
+    -#           必須
+    -#       .contents__image__text
+    -#         最大10枚までアップロードします
+    -#       .contents__image__form
+    -#         .contents__image__form__text
+    -#           -@photos.each_with_index do |p,i|
+    -#             = image_tag ("#{p.image}"),width:"100px",height:"100px" 
+    -#           %b
+    -#             ドラッグアンドドロップ
+    -#             %br
+    -#             またはクリックしてファイルをアップロード
+    -#           #image-box
+    -#             = f.fields_for :photos do |i|
+    -#               .contents__image__form__text__js-file_group{data:{index:i.index}}
+    -#                 = i.file_field :image,class:"contents__image__form__text__js-file_group__file"
+    -#                 .js-remove 削除
+    -#               - if @item.persisted?
+    -#                 = i.check_box :_destroy, data:{ index: i.index }, class: 'hidden-destroy'
+    -#             - if @item.persisted?
+    -#               .contents__image__form__text__js-file_group{data:{index:"#{@photos.count}"}}
+    -#                 = file_field_tag :image, name: "item[photos_attributes][#{@photos.count}][image]",class:"contents__image__form__text__js-file_group__file"
+    -#                 .js-remove 削除       
+    -#       .contents__name__top
+    -#         .contents__name__top__font
+    -#           商品名
+    -#         .contents__name__top__required
+    -#           必須
+    -#       = f.text_field :name,class:"contents__name__field",placeholder:"商品名(必須40文字まで)"
+    -#     .contents__explain
+    -#       .contents__explain__top
+    -#         .contents__explain__top__font
+    -#           商品説明
+    -#         .contents__explain__top__required
+    -#           必須
+    -#       = f.text_area :text,class:"contents__explain__area",placeholder:"商品名 （商品の説明(必須1,000文字以内）（色、素材、重さ、定価、注意点など）例）   2010年頃に1万円に購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。）"
+    -#     .contents__detail
+    -#       .contents__detail__main
+    -#         .contents__detail__main__name
+    -#           商品の詳細
+    -#         .contents__detail__main__box
+    -#           .contents__detail__main__box__cate
+    -#             .contents__detail__main__box__cate__top
+    -#               .contents__detail__main__box__cate__top__font
+    -#                 カテゴリー
+    -#               .contents__detail__main__box__cate__top__required
+    -#                 必須
+    -#             = f.collection_select :category_id,@categories, :id, :name,{prompt: "---"},class:"contents__detail__main__box__cate__select",id:"parent_category"
+    -#             = f.collection_select :category_id,@children, :id, :name,{prompt: "---", selected: @child.id},class:"contents__detail__main__box__cate__select",id:"edit-children"
+    -#             = f.collection_select :category_id,@grandchildren, :id, :name,{prompt: "---"},class:"contents__detail__main__box__cate__select",id:"edit-grandchildren"
+    -#           .contents__detail__main__box__condition
+    -#             .contents__detail__main__box__condition__top
+    -#               .contents__detail__main__box__condition__top__font
+    -#                 商品の状態
+    -#               .contents__detail__main__box__condition__top__required
+    -#                 必須
+    -#             = f.select :condition, [ ["新品、未使用","新品、未使用"], ["未使用に近い", "未使用に近い"], ["目立った傷や汚れなし", "目立った傷や汚れなし"], ["やや傷や汚れなし", "やや傷や汚れなし"], ["傷や汚れなし", "傷や汚れなし"], ["傷や汚れあり", "傷や汚れあり"], ["全体的に状態が悪い", "全体的に状態が悪い"] ], {prompt: "---"}, class:"contents__detail__main__box__condition__select"
+    -#     .contents__deal
+    -#       .contents__deal__main
+    -#         .contents__deal__main__name
+    -#           配送について
+    -#         .contents__deal__main__box
+    -#           .contents__deal__main__box__burden
+    -#             .contents__deal__main__box__burden__top
+    -#               .contents__deal__main__box__burden__top__font
+    -#                 配送料の負担
+    -#               .contents__deal__main__box__burden__top__required
+    -#                 必須
+    -#             = f.select :burden, [ ["送料込み(出品者負担)",1], ["着払い(購入者負担)", 2] ], {prompt: "---"}, class:"contents__deal__main__box__burden__select"
+    -#           .contents__deal__main__box__area
+    -#             .contents__deal__main__box__area__top
+    -#               .contents__deal__main__box__area__top__font
+    -#                 発想元の地域
+    -#               .contents__deal__main__box__area__top__required
+    -#                 必須
+    -#             = f.collection_select :area, Area.all,:id, :name, {prompt: "---"}, class:"contents__deal__main__box__area__select" 
+    -#           .contents__deal__main__box__days
+    -#             .contents__deal__main__box__days__top
+    -#               .contents__deal__main__box__days__top__font
+    -#                 発送までの日数
+    -#               .contents__deal__main__box__days__top__required
+    -#                 必須
+    -#             = f.select :day, [ ["1~2日で発送","1~2日で発送"], ["2~3日で発送", "2~3日で発送"], ["4~7日で発送", "4~7日で発送"] ], {prompt: "---"}, class:"contents__deal__main__box__days__select"
+    -#     .contents__money
+    -#       .contents__money__main
+    -#         .contets__money__main__name
+    -#           販売価格(300~9,999,999)
+    -#         .contents__money__main__box
+    -#           .contents__money__main__box__frame
+    -#             .contents__money__main__box__frame__left
+    -#               .contents__money__main__box__frame__left__top
+    -#                 .contents__money__main__box__frame__left__top__font
+    -#                   価格
+    -#                 .contents__money__main__box__frame__left__top__required
+    -#                   必須
+    -#             .contents__money__main__box__frame__right
+    -#               .contents__money__main__box__frame__right__yen
+    -#                 ¥
+    -#             = f.text_field :price,class:"contents__money__main__box__frame__right__price",placeholder: '  例）  300'
+    -#     .contents__text
+    -#       .contents__text__main
+    -#         .contents__text__main__first
+    -#           = link_to '禁止されている出品', '/#', class: 'contents__text__main__first__box1'
+    -#           、
+    -#           = link_to '行為', '/#', class: 'contents__text__main__first__box2'
+    -#           を必ずご確認ください。
+    -#         .contents__text__main__second
+    -#           またブランド品でシリアルナンバー等がある場合はご記載ください。
+    -#           = link_to '偽ブランドの販売', '/#', class: 'contents__text__main__second__box1'
+    -#           は犯罪であり処罰される可能性があります。
+    -#         .contents__text__main__third{}
+    -#           また、出品をもちまして
+    -#           = link_to '加盟店規約', '/#', class: 'contents__text__main__third__box1'
+    -#           に同意したことになります。
+    -#     .contents__submit
+    -#       .contents__submit__sell
+    -#         = f.submit "変更する", class: 'contents__submit__sell__button'
+    -#       .contents__submit__back
+    -#         = link_to 'もどる',root_path, class: 'contents__submit__back__button'
+    -# .footer
+    -#   = link_to 'プライバシーポリシー', '/#', class: 'footer__left'
+    -#   = link_to 'メルカリ利用規約', '/#', class: 'footer__middle'
+    -#   = link_to '特定商取引に関する表記', '/#', class: 'footer__right'
+    -#   .footer__logo
+    -#     = image_tag "logo-white.png", size: "120x70"
+    -#   %small © FURIMA, Inc.
+
+.items
+  .edit
     .header
       = image_tag "logo.png", size: "185x49"
-    .contents
-      = form_for @item do |f|
+    = form_for @item do |f|
+      .contents
         .contents__header
           商品の情報を入力
         .contents__image
@@ -17,25 +156,36 @@
               必須
           .contents__image__text
             最大10枚までアップロードします
-          .contents__image__form
-            .contents__image__form__text
+          .contents__image__main
+            - if @item.persisted?
+              -# - @photos.each
               -@photos.each_with_index do |p,i|
-                = image_tag ("#{p.image}"),width:"100px",height:"100px" 
-              %b
-                ドラッグアンドドロップ
-                %br
-                またはクリックしてファイルをアップロード
+                -# = image_tag ("#{p.image}"),width:"100px",height:"100px" 
+                .contents__image__main__box
+                  .contents__image__main__box__image
+                    = image_tag ("#{p.image}"),width:"100px",height:"100px"
+                  .contents__image__main__box__btns
+                    .contents__image__main__box__btns__remove{data:{index:i}}
+                      削除
+                  = f.check_box :_destroy, {data:{ index: i }}, class: 'hidden-destroy'
+                -# .contents__image__main__left
+                -#   .contents__image__main__left__box
+                -#     .contents__image__main__left__box__image
+                -#     .contents__image__main__left__box__btns
+                -#       .contents__image__main__left__box__btns__remove{data:{index:i}}
+            %label.contents__image__main__right#label{for: "item_photos_attributes_0_image"}
               #image-box
                 = f.fields_for :photos do |i|
-                  .contents__image__form__text__js-file_group{data:{index:i.index}}
-                    = i.file_field :image,class:"contents__image__form__text__js-file_group__file"
-                    .js-remove 削除
-                  - if @item.persisted?
-                    = i.check_box :_destroy, data:{ index: i.index }, class: 'hidden-destroy'
-                - if @item.persisted?
-                  .contents__image__form__text__js-file_group{data:{index:"#{@photos.count}"}}
-                    = file_field_tag :image, name: "item[photos_attributes][#{@photos.count}][image]",class:"contents__image__form__text__js-file_group__file"
-                    .js-remove 削除       
+                  .contents__image__main__right__group{data:{index:i.index}}
+                    = i.file_field :image,class:"contents__image__main__right__group__file"
+                  = "画像を選択"
+                -#    - if @item.persisted?
+                -#     = i.check_box :_destroy, data:{ index: i.index }, class: 'hidden-destroy'
+                -# - if @item.persisted?
+                -#   .contents__image__form__text__js-file_group{data:{index:"#{@photos.count}"}}
+                -#     = file_field_tag :image, name: "item[photos_attributes][#{@photos.count}][image]",class:"contents__image__form__text__js-file_group__file"
+                -#     .js-remove 削除       
+        .contents__name
           .contents__name__top
             .contents__name__top__font
               商品名
@@ -60,9 +210,7 @@
                     カテゴリー
                   .contents__detail__main__box__cate__top__required
                     必須
-                = f.collection_select :category_id,@categories, :id, :name,{prompt: "---"},class:"contents__detail__main__box__cate__select",id:"parent_category"
-                = f.collection_select :category_id,@children, :id, :name,{prompt: "---", selected: @child.id},class:"contents__detail__main__box__cate__select",id:"edit-children"
-                = f.collection_select :category_id,@grandchildren, :id, :name,{prompt: "---"},class:"contents__detail__main__box__cate__select",id:"edit-grandchildren"
+                = f.collection_select :category_id, @categories, :id, :name,{prompt: "---"},class:"contents__detail__main__box__cate__select",id:"parent_category"
               .contents__detail__main__box__condition
                 .contents__detail__main__box__condition__top
                   .contents__detail__main__box__condition__top__font
@@ -85,10 +233,12 @@
               .contents__deal__main__box__area
                 .contents__deal__main__box__area__top
                   .contents__deal__main__box__area__top__font
-                    発想元の地域
+                    発送元の地域
                   .contents__deal__main__box__area__top__required
                     必須
-                = f.collection_select :area, Area.all,:id, :name, {prompt: "---"}, class:"contents__deal__main__box__area__select" 
+               
+                = f.collection_select :area,Area.all, :id, :name,{prompt: "---"}, class:"contents__deal__main__box__area__select"
+
               .contents__deal__main__box__days
                 .contents__deal__main__box__days__top
                   .contents__deal__main__box__days__top__font
@@ -129,7 +279,7 @@
               に同意したことになります。
         .contents__submit
           .contents__submit__sell
-            = f.submit "変更する", class: 'contents__submit__sell__button'
+            = f.submit "出品する", class: 'contents__submit__sell__button'
           .contents__submit__back
             = link_to 'もどる',root_path, class: 'contents__submit__back__button'
     .footer
