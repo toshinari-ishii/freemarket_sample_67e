@@ -186,7 +186,7 @@
       }
     &__middledi{
       background-image: image-url("bg-topMiddleDl-pict.jpg");
-      // background-image: url(/assets/bg-topMiddleDl-pict.jpg);
+
       background-position: bottom right;
       height: 400px;
       background-size: cover;
@@ -356,7 +356,7 @@
   }
   .banner{
     background-image: image-url("bg-appBanner-pict.jpg");
-    // background-image: url(/assets/bg-appBanner-pict.jpg);
+    background-image: url(/assets/bg-appBanner-pict.jpg);
     padding: 100px 40px;
     margin-top: 60px;
     position: relative;
@@ -397,7 +397,6 @@
   }
 
   .purchaseBtn{
-    cursor: pointer;
     width: 120px;
     background: #3CCACE;
     text-align: center;
