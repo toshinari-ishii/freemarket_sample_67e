@@ -106,8 +106,7 @@ class ItemsController < ApplicationController
   end
   
   def search
-    @items = Item.where(name: params[:hoge])
-    
+    @items = Item.where(['name like ?', "%#{params[:search]}%"])
   end
   
   private

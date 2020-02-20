@@ -6,7 +6,7 @@
       .header__main__top__form
         = form_tag({controller: "items", action: "search" }, method: :get) do
           .header__main__top__form__box
-            = text_field_tag :hoge, "", {placeholder: "キーワードから探す",class:"header__main__top__form__box__text"}
+            = text_field_tag :search, "", {placeholder: "キーワードから探す",class:"header__main__top__form__box__text"}
             = image_submit_tag "icon-search 1.png",class:"header__main__top__form__box__submit",width:"30px"
     .header__main__bottom
       .header__main__bottom__left
