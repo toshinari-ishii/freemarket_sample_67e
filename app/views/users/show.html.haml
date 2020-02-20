@@ -1,7 +1,8 @@
 .items
   .show 
     = render partial:"module/header"
-
+    - breadcrumb :mypage
+    = render "layouts/breadcrumbs"
 
 .users
   .show
