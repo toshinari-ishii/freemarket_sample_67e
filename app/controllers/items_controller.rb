@@ -105,6 +105,10 @@ class ItemsController < ApplicationController
     end
   end
   
+  def search
+    @items = Item.where(['name like ?', "%#{params[:search]}%"])
+  end
+  
   private
   def item_params
     params.require(:item).permit(:name, :text,:condition,:burden, :area, :day, :price, :category_id, :user_id, :buyer , photos_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)

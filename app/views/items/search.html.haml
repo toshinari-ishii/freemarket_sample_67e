@@ -1,0 +1,15 @@
+.items
+  .show
+    = render partial:"module/header"
+.search
+  - @items.each do |i|
+    .search__box
+      .search__box__name
+        = i.name
+      .search__box__image
+        = link_to item_path(i.id)do
+          = image_tag "#{Photo.find_by(item_id: i.id).image}",width:"100px",height:"100px"
+
+.items
+  .show
+    = render partial:"module/footer"
