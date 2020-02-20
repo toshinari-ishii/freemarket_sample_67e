@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       get 'grandchildren'
     end
     collection do
+      get "search"
       get 'children', defaults: { format: 'json' }
       get 'grandchildren', defaults: { format: 'json' }
     end

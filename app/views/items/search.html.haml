@@ -1,0 +1,6 @@
+.search
+  - @items.each do |i|
+    = i.name
+    = link_to item_path(i.id)do
+      = image_tag "#{Photo.find_by(item_id: i.id).image}",width:"100px",height:"100px"
+
