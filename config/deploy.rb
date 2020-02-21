@@ -39,7 +39,11 @@ set :linked_files, %w{ config/master.key }
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
   task :restart do
-    invoke 'unicorn:restart'
+    # invoke 'unicorn:restart'
+    
+    # 完全にunicornをkillしてから起動
+    invoke 'unicorn:stop'
+    invoke 'unicorn:start'
   end
 
   desc 'upload master.key'
