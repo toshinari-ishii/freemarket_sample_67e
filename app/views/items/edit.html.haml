@@ -158,27 +158,26 @@
             最大10枚までアップロードします
           .contents__image__main
             - if @item.persisted?
-              -# - @photos.each
               -@photos.each_with_index do |p,i|
                 -# = image_tag ("#{p.image}"),width:"100px",height:"100px" 
                 .contents__image__main__box
                   .contents__image__main__box__image
                     = image_tag ("#{p.image}"),width:"100px",height:"100px"
                   .contents__image__main__box__btns
-                    .contents__image__main__box__btns__remove{data:{index:i}}
+                    .contents__image__main__box__btns__remove-edit{data:{index:i}}
                       削除
-                  = f.check_box :_destroy, {data:{ index: i }}, class: 'hidden-destroy'
+                = f.check_box :_destroy, data:{ index: i }, class: 'hidden-destroy'
                 -# .contents__image__main__left
                 -#   .contents__image__main__left__box
                 -#     .contents__image__main__left__box__image
                 -#     .contents__image__main__left__box__btns
                 -#       .contents__image__main__left__box__btns__remove{data:{index:i}}
-            %label.contents__image__main__right#label{for: "item_photos_attributes_0_image"}
+            %label.contents__image__main__right#label-edit{for: "item_photos_attributes_0_image"}
               #image-box
                 = f.fields_for :photos do |i|
                   .contents__image__main__right__group{data:{index:i.index}}
                     = i.file_field :image,class:"contents__image__main__right__group__file"
-                  = "画像を選択"
+                = "画像を選択"
                 -#    - if @item.persisted?
                 -#     = i.check_box :_destroy, data:{ index: i.index }, class: 'hidden-destroy'
                 -# - if @item.persisted?

@@ -37,7 +37,7 @@ $(function(){
   let fileIndex = [1,2,3,4,5,6,7,8,9,10];
     lastIndex = $('.contents__image__form__text__js-file_group:last').data("index")
     fileIndex.splice(0, lastIndex);
-    $(".hidden-destroy").hide();
+    // $(".hidden-destroy").hide();
     $('#image-box').on('change', '.contents__image__main__right__group__file', function(e) {
   // $('#image-box').on('change', '.contents__image__form__text__js-file_group__file', function(e) {
     const targetIndex = $(this).parent().data("index");
@@ -52,11 +52,13 @@ $(function(){
       $('#image-box').append(buildFile(fileIndex[0]));
       var labelIndex = targetIndex + 1;
       $('#label').attr('for', `item_photos_attributes_${labelIndex}_image`);
+      $('#label-edit').attr('for', `item_photos_attributes_${labelIndex}_image`);
       fileIndex.shift();
       // 末尾の数に1足した数を追加する
       fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
     }
   });
+  // newで削除ボタンを押した場合
     $(document).on("click", ".contents__image__main__box__btns__remove",function(){
     const targetIndex = $(this).data('index');
     const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
@@ -65,11 +67,23 @@ $(function(){
     // console.log(a);
       $(`img[data-index="${targetIndex}"]`).remove();
 
-      console.log($(`.contents__image__main__right__group[data-index="${targetIndex}"]`));
+      // console.log($(`.contents__image__main__right__group[data-index="${targetIndex}"]`));
       $(`.contents__image__main__right__group[data-index="${targetIndex}"]`).remove();
     });
-    if ($(".contents__image__form__text__js-file_group__file").length == 0) $("image-box").append(buildFile(fileIndex[0]));
- 
+    // if ($(".contents__image__form__text__js-file_group__file").length == 0) $("image-box").append(buildFile(fileIndex[0]));
+    // 保存済みの画像の削除ボタンを押した場合
+    $(".contents__image__main__box__btns__remove-edit").on("click",function(){
+      console.log("edit");
+      const targetIndex = $(this).data('index');
+      const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
+      if (hiddenCheck) hiddenCheck.prop('checked', true);
+      $(this).parent().parent().remove();
+      // console.log(a);
+        $(`img[data-index="${targetIndex}"]`).remove();
+  
+        // console.log($(`.contents__image__main__right__group[data-index="${targetIndex}"]`));
+        $(`.contents__image__main__right__group[data-index="${targetIndex}"]`).remove();
+    })
 });
 
 
