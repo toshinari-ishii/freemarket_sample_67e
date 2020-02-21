@@ -172,17 +172,19 @@
                 -#     .contents__image__main__left__box__image
                 -#     .contents__image__main__left__box__btns
                 -#       .contents__image__main__left__box__btns__remove{data:{index:i}}
-            %label.contents__image__main__right#label-edit{for: "item_photos_attributes_0_image"}
+            %label.contents__image__main__right#label-edit{for: "item_photos_attributes_#{@item.photos.count}"}
               #image-box
                 = f.fields_for :photos do |i|
                   .contents__image__main__right__group{data:{index:i.index}}
                     = i.file_field :image,class:"contents__image__main__right__group__file"
                 = "画像を選択"
+                .contents__image__main__right__group{data:{index: @item.photos.count}}
+                  = file_field_tag :image, name: "item[photos_attributes][#{@item.photos.count}][image]",class:"contents__image__main__right__group__file"
+
                 -#    - if @item.persisted?
                 -#     = i.check_box :_destroy, data:{ index: i.index }, class: 'hidden-destroy'
                 -# - if @item.persisted?
                 -#   .contents__image__form__text__js-file_group{data:{index:"#{@photos.count}"}}
-                -#     = file_field_tag :image, name: "item[photos_attributes][#{@photos.count}][image]",class:"contents__image__form__text__js-file_group__file"
                 -#     .js-remove 削除       
         .contents__name
           .contents__name__top

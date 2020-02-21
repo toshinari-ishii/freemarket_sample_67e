@@ -51,12 +51,17 @@ $(function(){
       // fileIndexの先頭の数字を使ってinputを作る
       $('#image-box').append(buildFile(fileIndex[0]));
       var labelIndex = targetIndex + 1;
+      var count = $(".contents__image__main__right__group__file").length
+      console.log(count);
       $('#label').attr('for', `item_photos_attributes_${labelIndex}_image`);
-      $('#label-edit').attr('for', `item_photos_attributes_${labelIndex}_image`);
+      // $('#label-edit').attr('for', `item_photos_attributes_${labelIndex}_image`);
+      if ($("#label-edit").length == 1){
+        $('#label-edit').attr('for', `item_photos_attributes_${labelIndex + count}_image`);
+      };
       fileIndex.shift();
       // 末尾の数に1足した数を追加する
       fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
-    }
+    };
   });
   // newで削除ボタンを押した場合
     $(document).on("click", ".contents__image__main__box__btns__remove",function(){
