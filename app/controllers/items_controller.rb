@@ -92,8 +92,6 @@ class ItemsController < ApplicationController
     @parent = @child.parent
     @children = @child.siblings
     @parents = @parent.siblings
-    # @photos = Photo.where(item_id: params[:id])
-
   end
 
   def update
