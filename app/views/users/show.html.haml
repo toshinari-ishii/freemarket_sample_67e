@@ -39,19 +39,17 @@
           .main__itembox__header
             この出品者の商品
           .main__itembox__itemsbox
-
-            - @items.each do |item|
-              .main__itembox__itemsbox__room
-                .main__itembox__itemsbox__room__item
-                  = image_tag ("#{@photos.find_by(item_id:params[:id]).image}"), size: "200x220"
-                .main__itembox__itemsbox__room__detail
-                  .main__itembox__itemsbox__room__detail__name
-                    = item.name
-                  .main__itembox__itemsbox__room__detail__price-box
-                    .main__itembox__itemsbox__room__detail__price-box__price
-                      = "¥#{item.price.to_s(:delimited)}"
-                    .main__itembox__itemsbox__room__detail__price-box__icon
-                      %i.far.fa-heart 30
+            .main__itembox__itemsbox__room
+              .main__itembox__itemsbox__room__item
+                = image_tag ("a004.png"), size: "200x220"
+              .main__itembox__itemsbox__room__detail
+                .main__itembox__itemsbox__room__detail__name
+                  アイテム
+                .main__itembox__itemsbox__room__detail__price-box
+                  .main__itembox__itemsbox__room__detail__price-box__price
+                    1000円
+                  .main__itembox__itemsbox__room__detail__price-box__icon
+                    %i.far.fa-heart 30
              
 
           %a{:href => "items/new"}
